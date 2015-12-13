@@ -1,0 +1,65 @@
+!!!
+%html{lang: 'zh'}
+  %head
+    %meta{content: 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type'}
+    %meta{content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name: 'viewport'}
+    
+    %title 正道中医
+    
+    %link{rel: 'stylesheet', type: 'text/css', href: '../lib/semantic-ui/semantic.min.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: '../dist/base/css/base.css'}
+
+  %body
+    .ui.container
+      %h1.ui.header
+        %span 表格
+        .sub.header 这是一个管理界面的数据表格
+      %table.ui.celled.table
+        %thead
+          %tr
+            %th 店面名称
+            %th 地址
+            %th 电话
+            %th 负责人
+            %th 所属公司
+            %th 床位数
+        %tbody
+          %tr
+            %td Cell
+            %td Cell
+            %td Cell
+            %td Cell
+            %td Cell
+            %td Cell
+          %tr
+            %td Cell
+            %td Cell
+            %td Cell
+            %td Cell
+            %td Cell
+            %td Cell
+          %tr
+            %td Cell
+            %td Cell
+            %td Cell
+            %td Cell
+            %td Cell
+            %td Cell
+        %tfoot
+          %tr
+            %th{colspan: '6'}
+              .ui.right.floated.pagination.menu
+                %a.icon.item
+                  %i.left.chevron.icon
+                %a.item 1
+                %a.item 2
+                %a.item 3
+                %a.item 4
+                %a.icon.item
+                  %i.right.chevron.icon
+
+    %script{src: '../lib/jquery/jquery-2.1.4.min.js'}
+    %script{src: '../lib/react-0.14.3/react.min.js'}
+    %script{src: '../lib/react-0.14.3/react-dom.min.js'}
+    %script{src: '../lib/semantic-ui/semantic.min.js'}
+    %script{src: '../dist/base/js/base.js'}
