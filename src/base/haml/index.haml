@@ -1,15 +1,14 @@
-!!!
-%html{lang: 'zh'}
-  %head
-    %meta{content: 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type'}
-    %meta{content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name: 'viewport'}
-    
-    %title 正道中医
-    
-    %link{rel: 'stylesheet', type: 'text/css', href: '../lib/semantic-ui/semantic.min.css'}
-    %link{rel: 'stylesheet', type: 'text/css', href: '../dist/base/css/base.css'}
+= Haml::Engine.new(File.read "#{Dir.pwd}/src/base/partial/admin.haml").render do
+  - capture_haml do
+    :ruby
+      require 'json'
+      props = JSON.generate({
+        a: 1,
+        b: 2
+      })
 
-  %body
+    %div{'data-react-class' => 'DataTable', 'data-props' => props}
+
     .ui.container
       %h1.ui.header
         %span 表格
@@ -25,12 +24,12 @@
             %th 床位数
         %tbody
           %tr
-            %td Cell
-            %td Cell
-            %td Cell
-            %td Cell
-            %td Cell
-            %td Cell
+            %td 立水桥门诊
+            %td 朝阳区北苑路 6 号
+            %td 010-66668888
+            %td 孙思邈
+            %td 正道国医馆
+            %td 100
           %tr
             %td Cell
             %td Cell
@@ -57,9 +56,3 @@
                 %a.item 4
                 %a.icon.item
                   %i.right.chevron.icon
-
-    %script{src: '../lib/jquery/jquery-2.1.4.min.js'}
-    %script{src: '../lib/react-0.14.3/react.min.js'}
-    %script{src: '../lib/react-0.14.3/react-dom.min.js'}
-    %script{src: '../lib/semantic-ui/semantic.min.js'}
-    %script{src: '../dist/base/js/base.js'}
