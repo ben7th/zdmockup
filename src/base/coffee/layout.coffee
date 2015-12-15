@@ -27,7 +27,7 @@
   statics:
     Item: React.createClass
       render: ->
-        href = if @props.link then "/demo/#{@props.link}.html" else 'javascript:;'
+        href = if @props.link then "#{@props.link}.html" else 'javascript:;'
         klass = ['item blue']
         if @current_sidebar_active_item() == @props.link
           klass.push 'active'

@@ -297,7 +297,7 @@
       Item: React.createClass({
         render: function() {
           var href, klass;
-          href = this.props.link ? "/demo/" + this.props.link + ".html" : 'javascript:;';
+          href = this.props.link ? this.props.link + ".html" : 'javascript:;';
           klass = ['item blue'];
           if (this.current_sidebar_active_item() === this.props.link) {
             klass.push('active');
