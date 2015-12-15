@@ -12,42 +12,57 @@
       render: ->
         <table className='ui celled table'>
           <thead><tr>
-          {
-            for name, text of @props.data.fields
-              <th key={name}>{text}</th>
-          }
+            <th></th>
+            {
+              for name, text of @props.data.fields
+                <th key={name}>{text}</th>
+            }
           </tr></thead>
           <tbody>
           {
             for i in [0..2]
               <tr key={i}>
-              {
-                for name, text of @props.data.fields
-                  value = @props.data.sample?[i]?[name] || <br /> 
-                  <td key={name}>
-                    <span>{value}</span>
-                    {
-                      if @props.data.manage[name]?
-                        [icon, btn_text] = @props.data.manage[name]
-                        <a className='ui mini manage button green'>
-                          <i className="ui icon #{icon}" />
-                          <span>{btn_text}</span>
-                        </a>
-                    }
-                  </td>
-              }
+                <td className='collapsing'>
+                  <a className='ui mini button edit green'>
+                    <i className='ui icon edit' />
+                    <span>修改</span>
+                  </a>
+                </td>
+                {
+                  for name, text of @props.data.fields
+                    value = @props.data.sample?[i]?[name] || <br /> 
+                    <td key={name}>
+                      <span>{value}</span>
+                      {
+                        if @props.data.manage[name]?
+                          [icon, btn_text] = @props.data.manage[name]
+                          <a className='ui mini manage button green'>
+                            <i className="ui icon #{icon}" />
+                            <span>{btn_text}</span>
+                          </a>
+                      }
+                    </td>
+                }
               </tr>
           }
           </tbody>
-          <tfoot><tr><th colSpan='6'>
-            <div className='ui right floated pagination menu'>
-              <a className='icon item'><i className='icon left chevron' /></a>
-              <a className='item'>1</a>
-              <a className='item'>2</a>
-              <a className='item'>3</a>
-              <a className='icon item'><i className='icon right chevron' /></a>
-            </div>
-          </th></tr></tfoot>
+          <tfoot><tr>
+            <th></th>
+            <th colSpan={Object.keys(@props.data.fields).length}>
+              <a className='ui labeled icon button large blue'>
+                <i className='ui icon add' />
+                <span>增加店面</span>
+              </a>
+
+              <div className='ui right floated pagination menu'>
+                <a className='icon item'><i className='icon left chevron' /></a>
+                <a className='item'>1</a>
+                <a className='item'>2</a>
+                <a className='item'>3</a>
+                <a className='icon item'><i className='icon right chevron' /></a>
+              </div>
+            </th>
+          </tr></tfoot>
         </table>
 
 
@@ -78,7 +93,7 @@
               address: '北京朝阳区北苑路xx号'
               phone: '010-66668889'
               director: '孙思邈'
-              underlings: '-'
+              underlings: '0'
               beds: '100'
             },
             {
@@ -86,7 +101,7 @@
               address: '北京朝阳区文学馆路xx号'
               phone: '010-66668880'
               director: '钱乙'
-              underlings: '-'
+              underlings: '0'
               beds: '100'
             }
           ]

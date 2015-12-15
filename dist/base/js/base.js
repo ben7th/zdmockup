@@ -173,7 +173,7 @@
           var btn_text, i, icon, name, text, value;
           return React.createElement("table", {
             "className": 'ui celled table'
-          }, React.createElement("thead", null, React.createElement("tr", null, (function() {
+          }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null), (function() {
             var ref, results;
             ref = this.props.data.fields;
             results = [];
@@ -190,7 +190,13 @@
             for (i = j = 0; j <= 2; i = ++j) {
               results.push(React.createElement("tr", {
                 "key": i
-              }, (function() {
+              }, React.createElement("td", {
+                "className": 'collapsing'
+              }, React.createElement("a", {
+                "className": 'ui mini button edit green'
+              }, React.createElement("i", {
+                "className": 'ui icon edit'
+              }), React.createElement("span", null, "修改"))), (function() {
                 var ref, ref1, ref2, ref3, results1;
                 ref = this.props.data.fields;
                 results1 = [];
@@ -209,9 +215,13 @@
               }).call(this)));
             }
             return results;
-          }).call(this)), React.createElement("tfoot", null, React.createElement("tr", null, React.createElement("th", {
-            "colSpan": '6'
-          }, React.createElement("div", {
+          }).call(this)), React.createElement("tfoot", null, React.createElement("tr", null, React.createElement("th", null), React.createElement("th", {
+            "colSpan": (Object.keys(this.props.data.fields).length)
+          }, React.createElement("a", {
+            "className": 'ui labeled icon button large blue'
+          }, React.createElement("i", {
+            "className": 'ui icon add'
+          }), React.createElement("span", null, "增加店面")), React.createElement("div", {
             "className": 'ui right floated pagination menu'
           }, React.createElement("a", {
             "className": 'icon item'
@@ -259,14 +269,14 @@
                 address: '北京朝阳区北苑路xx号',
                 phone: '010-66668889',
                 director: '孙思邈',
-                underlings: '-',
+                underlings: '0',
                 beds: '100'
               }, {
                 name: '芍药居分店',
                 address: '北京朝阳区文学馆路xx号',
                 phone: '010-66668880',
                 director: '钱乙',
-                underlings: '-',
+                underlings: '0',
                 beds: '100'
               }
             ]
