@@ -1,16 +1,9 @@
 @DemoAdminTable = React.createClass
   displayName: 'DemoAdminTable'
   render: ->
-    <div className='demo-admin-table'>
-      <div className='ui vertical segment masthead'>
-        <div className='ui container'>
-          <DemoAdminTable.Header data={@props.data} />
-        </div>
-      </div>
-      <div className='ui vertical segment'>
-        <div className='ui container'>
-          <DemoAdminTable.Table data={@props.data} />
-        </div>
+    <div className='demo-admin-table ui basic segment'>
+      <div className='ui basic segment'>
+        <DemoAdminTable.Table data={@props.data} />
       </div>
     </div>
 

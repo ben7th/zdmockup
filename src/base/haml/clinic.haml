@@ -18,12 +18,29 @@
         name: '朝阳区总店',
         address: '北京朝阳区健翔桥东xx号',
         phone: '010-66668888',
+        director: '张仲景',
+        underlings: '2',
+        beds: '200'
+      },
+      {
+        name: '北苑路分店',
+        address: '北京朝阳区北苑路xx号',
+        phone: '010-66668889',
         director: '孙思邈',
-        underlings: '3',
+        underlings: '-',
+        beds: '100'
+      },
+      {
+        name: '芍药居分店',
+        address: '北京朝阳区文学馆路xx号',
+        phone: '010-66668889',
+        director: '钱乙',
+        underlings: '-',
         beds: '100'
       }
     ]
   }
 
 = partial 'admin' do
+  = react_component 'DemoAdminHeader.Clinic'
   = react_component 'DemoAdminTable', data: data

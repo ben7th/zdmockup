@@ -3,6 +3,12 @@ body, .ui.header, .ui.menu {
   font-family: '微软雅黑', Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif; }
 
 body.admin .page-content {
-  margin-left: 84px; }
-body.admin .ui.masthead.segment {
-  padding: 2em 0; }
+  margin-left: 88px; }
+body.admin .ui.header.page-title span {
+  font-weight: bold; }
+body.admin .ui.header.page-title .sub {
+  margin-top: 0.5em; }
+
+.demo-placeholder {
+  font-size: 16px;
+  font-weight: bold; }

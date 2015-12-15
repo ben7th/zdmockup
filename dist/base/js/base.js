@@ -1,22 +1,171 @@
 (function() {
+  this.DemoAdminHeader = React.createClass({
+    displayName: 'DemoAdminHeader',
+    render: function() {
+      var idx, item, klass;
+      return React.createElement("div", {
+        "className": 'page-admin-head'
+      }, React.createElement("div", {
+        "className": 'ui basic segment'
+      }, React.createElement("div", {
+        "className": 'ui basic segment'
+      }, React.createElement("h2", {
+        "className": 'ui header page-title'
+      }, React.createElement("span", null, this.props.data.title), React.createElement("div", {
+        "className": 'sub header'
+      }, this.props.data.desc))), React.createElement("div", {
+        "className": 'ui basic segment'
+      }, React.createElement("div", {
+        "className": 'ui pointing menu'
+      }, ((function() {
+        var i, len, ref, results;
+        idx = 0;
+        ref = this.props.data.secondary_items;
+        results = [];
+        for (i = 0, len = ref.length; i < len; i++) {
+          item = ref[i];
+          klass = ['item'];
+          if (idx === 0) {
+            klass.push('active');
+          }
+          results.push(React.createElement("a", {
+            "key": idx++,
+            "className": klass.join(' ')
+          }, item));
+        }
+        return results;
+      }).call(this))))));
+    },
+    statics: {
+      Clinic: React.createClass({
+        displayName: 'DemoAdminHeader.Clinic',
+        render: function() {
+          var data;
+          data = {
+            title: '店面与人员信息管理',
+            desc: '设置门店机构，诊疗室，床位，以及人员信息',
+            secondary_items: ['分店信息', '部门设置', '职员管理', '诊疗室管理', '床位管理']
+          };
+          return React.createElement(DemoAdminHeader, {
+            "data": data
+          });
+        }
+      }),
+      Patient: React.createClass({
+        displayName: 'DemoAdminHeader.Patient',
+        render: function() {
+          var data;
+          data = {
+            title: '患者信息管理',
+            desc: '查看与管理患者档案，病历，以及诊疗回访信息',
+            secondary_items: ['患者名单', '档案病历', '诊疗回访']
+          };
+          return React.createElement(DemoAdminHeader, {
+            "data": data
+          });
+        }
+      }),
+      Register: React.createClass({
+        displayName: 'DemoAdminHeader.Register',
+        render: function() {
+          var data;
+          data = {
+            title: '挂号分诊管理',
+            desc: '导诊查看诊疗资源，预约与挂号信息，以及进行过号分诊处理',
+            secondary_items: ['诊疗资源看板', '预约信息', '挂号信息', '分诊管理']
+          };
+          return React.createElement(DemoAdminHeader, {
+            "data": data
+          });
+        }
+      }),
+      Charge: React.createClass({
+        displayName: 'DemoAdminHeader.Charge',
+        render: function() {
+          var data;
+          data = {
+            title: '收费项目管理',
+            desc: '设置收费项目， VIP 等级，以及进行会员充值',
+            secondary_items: ['诊疗资源看板', '预约信息', '挂号信息', '分诊管理']
+          };
+          return React.createElement(DemoAdminHeader, {
+            "data": data
+          });
+        }
+      }),
+      Plan: React.createClass({
+        displayName: 'DemoAdminHeader.Plan',
+        render: function() {
+          var data;
+          data = {
+            title: '收费项目管理',
+            desc: '设置收费项目， VIP 等级，以及进行会员充值',
+            secondary_items: ['诊疗资源看板', '预约信息', '挂号信息', '分诊管理']
+          };
+          return React.createElement(DemoAdminHeader, {
+            "data": data
+          });
+        }
+      }),
+      Resource: React.createClass({
+        displayName: 'DemoAdminHeader.Resource',
+        render: function() {
+          var data;
+          data = {
+            title: '药品耗材管理',
+            desc: '管理药品耗材的库存信息',
+            secondary_items: ['分类管理', '信息维护', '入库管理', '出库管理', '在库盘点']
+          };
+          return React.createElement(DemoAdminHeader, {
+            "data": data
+          });
+        }
+      }),
+      System: React.createClass({
+        displayName: 'DemoAdminHeader.System',
+        render: function() {
+          var data;
+          data = {
+            title: '系统基础设置',
+            desc: '设置系统其它功能用到的基础数据',
+            secondary_items: ['床位类型定义', '方案类型定义', '诊断模板管理', '缴费方式定义']
+          };
+          return React.createElement(DemoAdminHeader, {
+            "data": data
+          });
+        }
+      })
+    }
+  });
+
+}).call(this);
+
+(function() {
+  this.DemoPlaceholder = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'ui segment vertical'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("div", {
+        "className": 'demo-placeholder'
+      }, "developing ", location.href)));
+    }
+  });
+
+}).call(this);
+
+(function() {
   this.DemoAdminTable = React.createClass({
     displayName: 'DemoAdminTable',
     render: function() {
       return React.createElement("div", {
-        "className": 'demo-admin-table'
+        "className": 'demo-admin-table ui basic segment'
       }, React.createElement("div", {
-        "className": 'ui vertical segment masthead'
-      }, React.createElement("div", {
-        "className": 'ui container'
-      }, React.createElement(DemoAdminTable.Header, {
-        "data": this.props.data
-      }))), React.createElement("div", {
-        "className": 'ui vertical segment'
-      }, React.createElement("div", {
-        "className": 'ui container'
+        "className": 'ui basic segment'
       }, React.createElement(DemoAdminTable.Table, {
         "data": this.props.data
-      }))));
+      })));
     },
     statics: {
       Header: React.createClass({
@@ -116,23 +265,28 @@
         "className": 'ui left vertical inverted sidebar labeled icon menu visible'
       }, React.createElement(DemoManageSidebar.Item, {
         "icon": 'hospital',
-        "text": '店面人员'
+        "text": '店面人员',
+        "link": 'clinic'
       }), React.createElement(DemoManageSidebar.Item, {
         "icon": 'user',
-        "text": '患者信息'
+        "text": '患者信息',
+        "link": 'patient'
       }), React.createElement(DemoManageSidebar.Item, {
         "icon": 'treatment',
-        "text": '挂号分诊'
+        "text": '挂号分诊',
+        "link": 'register'
       }), React.createElement(DemoManageSidebar.Item, {
         "icon": 'yen',
-        "text": '收费项目'
+        "text": '收费项目',
+        "link": 'charge'
       }), React.createElement(DemoManageSidebar.Item, {
         "icon": 'file text outline',
-        "text": '诊疗方案'
+        "text": '诊疗方案',
+        "link": 'plan'
       }), React.createElement(DemoManageSidebar.Item, {
         "icon": 'first aid',
         "text": '药品耗材',
-        "link": 'material'
+        "link": 'resource'
       }), React.createElement(DemoManageSidebar.Item, {
         "icon": 'setting',
         "text": '系统设置',
@@ -142,14 +296,23 @@
     statics: {
       Item: React.createClass({
         render: function() {
-          var href;
+          var href, klass;
           href = this.props.link ? "/demo/" + this.props.link + ".html" : 'javascript:;';
+          klass = ['item blue'];
+          if (this.current_sidebar_active_item() === this.props.link) {
+            klass.push('active');
+          }
           return React.createElement("a", {
-            "className": 'item',
+            "className": klass.join(' '),
             "href": href
           }, React.createElement("i", {
             "className": "icon " + this.props.icon
           }), React.createElement("span", null, this.props.text));
+        },
+        current_sidebar_active_item: function() {
+          var mark, page;
+          page = location.href.split('/demo/').pop();
+          return mark = page.split('.html')[0];
         }
       })
     }
