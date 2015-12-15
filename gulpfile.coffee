@@ -14,9 +14,10 @@ plumber = require("gulp-plumber")
 app =
   src:
     base:
-      coffee: 'src/base/coffee/*.coffee'
-      scss:   'src/base/scss/*.scss'
-      haml:   'src/base/haml/*.haml'
+      coffee:  'src/base/coffee/*.coffee'
+      scss:    'src/base/scss/*.scss'
+      haml:    'src/base/haml/*.haml'
+      partial: 'src/base/partial/*.*'
   dist:
     base:
       js:   'dist/base/js'
@@ -37,7 +38,7 @@ gulp.task 'js', ->
 
 gulp.task 'css', ->
   gulp.src app.src.base.scss
-    # .pipe sass 'sourcemap=none': true
+    .pipe sass 'sourcemap=none': true
     .on 'error', (err)->
       file = err.message.match(/^error\s([\w\.]*)\s/)[1]
       util.log [
@@ -67,3 +68,4 @@ gulp.task 'watch', ['build'], ->
   gulp.watch app.src.base.coffee, ['js']
   gulp.watch app.src.base.scss, ['css']
   gulp.watch app.src.base.haml, ['html']
+  gulp.watch app.src.base.partial, ['html']

@@ -6,14 +6,18 @@
     
     %title 管理 - 正道中医
     
-    %link{rel: 'stylesheet', type: 'text/css', href: '../lib/semantic-ui/semantic.min.css'}
-    %link{rel: 'stylesheet', type: 'text/css', href: '../dist/base/css/base.css'}
+    %link{'data-turbolinks-track' => true, rel: 'stylesheet', type: 'text/css', href: '../lib/semantic-ui/semantic.min.css'}
+    %link{'data-turbolinks-track' => true, rel: 'stylesheet', type: 'text/css', href: '../dist/base/css/base.css'}
+
+    %script{'data-turbolinks-track' => true, src: '../lib/jquery/jquery-2.1.4.min.js'}
+    %script{'data-turbolinks-track' => true, src: '../lib/react-0.14.3/react.js'}
+    %script{'data-turbolinks-track' => true, src: '../lib/react-0.14.3/react-dom.min.js'}
+    %script{'data-turbolinks-track' => true, src: '../lib/semantic-ui/semantic.min.js'}
+    %script{'data-turbolinks-track' => true, src: '../dist/base/js/base.js'}
 
   %body.admin
-    = yield
-
-    %script{src: '../lib/jquery/jquery-2.1.4.min.js'}
-    %script{src: '../lib/react-0.14.3/react.min.js'}
-    %script{src: '../lib/react-0.14.3/react-dom.min.js'}
-    %script{src: '../lib/semantic-ui/semantic.min.js'}
-    %script{src: '../dist/base/js/base.js'}
+    .page-sidebar
+      = react_component 'DemoManageSidebar'
+    -# react_component 'DemoTopMenu'
+    .page-content
+      = yield

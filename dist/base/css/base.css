@@ -1,2 +1,8 @@
-body {
-}
+@charset "UTF-8";
+body, .ui.header, .ui.menu {
+  font-family: '微软雅黑', Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif; }
+
+body.admin .page-content {
+  margin-left: 84px; }
+body.admin .ui.masthead.segment {
+  padding: 2em 0; }
