@@ -86,7 +86,7 @@
           data = {
             title: '收费项目管理',
             desc: '设置收费项目， VIP 等级，以及进行会员充值',
-            secondary_items: ['诊疗资源看板', '预约信息', '挂号信息', '分诊管理']
+            secondary_items: ['收费项管理', 'VIP 等级设置', '会员充值']
           };
           return React.createElement(DemoAdminHeader, {
             "data": data
@@ -98,9 +98,9 @@
         render: function() {
           var data;
           data = {
-            title: '收费项目管理',
-            desc: '设置收费项目， VIP 等级，以及进行会员充值',
-            secondary_items: ['诊疗资源看板', '预约信息', '挂号信息', '分诊管理']
+            title: '诊疗方案管理',
+            desc: '设置各阶段诊疗方案录入项构成',
+            secondary_items: ['方案定义', '录入项定义', '诊断模板管理']
           };
           return React.createElement(DemoAdminHeader, {
             "data": data
@@ -128,7 +128,7 @@
           data = {
             title: '系统基础设置',
             desc: '设置系统其它功能用到的基础数据',
-            secondary_items: ['床位类型定义', '方案类型定义', '诊断模板管理', '缴费方式定义']
+            secondary_items: ['人员岗位定义', '床位类型定义', '缴费方式定义']
           };
           return React.createElement(DemoAdminHeader, {
             "data": data
@@ -168,18 +168,9 @@
       })));
     },
     statics: {
-      Header: React.createClass({
-        render: function() {
-          return React.createElement("h2", {
-            "className": 'ui header'
-          }, React.createElement("span", null, this.props.data.name, "管理"), React.createElement("div", {
-            "className": 'sub header'
-          }, this.props.data.desc));
-        }
-      }),
       Table: React.createClass({
         render: function() {
-          var i, name, text, value;
+          var btn_text, i, icon, name, text, value;
           return React.createElement("table", {
             "className": 'ui celled table'
           }, React.createElement("thead", null, React.createElement("tr", null, (function() {
@@ -200,7 +191,7 @@
               results.push(React.createElement("tr", {
                 "key": i
               }, (function() {
-                var ref, ref1, ref2, results1;
+                var ref, ref1, ref2, ref3, results1;
                 ref = this.props.data.fields;
                 results1 = [];
                 for (name in ref) {
@@ -208,7 +199,11 @@
                   value = ((ref1 = this.props.data.sample) != null ? (ref2 = ref1[i]) != null ? ref2[name] : void 0 : void 0) || React.createElement("br", null);
                   results1.push(React.createElement("td", {
                     "key": name
-                  }, React.createElement("span", null, value)));
+                  }, React.createElement("span", null, value), (this.props.data.manage[name] != null ? ((ref3 = this.props.data.manage[name], icon = ref3[0], btn_text = ref3[1], ref3), React.createElement("a", {
+                    "className": 'ui mini manage button green'
+                  }, React.createElement("i", {
+                    "className": "ui icon " + icon
+                  }), React.createElement("span", null, btn_text))) : void 0)));
                 }
                 return results1;
               }).call(this)));
@@ -233,6 +228,52 @@
           }, React.createElement("i", {
             "className": 'icon right chevron'
           })))))));
+        }
+      }),
+      Clinic: React.createClass({
+        render: function() {
+          var data;
+          data = {
+            fields: {
+              name: '店面名称',
+              address: '地址',
+              phone: '电话',
+              director: '负责人',
+              underlings: '下属店面',
+              beds: '床位数'
+            },
+            manage: {
+              underlings: ['setting', '设置'],
+              beds: ['setting', '设置']
+            },
+            sample: [
+              {
+                name: '朝阳区总店',
+                address: '北京朝阳区健翔桥东xx号',
+                phone: '010-66668888',
+                director: '张仲景',
+                underlings: '2',
+                beds: '200'
+              }, {
+                name: '北苑路分店',
+                address: '北京朝阳区北苑路xx号',
+                phone: '010-66668889',
+                director: '孙思邈',
+                underlings: '-',
+                beds: '100'
+              }, {
+                name: '芍药居分店',
+                address: '北京朝阳区文学馆路xx号',
+                phone: '010-66668880',
+                director: '钱乙',
+                underlings: '-',
+                beds: '100'
+              }
+            ]
+          };
+          return React.createElement(DemoAdminTable, {
+            "data": data
+          });
         }
       })
     }

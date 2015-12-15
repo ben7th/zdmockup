@@ -15,6 +15,18 @@ body.admin {
       margin-top: 0.5em;
     }
   }
+
+  .demo-admin-table {
+    td {
+      line-height: 20px;
+    }
+    .ui.manage.button {
+      float: right;
+      height: 30px; line-height: 30px;
+      margin: -5px -5px -5px;
+      padding: 0 1em;
+    }
+  }
 }
 
 .demo-placeholder {

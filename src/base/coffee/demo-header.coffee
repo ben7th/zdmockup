@@ -68,7 +68,7 @@
           title: '收费项目管理'
           desc: '设置收费项目， VIP 等级，以及进行会员充值'
           secondary_items: [
-            '诊疗资源看板', '预约信息', '挂号信息', '分诊管理'
+            '收费项管理', 'VIP 等级设置', '会员充值'
           ]
 
         <DemoAdminHeader data={data} />
@@ -77,10 +77,10 @@
       displayName: 'DemoAdminHeader.Plan'
       render: ->
         data =
-          title: '收费项目管理'
-          desc: '设置收费项目， VIP 等级，以及进行会员充值'
+          title: '诊疗方案管理'
+          desc: '设置各阶段诊疗方案录入项构成'
           secondary_items: [
-            '诊疗资源看板', '预约信息', '挂号信息', '分诊管理'
+            '方案定义', '录入项定义', '诊断模板管理'
           ]
 
         <DemoAdminHeader data={data} />
@@ -104,7 +104,7 @@
           title: '系统基础设置'
           desc: '设置系统其它功能用到的基础数据'
           secondary_items: [
-            '床位类型定义', '方案类型定义', '诊断模板管理', '缴费方式定义'
+            '人员岗位定义', '床位类型定义', '缴费方式定义'
           ]
 
         <DemoAdminHeader data={data} />

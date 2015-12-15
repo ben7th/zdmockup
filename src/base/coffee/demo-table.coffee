@@ -8,13 +8,6 @@
     </div>
 
   statics:
-    Header: React.createClass
-      render: ->
-        <h2 className='ui header'>
-          <span>{@props.data.name}管理</span>
-          <div className='sub header'>{@props.data.desc}</div>
-        </h2>
-
     Table: React.createClass
       render: ->
         <table className='ui celled table'>
@@ -31,7 +24,17 @@
               {
                 for name, text of @props.data.fields
                   value = @props.data.sample?[i]?[name] || <br /> 
-                  <td key={name}><span>{value}</span></td>
+                  <td key={name}>
+                    <span>{value}</span>
+                    {
+                      if @props.data.manage[name]?
+                        [icon, btn_text] = @props.data.manage[name]
+                        <a className='ui mini manage button green'>
+                          <i className="ui icon #{icon}" />
+                          <span>{btn_text}</span>
+                        </a>
+                    }
+                  </td>
               }
               </tr>
           }
@@ -46,3 +49,46 @@
             </div>
           </th></tr></tfoot>
         </table>
+
+
+    Clinic: React.createClass
+      render: ->
+        data = 
+          fields: 
+            name: '店面名称'
+            address: '地址'
+            phone: '电话'
+            director: '负责人'
+            underlings: '下属店面'
+            beds: '床位数'
+          manage:
+            underlings: ['setting', '设置']
+            beds: ['setting', '设置']
+          sample: [
+            {
+              name: '朝阳区总店'
+              address: '北京朝阳区健翔桥东xx号'
+              phone: '010-66668888'
+              director: '张仲景'
+              underlings: '2'
+              beds: '200'
+            },
+            {
+              name: '北苑路分店'
+              address: '北京朝阳区北苑路xx号'
+              phone: '010-66668889'
+              director: '孙思邈'
+              underlings: '-'
+              beds: '100'
+            },
+            {
+              name: '芍药居分店'
+              address: '北京朝阳区文学馆路xx号'
+              phone: '010-66668880'
+              director: '钱乙'
+              underlings: '-'
+              beds: '100'
+            }
+          ]
+
+        <DemoAdminTable data={data} />
