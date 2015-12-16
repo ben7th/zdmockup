@@ -10,14 +10,19 @@
           </h2>
         </div>
 
-        <div className='ui basic segment'>
+        <div className='ui basic segment secondry-nav'>
           <div className='ui pointing menu'>
             {
               idx = 0
               for item in @props.data.secondary_items
                 klass = ['item']
-                klass.push 'active' if idx is 0
-                <a key={idx++} className={klass.join(' ')}>{item}</a>
+                if (link = @props.data.links?[idx])?
+                  href = "#{link}.html"
+                  klass.push 'active' if window.get_page_name() == link
+                else
+                  href = 'javascript:;'
+                  klass.push 'disabled'
+                <a key={idx++} className={klass.join(' ')} href={href}>{item}</a>
             }
           </div>
         </div>
@@ -30,9 +35,12 @@
       render: ->
         data =
           title: '店面与人员信息管理'
-          desc: '设置门店机构，诊疗室，床位，以及人员信息'
+          desc: '设置分公司与门店机构，部门人员，以及诊疗室，床位信息'
           secondary_items: [
-            '分店信息', '部门设置', '职员管理', '诊疗室管理', '床位管理'
+            '分公司信息', '店面信息', '部门信息', '人员信息', '诊疗室与床位信息'
+          ],
+          links: [
+            'clinic', 'clinic-branch', 'clinic-department', 'clinic-person', 'clinic-room'
           ]
 
         <DemoAdminHeader data={data} />

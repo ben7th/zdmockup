@@ -1,4 +1,4 @@
-body, .ui.header, .ui.menu{
+body, .ui.header, .ui.menu, .ui.button{
   font-family: '微软雅黑', Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
@@ -16,11 +16,31 @@ body.admin {
     }
   }
 
-  .demo-admin-table {
+  .ui.segment.secondry-nav {
+    padding-top: 0;
+  }
+
+  .ui.segment.demo-admin-table {
+    padding-top: 0;
     td {
       line-height: 20px;
       padding: 10px;
     }
+    td.manage {
+      background-color: #F8FFFF;
+      > span {color: #00B5AD;font-weight:bold;}
+    }
+
+    td .value-labels {
+      float: left;
+      font-weight: normal;
+      .label {
+        margin-top: -2.5px;
+        margin-bottom: -2.5px;
+        .detail {font-weight: normal;}
+      }
+    }
+
     .ui.manage.button {
       float: right;
       height: 30px; line-height: 30px;
@@ -32,6 +52,18 @@ body.admin {
       height: 30px; line-height: 30px;
       margin: -5px;
       padding: 0 1em;
+    }
+
+    // ---------
+    .ui.segment.basic.table-filter {
+      padding-top: 0;padding-bottom: 0;
+      margin-bottom: 0;
+      + .ui.basic.segment {
+        margin-top: 0;
+      }
+    }
+    .ui.segment.basic.table-table:first-child {
+      padding-top: 0;
     }
   }
 }

@@ -2,7 +2,7 @@
   this.DemoAdminHeader = React.createClass({
     displayName: 'DemoAdminHeader',
     render: function() {
-      var idx, item, klass;
+      var href, idx, item, klass, link;
       return React.createElement("div", {
         "className": 'page-admin-head'
       }, React.createElement("div", {
@@ -14,23 +14,30 @@
       }, React.createElement("span", null, this.props.data.title), React.createElement("div", {
         "className": 'sub header'
       }, this.props.data.desc))), React.createElement("div", {
-        "className": 'ui basic segment'
+        "className": 'ui basic segment secondry-nav'
       }, React.createElement("div", {
         "className": 'ui pointing menu'
       }, ((function() {
-        var i, len, ref, results;
+        var i, len, ref, ref1, results;
         idx = 0;
         ref = this.props.data.secondary_items;
         results = [];
         for (i = 0, len = ref.length; i < len; i++) {
           item = ref[i];
           klass = ['item'];
-          if (idx === 0) {
-            klass.push('active');
+          if ((link = (ref1 = this.props.data.links) != null ? ref1[idx] : void 0) != null) {
+            href = link + ".html";
+            if (window.get_page_name() === link) {
+              klass.push('active');
+            }
+          } else {
+            href = 'javascript:;';
+            klass.push('disabled');
           }
           results.push(React.createElement("a", {
             "key": idx++,
-            "className": klass.join(' ')
+            "className": klass.join(' '),
+            "href": href
           }, item));
         }
         return results;
@@ -43,8 +50,9 @@
           var data;
           data = {
             title: '店面与人员信息管理',
-            desc: '设置门店机构，诊疗室，床位，以及人员信息',
-            secondary_items: ['分店信息', '部门设置', '职员管理', '诊疗室管理', '床位管理']
+            desc: '设置分公司与门店机构，部门人员，以及诊疗室，床位信息',
+            secondary_items: ['分公司信息', '店面信息', '部门信息', '人员信息', '诊疗室与床位信息'],
+            links: ['clinic', 'clinic-branch', 'clinic-department', 'clinic-person', 'clinic-room']
           };
           return React.createElement(DemoAdminHeader, {
             "data": data
@@ -161,17 +169,19 @@
     render: function() {
       return React.createElement("div", {
         "className": 'demo-admin-table ui basic segment'
-      }, React.createElement("div", {
-        "className": 'ui basic segment'
-      }, React.createElement(DemoAdminTable.Table, {
+      }, (this.props.data.filters != null ? React.createElement(DemoAdminTable.Filter, {
+        "data": this.props.data.filters
+      }) : void 0), React.createElement(DemoAdminTable.Table, {
         "data": this.props.data
-      })));
+      }));
     },
     statics: {
       Table: React.createClass({
         render: function() {
-          var btn_text, i, icon, name, text, value;
-          return React.createElement("table", {
+          var add_button, btn_link, btn_text, icon, idx, manage, name, sdata, text, value;
+          return React.createElement("div", {
+            "className": 'ui basic segment table-table'
+          }, React.createElement("table", {
             "className": 'ui celled table'
           }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null), (function() {
             var ref, results;
@@ -184,51 +194,175 @@
               }, text));
             }
             return results;
-          }).call(this))), React.createElement("tbody", null, (function() {
-            var j, results;
+          }).call(this))), React.createElement("tbody", null, ((function() {
+            var i, len, ref, results;
+            idx = 0;
+            ref = this.props.data.sample || [{}, {}, {}];
             results = [];
-            for (i = j = 0; j <= 2; i = ++j) {
+            for (i = 0, len = ref.length; i < len; i++) {
+              sdata = ref[i];
               results.push(React.createElement("tr", {
-                "key": i
+                "key": idx++
               }, React.createElement("td", {
                 "className": 'collapsing'
               }, React.createElement("a", {
-                "className": 'ui mini button edit green'
+                "className": 'ui mini button edit teal'
               }, React.createElement("i", {
-                "className": 'ui icon edit'
+                "className": 'ui icon pencil'
               }), React.createElement("span", null, "修改"))), (function() {
-                var ref, ref1, ref2, ref3, results1;
-                ref = this.props.data.fields;
+                var ref1, ref2, ref3, results1;
+                ref1 = this.props.data.fields;
                 results1 = [];
-                for (name in ref) {
-                  text = ref[name];
-                  value = ((ref1 = this.props.data.sample) != null ? (ref2 = ref1[i]) != null ? ref2[name] : void 0 : void 0) || React.createElement("br", null);
-                  results1.push(React.createElement("td", {
-                    "key": name
-                  }, React.createElement("span", null, value), (this.props.data.manage[name] != null ? ((ref3 = this.props.data.manage[name], icon = ref3[0], btn_text = ref3[1], ref3), React.createElement("a", {
-                    "className": 'ui mini manage button green'
-                  }, React.createElement("i", {
-                    "className": "ui icon " + icon
-                  }), React.createElement("span", null, btn_text))) : void 0)));
+                for (name in ref1) {
+                  text = ref1[name];
+                  value = sdata[name] || React.createElement("span", null, " ");
+                  if ((manage = (ref2 = this.props.data.manage) != null ? ref2[name] : void 0) != null) {
+                    icon = manage[0], btn_text = manage[1];
+                    btn_link = ((ref3 = this.props.data.manage_links) != null ? ref3[name] : void 0) || 'javascript:;';
+                    results1.push(React.createElement("td", {
+                      "key": name,
+                      "className": 'manage'
+                    }, React.createElement(DemoAdminTable.TDValue, {
+                      "data": value
+                    }), React.createElement("a", {
+                      "className": 'ui mini manage button teal basic',
+                      "href": btn_link
+                    }, React.createElement("i", {
+                      "className": "ui icon " + icon
+                    }), React.createElement("span", null, btn_text))));
+                  } else {
+                    results1.push(React.createElement("td", {
+                      "key": name
+                    }, React.createElement("span", null, value)));
+                  }
                 }
                 return results1;
               }).call(this)));
             }
             return results;
-          }).call(this)), React.createElement("tfoot", null, React.createElement("tr", null, React.createElement("th", null), React.createElement("th", {
+          }).call(this))), React.createElement("tfoot", null, React.createElement("tr", null, React.createElement("th", null), React.createElement("th", {
             "colSpan": (Object.keys(this.props.data.fields).length)
-          }, React.createElement("a", {
-            "className": 'ui labeled icon button large blue'
+          }, ((add_button = this.props.data.add_button) != null ? React.createElement("a", {
+            "className": 'ui labeled icon button large green'
           }, React.createElement("i", {
             "className": 'ui icon add'
-          }), React.createElement("span", null, "增加店面")), React.createElement("div", {
+          }), React.createElement("span", null, add_button)) : void 0), React.createElement(DemoAdminTable.Pagination, null))))));
+        }
+      }),
+      TDValue: React.createClass({
+        render: function() {
+          var key, value;
+          if (typeof this.props.data === 'object') {
+            return React.createElement("div", {
+              "className": 'value-labels'
+            }, (function() {
+              var ref, results;
+              ref = this.props.data;
+              results = [];
+              for (key in ref) {
+                value = ref[key];
+                results.push(React.createElement("div", {
+                  "key": key,
+                  "className": 'ui label basic brown'
+                }, React.createElement("span", null, key), React.createElement("div", {
+                  "className": 'detail'
+                }, value)));
+              }
+              return results;
+            }).call(this));
+          } else {
+            return React.createElement("span", null, this.props.data);
+          }
+        }
+      }),
+      Filter: React.createClass({
+        render: function() {
+          var idx, key, sdata, value;
+          return React.createElement("div", {
+            "ref": 'filters',
+            "className": 'ui basic segment table-filter'
+          }, (function() {
+            var ref, results;
+            ref = this.props.data;
+            results = [];
+            for (key in ref) {
+              sdata = ref[key];
+              results.push(React.createElement("div", {
+                "key": key,
+                "className": "ui floating labeled icon dropdown button mini"
+              }, React.createElement("i", {
+                "className": "filter icon"
+              }), React.createElement("span", {
+                "className": "text disabled"
+              }, "选择", sdata.text), React.createElement("div", {
+                "className": "menu"
+              }, React.createElement("div", {
+                "className": "header"
+              }, React.createElement("i", {
+                "className": "tags icon"
+              }), React.createElement("span", null, "根据", sdata.text, "过滤")), ((function() {
+                var i, len, ref1, results1;
+                idx = 0;
+                ref1 = sdata.values;
+                results1 = [];
+                for (i = 0, len = ref1.length; i < len; i++) {
+                  value = ref1[i];
+                  results1.push(React.createElement(DemoAdminTable.FilterDropDownItem, {
+                    "key": idx++,
+                    "data": value
+                  }));
+                }
+                return results1;
+              })()))));
+            }
+            return results;
+          }).call(this));
+        },
+        componentDidMount: function() {
+          return jQuery(this.refs.filters).find('.ui.dropdown').dropdown();
+        }
+      }),
+      FilterDropDownItem: React.createClass({
+        render: function() {
+          var idx, value;
+          if (Array.isArray(this.props.data)) {
+            return React.createElement("div", {
+              "className": "item"
+            }, React.createElement("i", {
+              "className": "dropdown icon"
+            }), React.createElement("span", null, this.props.data[0]), React.createElement("div", {
+              "className": 'menu'
+            }, ((function() {
+              var i, len, ref, results;
+              idx = 0;
+              ref = this.props.data[1];
+              results = [];
+              for (i = 0, len = ref.length; i < len; i++) {
+                value = ref[i];
+                results.push(React.createElement(DemoAdminTable.FilterDropDownItem, {
+                  "key": idx++,
+                  "data": value
+                }));
+              }
+              return results;
+            }).call(this))));
+          } else {
+            return React.createElement("div", {
+              "className": "item"
+            }, React.createElement("span", null, this.props.data));
+          }
+        }
+      }),
+      Pagination: React.createClass({
+        render: function() {
+          return React.createElement("div", {
             "className": 'ui right floated pagination menu'
           }, React.createElement("a", {
             "className": 'icon item'
           }, React.createElement("i", {
             "className": 'icon left chevron'
           })), React.createElement("a", {
-            "className": 'item'
+            "className": 'item active'
           }, "1"), React.createElement("a", {
             "className": 'item'
           }, "2"), React.createElement("a", {
@@ -237,7 +371,46 @@
             "className": 'icon item'
           }, React.createElement("i", {
             "className": 'icon right chevron'
-          })))))));
+          })));
+        }
+      }),
+      Company: React.createClass({
+        render: function() {
+          var data;
+          data = {
+            fields: {
+              name: '分公司名称',
+              address: '地址',
+              phone: '电话',
+              director: '负责人',
+              underlings: '下辖店面'
+            },
+            manage: {
+              underlings: ['list layout', '设置']
+            },
+            manage_links: {
+              underlings: 'clinic-branch.html'
+            },
+            add_button: '增加分公司',
+            sample: [
+              {
+                name: '苏州分公司',
+                address: '江苏省苏州市园区娄东路 ** 号',
+                phone: '0512-12345678',
+                director: '张仲景',
+                underlings: '3'
+              }, {
+                name: '北京分公司',
+                address: '北京市朝阳区北苑路 ** 号',
+                phone: '010-12345678',
+                director: '孙思邈',
+                underlings: '2'
+              }
+            ]
+          };
+          return React.createElement(DemoAdminTable, {
+            "data": data
+          });
         }
       }),
       Clinic: React.createClass({
@@ -249,35 +422,193 @@
               address: '地址',
               phone: '电话',
               director: '负责人',
-              underlings: '下属店面',
+              belongs_to: '所属分公司',
               beds: '床位数'
             },
             manage: {
-              underlings: ['setting', '设置'],
-              beds: ['setting', '设置']
+              beds: ['list layout', '设置']
+            },
+            manage_links: {
+              beds: 'clinic-room.html'
+            },
+            add_button: '增加店面',
+            filters: {
+              belongs_to: {
+                text: '分公司',
+                values: ['苏州分公司', '北京分公司']
+              }
             },
             sample: [
               {
-                name: '朝阳区总店',
-                address: '北京朝阳区健翔桥东xx号',
-                phone: '010-66668888',
-                director: '张仲景',
-                underlings: '2',
-                beds: '200'
-              }, {
-                name: '北苑路分店',
-                address: '北京朝阳区北苑路xx号',
-                phone: '010-66668889',
-                director: '孙思邈',
-                underlings: '0',
+                name: '奥体分店',
+                address: '北京朝阳区惠新西街 ** 号',
+                phone: '010-12345677',
+                director: '扁鹊',
+                belongs_to: '北京分公司',
                 beds: '100'
               }, {
                 name: '芍药居分店',
-                address: '北京朝阳区文学馆路xx号',
-                phone: '010-66668880',
+                address: '北京朝阳区文学馆路 ** 号',
+                phone: '010-12345676',
                 director: '钱乙',
-                underlings: '0',
-                beds: '100'
+                belongs_to: '北京分公司',
+                beds: '150'
+              }
+            ]
+          };
+          return React.createElement(DemoAdminTable, {
+            "data": data
+          });
+        }
+      }),
+      Department: React.createClass({
+        render: function() {
+          var data;
+          data = {
+            fields: {
+              name: '部门名称',
+              persons: '部门人员'
+            },
+            manage: {
+              persons: ['list layout', '设置']
+            },
+            manage_links: {
+              persons: 'clinic-person.html'
+            },
+            add_button: '增加部门',
+            filters: {
+              belongs_to: {
+                text: '店面',
+                values: [['苏州分公司', ['园区分店', '虎丘区分店', '吴中区分店']], ['北京分公司', ['奥体分店', '芍药居分店']]]
+              }
+            },
+            sample: [
+              {
+                name: '行政部',
+                persons: 3
+              }, {
+                name: '体检部',
+                persons: 10
+              }, {
+                name: '诊疗部',
+                persons: 10
+              }, {
+                name: '后勤部',
+                persons: 5
+              }
+            ]
+          };
+          return React.createElement(DemoAdminTable, {
+            "data": data
+          });
+        }
+      }),
+      Person: React.createClass({
+        render: function() {
+          var data;
+          data = {
+            fields: {
+              name: '姓名',
+              age: '年龄',
+              gender: '性别',
+              post: '岗位',
+              company: '所属分公司',
+              clinic: '店面',
+              department: '部门'
+            },
+            add_button: '增加人员',
+            filters: {
+              clinic: {
+                text: '店面',
+                values: [['苏州分公司', ['园区分店', '虎丘区分店', '吴中区分店']], ['北京分公司', ['奥体分店', '芍药居分店']]]
+              },
+              department: {
+                text: '部门',
+                values: ['行政部', '体检部', '诊疗部', '后勤部']
+              }
+            },
+            sample: [
+              {
+                name: '顾慎为',
+                age: '32',
+                gender: '男',
+                post: '体检师',
+                company: '北京分公司',
+                clinic: '奥体分店',
+                department: '体检部'
+              }, {
+                name: '霍允',
+                age: '29',
+                gender: '女',
+                post: '助理',
+                company: '北京分公司',
+                clinic: '奥体分店',
+                department: '行政部'
+              }, {
+                name: '宁七味',
+                age: '53',
+                gender: '男',
+                post: '诊疗师',
+                company: '北京分公司',
+                clinic: '奥体分店',
+                department: '诊疗部'
+              }, {
+                name: '江水瑶',
+                age: '42',
+                gender: '女',
+                post: '诊疗师',
+                company: '北京分公司',
+                clinic: '奥体分店',
+                department: '诊疗部'
+              }
+            ]
+          };
+          return React.createElement(DemoAdminTable, {
+            "data": data
+          });
+        }
+      }),
+      Room: React.createClass({
+        render: function() {
+          var data;
+          data = {
+            fields: {
+              name: '诊疗室名称',
+              clinic: '所属店面',
+              projects: '诊疗项目与床位'
+            },
+            add_button: '增加诊疗室',
+            manage: {
+              projects: ['setting layout', '调整']
+            },
+            filters: {
+              clinic: {
+                text: '店面',
+                values: [['苏州分公司', ['园区分店', '虎丘区分店', '吴中区分店']], ['北京分公司', ['奥体分店', '芍药居分店']]]
+              }
+            },
+            sample: [
+              {
+                name: '第一诊疗室',
+                clinic: '奥体分店',
+                projects: {
+                  '五官检查': 0,
+                  '胸腹检查': 2
+                }
+              }, {
+                name: '第二诊疗室',
+                clinic: '奥体分店',
+                projects: {
+                  '推拿': 10,
+                  '针灸': 10
+                }
+              }, {
+                name: '第三诊疗室',
+                clinic: '奥体分店',
+                projects: {
+                  '刮痧': 10,
+                  '火罐': 10
+                }
               }
             ]
           };
@@ -350,7 +681,7 @@
           var href, klass;
           href = this.props.link ? this.props.link + ".html" : 'javascript:;';
           klass = ['item blue'];
-          if (this.current_sidebar_active_item() === this.props.link) {
+          if (window.get_page_prefix_name() === this.props.link) {
             klass.push('active');
           }
           return React.createElement("a", {
@@ -359,11 +690,6 @@
           }, React.createElement("i", {
             "className": "icon " + this.props.icon
           }), React.createElement("span", null, this.props.text));
-        },
-        current_sidebar_active_item: function() {
-          var mark, page;
-          page = location.href.split('/demo/').pop();
-          return mark = page.split('.html')[0];
         }
       })
     }
@@ -1170,7 +1496,23 @@
 }).call(this);
 
 (function() {
+  window.get_page_name = function() {
+    var name, page;
+    page = location.href.split('/demo/').pop();
+    return name = page.split('.html')[0];
+  };
 
+  window.get_page_prefix_name = function() {
+    var name, prefix_name;
+    name = window.get_page_name();
+    return prefix_name = name.split('-')[0];
+  };
+
+  if (typeof Array.isArray === !'function') {
+    Array.isArray = function(arr) {
+      return Object.prototype.toString.call(arr) === '[object Array]';
+    };
+  }
 
 }).call(this);
 

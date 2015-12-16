@@ -29,14 +29,10 @@
       render: ->
         href = if @props.link then "#{@props.link}.html" else 'javascript:;'
         klass = ['item blue']
-        if @current_sidebar_active_item() == @props.link
+        if window.get_page_prefix_name() == @props.link
           klass.push 'active'
 
         <a className={klass.join(' ')} href={href}>
           <i className="icon #{@props.icon}" />
           <span>{@props.text}</span>
         </a>
-
-      current_sidebar_active_item: ->
-        page = location.href.split('/demo/').pop()
-        mark = page.split('.html')[0]
