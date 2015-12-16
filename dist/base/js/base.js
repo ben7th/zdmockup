@@ -136,7 +136,8 @@
           data = {
             title: '系统基础设置',
             desc: '设置系统其它功能用到的基础数据',
-            secondary_items: ['人员岗位定义', '床位类型定义', '缴费方式定义']
+            secondary_items: ['人员岗位定义', '诊疗项目定义'],
+            links: ['system', 'system-project']
           };
           return React.createElement(DemoAdminHeader, {
             "data": data
@@ -215,7 +216,7 @@
                 results1 = [];
                 for (name in ref1) {
                   text = ref1[name];
-                  value = sdata[name] || React.createElement("span", null, " ");
+                  value = sdata[name];
                   if ((manage = (ref2 = this.props.data.manage) != null ? ref2[name] : void 0) != null) {
                     icon = manage[0], btn_text = manage[1];
                     btn_link = ((ref3 = this.props.data.manage_links) != null ? ref3[name] : void 0) || 'javascript:;';
@@ -252,7 +253,9 @@
       TDValue: React.createClass({
         render: function() {
           var key, value;
-          if (typeof this.props.data === 'object') {
+          if (this.props.data == null) {
+            return React.createElement("span", null, " ");
+          } else if (typeof this.props.data === 'object') {
             return React.createElement("div", {
               "className": 'value-labels'
             }, (function() {
@@ -264,9 +267,9 @@
                 results.push(React.createElement("div", {
                   "key": key,
                   "className": 'ui label basic brown'
-                }, React.createElement("span", null, key), React.createElement("div", {
+                }, React.createElement("span", null, key), (value != null ? React.createElement("div", {
                   "className": 'detail'
-                }, value)));
+                }, value) : void 0)));
               }
               return results;
             }).call(this));
@@ -592,7 +595,7 @@
                 name: '第一诊疗室',
                 clinic: '奥体分店',
                 projects: {
-                  '五官检查': 0,
+                  '五官检查': null,
                   '胸腹检查': 2
                 }
               }, {
@@ -609,6 +612,103 @@
                   '刮痧': 10,
                   '火罐': 10
                 }
+              }
+            ]
+          };
+          return React.createElement(DemoAdminTable, {
+            "data": data
+          });
+        }
+      }),
+      Post: React.createClass({
+        render: function() {
+          var data;
+          data = {
+            fields: {
+              name: '岗位名称',
+              desc: '岗位描述',
+              privilege: '岗位权限'
+            },
+            add_button: '增加岗位',
+            manage: {
+              privilege: ['setting layout', '调整']
+            },
+            sample: [
+              {
+                name: '行政管理',
+                privilege: {
+                  '店面人员管理': null,
+                  '患者信息管理': null
+                }
+              }, {
+                name: '导诊',
+                privilege: {
+                  '挂号分诊操作': null
+                }
+              }, {
+                name: '医师',
+                privilege: {
+                  '诊疗报告录入': null,
+                  '收费项选取': null
+                }
+              }, {
+                name: '诊疗师',
+                privilege: {
+                  '诊疗报告录入': null,
+                  '收费项选取': null
+                }
+              }, {
+                name: '后勤助理',
+                privilege: {
+                  '药品耗材管理': null
+                }
+              }
+            ]
+          };
+          return React.createElement(DemoAdminTable, {
+            "data": data
+          });
+        }
+      }),
+      Project: React.createClass({
+        render: function() {
+          var data;
+          data = {
+            fields: {
+              name: '诊疗项目名称',
+              need_bed: '是否需要床位',
+              input_type: '报告录入方式',
+              input_items: '包含录入项',
+              need_photo: '是否拍照',
+              template: '模板'
+            },
+            add_button: '增加诊疗项目',
+            manage: {
+              input_items: ['setting layout', '调整'],
+              template: ['setting layout', '调整']
+            },
+            sample: [
+              {
+                name: '普通体检',
+                need_bed: '否',
+                input_type: '普通录入',
+                input_items: 44,
+                need_photo: '否',
+                template: '有'
+              }, {
+                name: '面诊',
+                need_bed: '否',
+                input_type: '触点录入',
+                input_items: 13,
+                need_photo: '是',
+                template: '有'
+              }, {
+                name: '背诊',
+                need_bed: '否',
+                input_type: '触点录入',
+                input_items: 9,
+                need_photo: '是',
+                template: '有'
               }
             ]
           };

@@ -112,7 +112,10 @@
           title: '系统基础设置'
           desc: '设置系统其它功能用到的基础数据'
           secondary_items: [
-            '人员岗位定义', '床位类型定义', '缴费方式定义'
+            '人员岗位定义', '诊疗项目定义'
+          ],
+          links: [
+            'system', 'system-project'
           ]
 
         <DemoAdminHeader data={data} />

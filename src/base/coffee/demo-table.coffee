@@ -35,7 +35,7 @@
                   </td>
                   {
                     for name, text of @props.data.fields
-                      value = sdata[name] || <span>&nbsp;</span> 
+                      value = sdata[name]
                       if (manage = @props.data.manage?[name])?
                         [icon, btn_text] = manage
                         btn_link = @props.data.manage_links?[name] || 'javascript:;'
@@ -73,13 +73,18 @@
 
     TDValue: React.createClass
       render: ->
-        if typeof(@props.data) is 'object'
+        if not @props.data?
+          <span>&nbsp;</span> 
+        else if typeof(@props.data) is 'object'
           <div className='value-labels'>
           {
             for key, value of @props.data
               <div key={key} className='ui label basic brown'>
                 <span>{key}</span>
-                <div className='detail'>{value}</div>
+                {
+                  if value?
+                    <div className='detail'>{value}</div>
+                }
               </div>
           }
           </div>
@@ -172,8 +177,6 @@
             }
           ]
         <DemoAdminTable data={data} />
-
-
 
     Clinic: React.createClass
       render: ->
@@ -339,7 +342,7 @@
               name: '第一诊疗室'
               clinic: '奥体分店'
               projects: {
-                '五官检查': 0
+                '五官检查': null
                 '胸腹检查': 2
               }
             }
@@ -358,6 +361,92 @@
                 '刮痧': 10
                 '火罐': 10
               }
+            }
+          ]
+
+        <DemoAdminTable data={data} />
+
+    Post: React.createClass
+      render: ->
+        data = 
+          fields: 
+            name: '岗位名称'
+            desc: '岗位描述'
+            privilege: '岗位权限'
+          add_button: '增加岗位'
+          manage:
+            privilege: ['setting layout', '调整']
+          sample: [
+            {
+              name: '行政管理'
+              privilege:
+                '店面人员管理': null
+                '患者信息管理': null
+            }
+            {
+              name: '导诊'
+              privilege:
+                '挂号分诊操作': null
+            }
+            {
+              name: '医师'
+              privilege:
+                '诊疗报告录入': null
+                '收费项选取': null
+            }
+            {
+              name: '诊疗师'
+              privilege:
+                '诊疗报告录入': null
+                '收费项选取': null
+            }
+            {
+              name: '后勤助理'
+              privilege:
+                '药品耗材管理': null
+            }
+          ]
+
+        <DemoAdminTable data={data} />
+
+    Project: React.createClass
+      render: ->
+        data = 
+          fields: 
+            name: '诊疗项目名称'
+            need_bed: '是否需要床位'
+            input_type: '报告录入方式'
+            input_items: '包含录入项'
+            need_photo:  '是否拍照'
+            template: '模板'
+          add_button: '增加诊疗项目'
+          manage:
+            input_items: ['setting layout', '调整']
+            template: ['setting layout', '调整']
+          sample: [
+            {
+              name: '普通体检'
+              need_bed: '否'
+              input_type: '普通录入'
+              input_items: 44
+              need_photo: '否'
+              template: '有'
+            }
+            {
+              name: '面诊'
+              need_bed: '否'
+              input_type: '触点录入'
+              input_items: 13
+              need_photo: '是'
+              template: '有'
+            }
+            {
+              name: '背诊'
+              need_bed: '否'
+              input_type: '触点录入'
+              input_items: 9
+              need_photo: '是'
+              template: '有'
             }
           ]
 
