@@ -1,0 +1,4073 @@
+﻿$axure.loadCurrentPage({
+  "url":"患者内页.html",
+  "generationDate":new Date(1450315459769.6),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"39ae013fc0804f948031b33dc7fcc68b",
+    "type":"Axure:Page",
+    "name":"患者内页",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"near",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFFFFFFF},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"应用字体",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"9240b6a9aa2547c9a1e28f93559c4979",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":40,
+              "y":60},
+            "size":{
+              "width":1000,
+              "height":810},
+            "borderFill":{
+              "fillType":"solid",
+              "color":0xFFCCCCCC}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"e717b154f525468d8679c5f1e505b2d3",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":40,
+                  "y":60},
+                "size":{
+                  "width":1000,
+                  "height":810},
+                "borderFill":{
+                  "fillType":"solid",
+                  "color":0xFFCCCCCC}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/患者内页/u0.png"}},
+{
+          "id":"a98ae95eee21419db96e3b9db7613357",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"h1",
+          "visible":true,
+          "style":{
+            "fontName":"'Verdana Normal', 'Verdana'",
+            "fontSize":"48px",
+            "fontWeight":"400",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF999999,
+              "opacity":1},
+            "location":{
+              "x":996,
+              "y":60},
+            "size":{
+              "width":34,
+              "height":59}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"280a465557124c639ffa7de4492da588",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Verdana Normal', 'Verdana'",
+                "fontSize":"48px",
+                "fontWeight":"400",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF999999,
+                  "opacity":1},
+                "location":{
+                  "x":996,
+                  "y":60},
+                "size":{
+                  "width":34,
+                  "height":59}},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onClick":{
+              "description":"OnClick",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 患者队列",
+                      "target":{
+                        "targetType":"page",
+                        "url":"患者队列.html",
+                        "includeVariables":true},
+                      "linkType":"current"}]}]}},
+          "tabbable":true,
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"4e86f15e3b5d44c6b3b2ec26ed4bbcd8",
+          "label":"",
+          "type":"horizontalLine",
+          "styleType":"horizontalLine",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":60,
+              "y":120},
+            "size":{
+              "width":980,
+              "height":10},
+            "borderFill":{
+              "fillType":"solid",
+              "color":0xFFCCCCCC}},
+          "adaptiveStyles":{
+},
+          "images":{
+            "start~":"resources/images/transparent.gif",
+            "end~":"resources/images/transparent.gif",
+            "line~":"images/患者内页/u4_line.png"}},
+{
+          "id":"e75aa3d979394adfabb40bd5fdb23263",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"16px",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":60,
+              "y":96},
+            "size":{
+              "width":65,
+              "height":21}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"d32b657e2551469d9f364d1743bf0b08",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"16px",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":60,
+                  "y":96},
+                "size":{
+                  "width":65,
+                  "height":21}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"87dff1aab04643a4af7187f48f6c929a",
+          "label":"",
+          "type":"horizontalLine",
+          "styleType":"horizontalLine",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":60,
+              "y":120},
+            "size":{
+              "width":90,
+              "height":10},
+            "borderWidth":"3",
+            "borderFill":{
+              "fillType":"solid",
+              "color":0xFF0099FF}},
+          "adaptiveStyles":{
+},
+          "images":{
+            "start~":"resources/images/transparent.gif",
+            "end~":"resources/images/transparent.gif",
+            "line~":"images/患者内页/u7_line.png"}},
+{
+          "id":"a20fcf99cb3446c19e1c5ada7087431c",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":88,
+              "y":149},
+            "size":{
+              "width":43,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"3186d4c7e45f4f539c7d0dc1e651c4a6",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":88,
+                  "y":149},
+                "size":{
+                  "width":43,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"09cd7cf21dbd42fc847ff6e44a86a6ae",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "disabled":true,
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "location":{
+              "x":134,
+              "y":146},
+            "size":{
+              "width":100,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"e7016bb4e7094598ab4d3dc1574db298",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":283,
+              "y":148},
+            "size":{
+              "width":43,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"0c4009c4ec994a65a1c3c3afbfeddea7",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":283,
+                  "y":148},
+                "size":{
+                  "width":43,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"dfd10479ba634d7580859a3692d7565a",
+          "label":"",
+          "type":"comboBox",
+          "styleType":"comboBox",
+          "disabled":true,
+          "visible":true,
+          "style":{
+            "location":{
+              "x":336,
+              "y":148},
+            "size":{
+              "width":50,
+              "height":22}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"3fda7d477c2e438abefbd437a5431319",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":479,
+              "y":150},
+            "size":{
+              "width":43,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"ffdb7e4f61ac4b3991beae323732e698",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":479,
+                  "y":150},
+                "size":{
+                  "width":43,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"78970244dd6f4945aeef057f2942bbec",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "disabled":true,
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "location":{
+              "x":525,
+              "y":146},
+            "size":{
+              "width":100,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"037a9399697941519573a98b8621f6e4",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":60,
+              "y":203},
+            "size":{
+              "width":71,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"e92540f5df4a4cb3a428310a4cdb56a3",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":60,
+                  "y":203},
+                "size":{
+                  "width":71,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"4351c2501fe14651b818f890af339755",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "disabled":true,
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "location":{
+              "x":134,
+              "y":199},
+            "size":{
+              "width":220,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"9d910fd325304fe5b12873530e1ef741",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":451,
+              "y":203},
+            "size":{
+              "width":71,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"9268586ec99a447b9a0e70f954ff712e",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":451,
+                  "y":203},
+                "size":{
+                  "width":71,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"3a83565b2a9e4399b6427cfcabe03ad9",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "disabled":true,
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "location":{
+              "x":525,
+              "y":199},
+            "size":{
+              "width":220,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"0dd339ce395e4df1a5964f3c432aaad2",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":74,
+              "y":339},
+            "size":{
+              "width":57,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"68ff16b12d364baba56a77996cadb24c",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":74,
+                  "y":339},
+                "size":{
+                  "width":57,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"6bf75421ec2d4d569fa188fcacb2e816",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "disabled":true,
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "location":{
+              "x":134,
+              "y":335},
+            "size":{
+              "width":100,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"41bd13ae9923447b8f3c2e133451d76f",
+          "label":"",
+          "type":"horizontalLine",
+          "styleType":"horizontalLine",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":60,
+              "y":300},
+            "size":{
+              "width":980,
+              "height":10},
+            "borderFill":{
+              "fillType":"solid",
+              "color":0xFFCCCCCC}},
+          "adaptiveStyles":{
+},
+          "images":{
+            "start~":"resources/images/transparent.gif",
+            "end~":"resources/images/transparent.gif",
+            "line~":"images/患者内页/u4_line.png"}},
+{
+          "id":"4e0a2fac3b1a416da1112d754e39967f",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"16px",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":60,
+              "y":276},
+            "size":{
+              "width":65,
+              "height":21}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"99a24e61f77e42e4a16707eeaa0229b8",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"16px",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":60,
+                  "y":276},
+                "size":{
+                  "width":65,
+                  "height":21}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"1e0939ebbb0f4351811ce21ddd69c192",
+          "label":"",
+          "type":"horizontalLine",
+          "styleType":"horizontalLine",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":60,
+              "y":300},
+            "size":{
+              "width":90,
+              "height":10},
+            "borderWidth":"3",
+            "borderFill":{
+              "fillType":"solid",
+              "color":0xFF0099FF}},
+          "adaptiveStyles":{
+},
+          "images":{
+            "start~":"resources/images/transparent.gif",
+            "end~":"resources/images/transparent.gif",
+            "line~":"images/患者内页/u7_line.png"}},
+{
+          "id":"25088a3af62945a5ba6a72efb3925be7",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":696,
+              "y":148},
+            "size":{
+              "width":71,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"fd356019a1674ad98bf2e64cb7498d34",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":696,
+                  "y":148},
+                "size":{
+                  "width":71,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"7578b1a07e25490c8628be444ea13eef",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "disabled":true,
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "location":{
+              "x":770,
+              "y":144},
+            "size":{
+              "width":220,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"6cf58839774e4f17844059596e08d17c",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":255,
+              "y":338},
+            "size":{
+              "width":71,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"e6f24bb0b48b4f6181b3ddc46e03a245",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":255,
+                  "y":338},
+                "size":{
+                  "width":71,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"741b71cf724844a8b31125f8e17a1a2c",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "disabled":true,
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "location":{
+              "x":329,
+              "y":334},
+            "size":{
+              "width":100,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"a8c932e0dbc2467884462c16115c05cb",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFFFFFCC},
+            "location":{
+              "x":1070,
+              "y":136},
+            "size":{
+              "width":220,
+              "height":30},
+            "cornerRadiusTopLeft":"5"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"519e843d984d451385444d441a82a863",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFFFFFCC},
+                "location":{
+                  "x":1070,
+                  "y":136},
+                "size":{
+                  "width":220,
+                  "height":30},
+                "cornerRadiusTopLeft":"5"},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/患者内页/u36.png"}},
+{
+          "id":"4da1217c370843ac9a861e493bbf28c6",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":88,
+              "y":389},
+            "size":{
+              "width":43,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"7bb5768f7e6b4bf1a3ac92395babdd38",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":88,
+                  "y":389},
+                "size":{
+                  "width":43,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"36a02ac839c948cb87db16d3bb6360b8",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF999999,
+              "opacity":1},
+            "location":{
+              "x":134,
+              "y":385},
+            "size":{
+              "width":100,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"47c34c5e058247e695dd4154c77a4ef0",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":283,
+              "y":389},
+            "size":{
+              "width":43,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"b5b2cdecb94f4f91bd62247c4d00caac",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":283,
+                  "y":389},
+                "size":{
+                  "width":43,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"c293770daf764ae085a2182ec1266c12",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF999999,
+              "opacity":1},
+            "location":{
+              "x":329,
+              "y":385},
+            "size":{
+              "width":100,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"cdbf628a993e4a7fb435c16ad285a2b0",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":479,
+              "y":388},
+            "size":{
+              "width":43,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"88d3e12c31b64dac89919218454161f8",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":479,
+                  "y":388},
+                "size":{
+                  "width":43,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"51956e3431d54c20ae98404e4bcfc0a5",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF999999,
+              "opacity":1},
+            "location":{
+              "x":525,
+              "y":384},
+            "size":{
+              "width":100,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"52f9c8d896a249a28dccbe2be4fdbd0f",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":74,
+              "y":440},
+            "size":{
+              "width":57,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"778df92c32184501a9bc49d9529fca1f",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":74,
+                  "y":440},
+                "size":{
+                  "width":57,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"fdaae8b4727e4b5c83db893ead160625",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":60,
+              "y":480},
+            "size":{
+              "width":71,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"72a57c6ab78944389e4ed85e0f28a5e3",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":60,
+                  "y":480},
+                "size":{
+                  "width":71,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"7175fae746b14dcf9ca358180718a292",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":134,
+              "y":438},
+            "size":{
+              "width":716,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"fda0ca2c094d47968b992f829092200a",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":88,
+              "y":522},
+            "size":{
+              "width":43,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"bdadd8537f494b74b5949016dfec963f",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":88,
+                  "y":522},
+                "size":{
+                  "width":43,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"5b1b66e1046b464d923e9c47ce1f85e7",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":134,
+              "y":520},
+            "size":{
+              "width":716,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"45d1c4f2f5cd45efa38b577086362a4b",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":60,
+              "y":567},
+            "size":{
+              "width":71,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"0b57f2030b424c3bac6e63f5e7a22222",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":60,
+                  "y":567},
+                "size":{
+                  "width":71,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"11d7e462371243279c6fd2d89e6e12c4",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":134,
+              "y":565},
+            "size":{
+              "width":716,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"4a21c5f15cdf403b93237ea09280b640",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF1E1E1E,
+              "opacity":1},
+            "location":{
+              "x":88,
+              "y":612},
+            "size":{
+              "width":43,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"c49cc9afb1fb4d3b956f2e76aa25e7d0",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF1E1E1E,
+                  "opacity":1},
+                "location":{
+                  "x":88,
+                  "y":612},
+                "size":{
+                  "width":43,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"7520d063f31a4aae871b9185da0c7178",
+          "label":"",
+          "type":"radioButton",
+          "styleType":"radioButton",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":134,
+              "y":612},
+            "size":{
+              "width":76,
+              "height":19}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"1583c717fb6444a88686aabe40f9752a",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":134,
+                  "y":612},
+                "size":{
+                  "width":76,
+                  "height":19}},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onCheckedChange":{
+              "description":"OnCheckedChange",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"fadeWidget",
+                      "description":"显示 处理输入",
+                      "objectsToFades":[{
+                          "objectPath":["61149ad45b004197b3f189483d0639b8"],
+                          "fadeInfo":{
+                            "fadeType":"show",
+                            "options":{
+                              "showType":"none"}}}]},
+{
+                      "action":"setPanelState",
+                      "description":"设置 处理输入 to 体检",
+                      "panelsToStates":[{
+                          "panelPath":["61149ad45b004197b3f189483d0639b8"],
+                          "stateInfo":{
+                            "setStateType":"diagram",
+                            "stateNumber":1,
+                            "stateValue":{
+                              "exprType":"stringLiteral",
+                              "value":"1",
+                              "stos":[]},
+                            "loop":false,
+                            "showWhenSet":false,
+                            "options":{
+                              "compress":false}}}]}]}]}}},
+{
+          "id":"7f7b1c343bdc41328bda19c965ef6ccd",
+          "label":"",
+          "type":"radioButton",
+          "styleType":"radioButton",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":245,
+              "y":612},
+            "size":{
+              "width":100,
+              "height":19}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"225a229c3cc5426f9a78afd8cc761975",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":245,
+                  "y":612},
+                "size":{
+                  "width":100,
+                  "height":19}},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onCheckedChange":{
+              "description":"OnCheckedChange",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"fadeWidget",
+                      "description":"显示 处理输入",
+                      "objectsToFades":[{
+                          "objectPath":["61149ad45b004197b3f189483d0639b8"],
+                          "fadeInfo":{
+                            "fadeType":"show",
+                            "options":{
+                              "showType":"none"}}}]},
+{
+                      "action":"setPanelState",
+                      "description":"设置 处理输入 to 药物治疗",
+                      "panelsToStates":[{
+                          "panelPath":["61149ad45b004197b3f189483d0639b8"],
+                          "stateInfo":{
+                            "setStateType":"diagram",
+                            "stateNumber":2,
+                            "stateValue":{
+                              "exprType":"stringLiteral",
+                              "value":"1",
+                              "stos":[]},
+                            "loop":false,
+                            "showWhenSet":false,
+                            "options":{
+                              "compress":false}}}]}]}]}}},
+{
+          "id":"4e94434d7669488389e70272cd20a657",
+          "label":"",
+          "type":"radioButton",
+          "styleType":"radioButton",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":380,
+              "y":612},
+            "size":{
+              "width":100,
+              "height":19}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"2fc50b00d3164a7ca082fdbc4d901f20",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":380,
+                  "y":612},
+                "size":{
+                  "width":100,
+                  "height":19}},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onCheckedChange":{
+              "description":"OnCheckedChange",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"fadeWidget",
+                      "description":"显示 处理输入",
+                      "objectsToFades":[{
+                          "objectPath":["61149ad45b004197b3f189483d0639b8"],
+                          "fadeInfo":{
+                            "fadeType":"show",
+                            "options":{
+                              "showType":"none"}}}]},
+{
+                      "action":"setPanelState",
+                      "description":"设置 处理输入 to 保健治疗",
+                      "panelsToStates":[{
+                          "panelPath":["61149ad45b004197b3f189483d0639b8"],
+                          "stateInfo":{
+                            "setStateType":"diagram",
+                            "stateNumber":3,
+                            "stateValue":{
+                              "exprType":"stringLiteral",
+                              "value":"1",
+                              "stos":[]},
+                            "loop":false,
+                            "showWhenSet":false,
+                            "options":{
+                              "compress":false}}}]}]}]}}},
+{
+          "id":"61149ad45b004197b3f189483d0639b8",
+          "label":"处理输入",
+          "type":"dynamicPanel",
+          "styleType":"dynamicPanel",
+          "visible":false,
+          "style":{
+            "location":{
+              "x":134,
+              "y":650},
+            "size":{
+              "width":716,
+              "height":130},
+            "visible":false},
+          "adaptiveStyles":{
+},
+          "scrollbars":"none",
+          "fitToContent":false,
+          "propagate":false,
+          "diagrams":[{
+              "id":"69392e25a14e443789bfd28b07a031fc",
+              "label":"体检",
+              "type":"Axure:PanelDiagram",
+              "objects":[{
+                  "id":"3fb914a1b14b4a64ab334bdd2db4fdd2",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"buttonShape",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "size":{
+                      "width":144,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"77c146843a9b4eb68cef7878c836c204",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "size":{
+                          "width":144,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}],
+                  "images":{
+                    "normal~":"resources/images/transparent.gif"}},
+{
+                  "id":"9c6453ff37164272ac22a0d804581ec6",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"checkbox",
+                  "styleType":"checkbox",
+                  "visible":true,
+                  "style":{
+                    "verticalAlignment":"middle",
+                    "location":{
+                      "x":103,
+                      "y":34},
+                    "size":{
+                      "width":90,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"cc22e111429944c7be1c9ab456aad2d4",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":103,
+                          "y":34},
+                        "size":{
+                          "width":90,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}]},
+{
+                  "id":"78d659812e5e49a79da54daefa3dc5ce",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"checkbox",
+                  "styleType":"checkbox",
+                  "visible":true,
+                  "style":{
+                    "verticalAlignment":"middle",
+                    "location":{
+                      "x":206,
+                      "y":34},
+                    "size":{
+                      "width":96,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"89afdd8711b3447cac5c838efb85b2ba",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":206,
+                          "y":34},
+                        "size":{
+                          "width":96,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}]},
+{
+                  "id":"ef2d70a84e7e4fc68244f198768fc99f",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"checkbox",
+                  "styleType":"checkbox",
+                  "visible":true,
+                  "style":{
+                    "verticalAlignment":"middle",
+                    "location":{
+                      "x":315,
+                      "y":34},
+                    "size":{
+                      "width":96,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"82e20a5b72f84b998fccfe9b872b8a64",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":315,
+                          "y":34},
+                        "size":{
+                          "width":96,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}]},
+{
+                  "id":"f946e929e9aa4ac193dc04a41c3b9c57",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"checkbox",
+                  "styleType":"checkbox",
+                  "visible":true,
+                  "style":{
+                    "verticalAlignment":"middle",
+                    "location":{
+                      "x":425,
+                      "y":34},
+                    "size":{
+                      "width":96,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"4580583ae6e74e41bfe74008eb64cd23",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":425,
+                          "y":34},
+                        "size":{
+                          "width":96,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}]},
+{
+                  "id":"98e0892bb732443b9cf00ecc0f146a83",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"checkbox",
+                  "styleType":"checkbox",
+                  "visible":true,
+                  "style":{
+                    "verticalAlignment":"middle",
+                    "location":{
+                      "x":534,
+                      "y":34},
+                    "size":{
+                      "width":96,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"02400edf3d574dbc9ccecb31e4b23575",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":534,
+                          "y":34},
+                        "size":{
+                          "width":96,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}]},
+{
+                  "id":"170294451eca492d81c852fef0891c38",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"checkbox",
+                  "styleType":"checkbox",
+                  "visible":true,
+                  "style":{
+                    "verticalAlignment":"middle",
+                    "location":{
+                      "x":0,
+                      "y":63},
+                    "size":{
+                      "width":70,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"eca2560d46a8456db71e01181e4a2825",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":0,
+                          "y":63},
+                        "size":{
+                          "width":70,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}]},
+{
+                  "id":"b490ceb2d731450c93e10f8f1c2df6e2",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"checkbox",
+                  "styleType":"checkbox",
+                  "visible":true,
+                  "style":{
+                    "verticalAlignment":"middle",
+                    "location":{
+                      "x":103,
+                      "y":63},
+                    "size":{
+                      "width":70,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"ba0b7bfe87bb4009a8f920c53ca52fbf",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":103,
+                          "y":63},
+                        "size":{
+                          "width":70,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}]},
+{
+                  "id":"d25eb2629948427d81a4d68aed1b108e",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"checkbox",
+                  "styleType":"checkbox",
+                  "visible":true,
+                  "style":{
+                    "verticalAlignment":"middle",
+                    "location":{
+                      "x":206,
+                      "y":63},
+                    "size":{
+                      "width":70,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"107a7fbf79844984b8c06a2c6f896409",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":206,
+                          "y":63},
+                        "size":{
+                          "width":70,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}]},
+{
+                  "id":"fe302226b952434694140ab51fbfb01d",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"checkbox",
+                  "styleType":"checkbox",
+                  "visible":true,
+                  "style":{
+                    "verticalAlignment":"middle",
+                    "location":{
+                      "x":0,
+                      "y":34},
+                    "size":{
+                      "width":90,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"2ce9f40340ab41649fc1151d68841fc5",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":0,
+                          "y":34},
+                        "size":{
+                          "width":90,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}]}]},
+{
+              "id":"88de599189374be3a354177c5e15d1be",
+              "label":"药物治疗",
+              "type":"Axure:PanelDiagram",
+              "objects":[{
+                  "id":"61e7633dd92c4f67a51cc33368406d94",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"table",
+                  "styleType":"table",
+                  "visible":true,
+                  "style":{
+                    "size":{
+                      "width":440.000030517578,
+                      "height":90}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"730f598b534945b89e46d86c90336855",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":57,
+                          "y":0},
+                        "size":{
+                          "width":121,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"2bac1607edaa4ed5814b4976103f43c7",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":57,
+                              "y":0},
+                            "size":{
+                              "width":121,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u90.png"}},
+{
+                      "id":"c9a349997a0d48a4aab11a44ed1d031c",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":57,
+                          "y":30},
+                        "size":{
+                          "width":121,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"4e59e20785054e74af68deda8e189ece",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":57,
+                              "y":30},
+                            "size":{
+                              "width":121,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u90.png"}},
+{
+                      "id":"757157d6b44e4b999494675dee1d8f7e",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":178,
+                          "y":0},
+                        "size":{
+                          "width":130,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"3e245ff6f109463ca984cdb79624aa3e",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":178,
+                              "y":0},
+                            "size":{
+                              "width":130,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u92.png"}},
+{
+                      "id":"59ac4f7cc44c431595f8cd8b9eca9d60",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":178,
+                          "y":30},
+                        "size":{
+                          "width":130,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"faf32bb3c3b94b9bbe9a5c5d00eb0ab8",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":178,
+                              "y":30},
+                            "size":{
+                              "width":130,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u92.png"}},
+{
+                      "id":"4bc8578aa62d45bd860c509841598431",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":308,
+                          "y":0},
+                        "size":{
+                          "width":132,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"2e7f2c46a64443f0b9db1bcf2eafa52e",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":308,
+                              "y":0},
+                            "size":{
+                              "width":132,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u94.png"}},
+{
+                      "id":"c7fad6bd8fd74fe898431a7977965aa2",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":308,
+                          "y":30},
+                        "size":{
+                          "width":132,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"46128d2257704875aa9b82143017ef3c",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":308,
+                              "y":30},
+                            "size":{
+                              "width":132,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u94.png"}},
+{
+                      "id":"1ec82662083d459f98a19580d3b82061",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "size":{
+                          "width":57,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"9faf0fc72ce4403bbc287a2946e9298f",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "size":{
+                              "width":57,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u88.png"}},
+{
+                      "id":"3b248ef8ba624da5b39b503a0434af45",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":0,
+                          "y":30},
+                        "size":{
+                          "width":57,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"505549473ea74d04956ad5c94cdb7d05",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":0,
+                              "y":30},
+                            "size":{
+                              "width":57,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u88.png"}},
+{
+                      "id":"d8b8d38397d146479b34e04fb8c923e7",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":0,
+                          "y":60},
+                        "size":{
+                          "width":57,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"7d70a920d31a4d5490ca1f22dfbd6120",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":0,
+                              "y":60},
+                            "size":{
+                              "width":57,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u104.png"}},
+{
+                      "id":"10f0edae695041f68522a4fc651f64b2",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":57,
+                          "y":60},
+                        "size":{
+                          "width":121,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"51728c5f246747f89d305395d7481921",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":57,
+                              "y":60},
+                            "size":{
+                              "width":121,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u106.png"}},
+{
+                      "id":"d961c403541e490897aa9ff8727e3d50",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":178,
+                          "y":60},
+                        "size":{
+                          "width":130,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"2d0e82cfcf2142a09be9d87e424fc6d1",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":178,
+                              "y":60},
+                            "size":{
+                              "width":130,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u108.png"}},
+{
+                      "id":"f663e28666c140419a8aed5cd0c4707b",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":308,
+                          "y":60},
+                        "size":{
+                          "width":132,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"03b8fa80fe59445d8103e4bb84a50b3e",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":308,
+                              "y":60},
+                            "size":{
+                              "width":132,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u110.png"}}]},
+{
+                  "id":"2a81162c3d9f4b19862f8329b98743f6",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"textBox",
+                  "styleType":"textBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":66,
+                      "y":33},
+                    "size":{
+                      "width":100,
+                      "height":25}},
+                  "adaptiveStyles":{
+}},
+{
+                  "id":"6bd9570fb3eb49b594aa8cd44460d248",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"textBox",
+                  "styleType":"textBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":194,
+                      "y":33},
+                    "size":{
+                      "width":100,
+                      "height":25}},
+                  "adaptiveStyles":{
+}},
+{
+                  "id":"8235c3d40bb244958feec7e7a88aae90",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"textBox",
+                  "styleType":"textBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":325,
+                      "y":33},
+                    "size":{
+                      "width":100,
+                      "height":25}},
+                  "adaptiveStyles":{
+}},
+{
+                  "id":"7ff5aae84ef045af97a9e737c43c3c76",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"imageBox",
+                  "styleType":"imageBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":474,
+                      "y":36},
+                    "size":{
+                      "width":16,
+                      "height":16}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"92a2e915d560493d87f52667c3a7276c",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "location":{
+                          "x":474,
+                          "y":36},
+                        "size":{
+                          "width":16,
+                          "height":16}},
+                      "adaptiveStyles":{
+}}],
+                  "images":{
+                    "normal~":"images/患者内页/u115.png"}},
+{
+                  "id":"982ed61a183344c5a7eef02f27d14ec6",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"imageBox",
+                  "styleType":"imageBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":453,
+                      "y":36},
+                    "size":{
+                      "width":16,
+                      "height":16}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"a028bdf654024f8ba2cd91e9f74b04ad",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "location":{
+                          "x":453,
+                          "y":36},
+                        "size":{
+                          "width":16,
+                          "height":16}},
+                      "adaptiveStyles":{
+}}],
+                  "images":{
+                    "normal~":"images/患者内页/u117.png"}},
+{
+                  "id":"1eefecbb804c4703862593cad94c05c3",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"buttonShape",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":320,
+                      "y":103},
+                    "size":{
+                      "width":40,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"82125e45b33f45cb8420289fa0f4ae69",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "location":{
+                          "x":320,
+                          "y":103},
+                        "size":{
+                          "width":40,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}],
+                  "images":{
+                    "normal~":"resources/images/transparent.gif"}},
+{
+                  "id":"660b2ee06f37489d90b8f14301bcaf66",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"textBox",
+                  "styleType":"textBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":360,
+                      "y":100},
+                    "size":{
+                      "width":65,
+                      "height":25}},
+                  "adaptiveStyles":{
+}}]},
+{
+              "id":"7f67b488b85941c69c1fb0443ec7d1b2",
+              "label":"保健治疗",
+              "type":"Axure:PanelDiagram",
+              "objects":[{
+                  "id":"9b71f11cb3e84b2398f8f584327356d9",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"table",
+                  "styleType":"table",
+                  "visible":true,
+                  "style":{
+                    "size":{
+                      "width":654,
+                      "height":90}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"641c39da14204dd6a90b156823ab0920",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":50,
+                          "y":0},
+                        "size":{
+                          "width":130,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"f75b344ab5f0481dbae5f063cfb0c06c",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":50,
+                              "y":0},
+                            "size":{
+                              "width":130,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u92.png"}},
+{
+                      "id":"dbd64bf9763f45fa8f5e92bec4d1eadf",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":50,
+                          "y":30},
+                        "size":{
+                          "width":130,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"4e217da1f0854c18937e5f4d02dcc3f9",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":50,
+                              "y":30},
+                            "size":{
+                              "width":130,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u92.png"}},
+{
+                      "id":"c5bc77ada4544cc1b3ebde0b8561fcd2",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":180,
+                          "y":0},
+                        "size":{
+                          "width":130,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"7bf67121b5894353acc6bbfb6a0500ad",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":180,
+                              "y":0},
+                            "size":{
+                              "width":130,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u92.png"}},
+{
+                      "id":"9cd44af03e384b548e848ba1d70420e4",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":180,
+                          "y":30},
+                        "size":{
+                          "width":130,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"861a91c13d374b4aacc419815c30f63d",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":180,
+                              "y":30},
+                            "size":{
+                              "width":130,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u92.png"}},
+{
+                      "id":"ef27f60d04694736bb0b91bef5206b1d",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":310,
+                          "y":0},
+                        "size":{
+                          "width":238,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"bf915c8e6aae4c9eb5724d10bbc72417",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":310,
+                              "y":0},
+                            "size":{
+                              "width":238,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u129.png"}},
+{
+                      "id":"ca83d3f7cea44ece91725377fa19334b",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":310,
+                          "y":30},
+                        "size":{
+                          "width":238,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"6f22296c6f2741a99d8c7df5c84086cb",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":310,
+                              "y":30},
+                            "size":{
+                              "width":238,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u129.png"}},
+{
+                      "id":"78a0fbf8b52a45a894d06cb4e8ba6c9c",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "size":{
+                          "width":50,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"248d21320ed2481b868f4e16b9f67d54",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "size":{
+                              "width":50,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u123.png"}},
+{
+                      "id":"bcf998c7cd024680a5c564b2ad4842eb",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":0,
+                          "y":30},
+                        "size":{
+                          "width":50,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"28804720e5844976bb9d35b8f82ec496",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":0,
+                              "y":30},
+                            "size":{
+                              "width":50,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u123.png"}},
+{
+                      "id":"fceaca4092a748d99564079c6c177cab",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":0,
+                          "y":60},
+                        "size":{
+                          "width":50,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"3f873e1ca455458fbc173926df8c5ed0",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":0,
+                              "y":60},
+                            "size":{
+                              "width":50,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u143.png"}},
+{
+                      "id":"d0565dc7ea574c6ab0c3cbf26b460f96",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":50,
+                          "y":60},
+                        "size":{
+                          "width":130,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"46c6fee9b23347cb985802bde55b4623",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":50,
+                              "y":60},
+                            "size":{
+                              "width":130,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u108.png"}},
+{
+                      "id":"a458e96f0bf441b08d5447a15b75d638",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":180,
+                          "y":60},
+                        "size":{
+                          "width":130,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"84e74391801441529d903263fb4a4c00",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":180,
+                              "y":60},
+                            "size":{
+                              "width":130,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u108.png"}},
+{
+                      "id":"199d0c08fbe647d6b1d030886d889a8b",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":310,
+                          "y":60},
+                        "size":{
+                          "width":238,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"2f87dfebfe29440b9bdf41aa73e6bb3f",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":310,
+                              "y":60},
+                            "size":{
+                              "width":238,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u149.png"}},
+{
+                      "id":"2fe270d1869447538d1cfc594944f80b",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":548,
+                          "y":0},
+                        "size":{
+                          "width":106,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"f6e5fc7a76404afb944d80483386ae48",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":548,
+                              "y":0},
+                            "size":{
+                              "width":106,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u131.png"}},
+{
+                      "id":"3f835e22e0da4d4ebe1e3b142f09ff93",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":548,
+                          "y":30},
+                        "size":{
+                          "width":106,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"66eaf7c748a24f8e975be6655575e8a3",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":548,
+                              "y":30},
+                            "size":{
+                              "width":106,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u131.png"}},
+{
+                      "id":"3ec18698bd174c149bfd6f5457ceaa5d",
+                      "label":"",
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"tableCell",
+                      "styleType":"tableCell",
+                      "visible":true,
+                      "style":{
+                        "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                        "horizontalAlignment":"center",
+                        "verticalAlignment":"middle",
+                        "location":{
+                          "x":548,
+                          "y":60},
+                        "size":{
+                          "width":106,
+                          "height":30}},
+                      "adaptiveStyles":{
+},
+                      "objects":[{
+                          "id":"6adc8f8aa8fe409590f0af7b1f9cd30e",
+                          "label":"",
+                          "isContained":true,
+                          "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                          "type":"richTextPanel",
+                          "styleType":"paragraph",
+                          "visible":true,
+                          "style":{
+                            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                            "horizontalAlignment":"center",
+                            "verticalAlignment":"middle",
+                            "location":{
+                              "x":548,
+                              "y":60},
+                            "size":{
+                              "width":106,
+                              "height":30}},
+                          "adaptiveStyles":{
+}}],
+                      "images":{
+                        "normal~":"images/患者内页/u151.png"}}]},
+{
+                  "id":"5b96c644acb34b6dbdbfe93b46d5ebd5",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"textBox",
+                  "styleType":"textBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":194,
+                      "y":34.5},
+                    "size":{
+                      "width":100,
+                      "height":25}},
+                  "adaptiveStyles":{
+}},
+{
+                  "id":"b462fc24cb41428b94329f7b490ed484",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"textBox",
+                  "styleType":"textBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":325,
+                      "y":34.5},
+                    "size":{
+                      "width":215,
+                      "height":25}},
+                  "adaptiveStyles":{
+}},
+{
+                  "id":"e05da81870bf46ca81ce9555481822e2",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"imageBox",
+                  "styleType":"imageBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":691,
+                      "y":37.5},
+                    "size":{
+                      "width":16,
+                      "height":16}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"ab9911cd67044347aa6b3e4c32751b4e",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "location":{
+                          "x":691,
+                          "y":37.5},
+                        "size":{
+                          "width":16,
+                          "height":16}},
+                      "adaptiveStyles":{
+}}],
+                  "images":{
+                    "normal~":"images/患者内页/u115.png"}},
+{
+                  "id":"305e374704554be69855bdd8b4349e80",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"imageBox",
+                  "styleType":"imageBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":670,
+                      "y":37.5},
+                    "size":{
+                      "width":16,
+                      "height":16}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"1d2c2c6f93264a5eb67df5b316b5c90c",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "location":{
+                          "x":670,
+                          "y":37.5},
+                        "size":{
+                          "width":16,
+                          "height":16}},
+                      "adaptiveStyles":{
+}}],
+                  "images":{
+                    "normal~":"images/患者内页/u117.png"}},
+{
+                  "id":"1cd15f0b16744f73aba314a181e5c8c9",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"buttonShape",
+                  "styleType":"paragraph",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":510,
+                      "y":103},
+                    "size":{
+                      "width":66,
+                      "height":19}},
+                  "adaptiveStyles":{
+},
+                  "objects":[{
+                      "id":"d7f097e022364b9d99634e55f04dd4c3",
+                      "label":"",
+                      "isContained":true,
+                      "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                      "type":"richTextPanel",
+                      "styleType":"paragraph",
+                      "visible":true,
+                      "style":{
+                        "location":{
+                          "x":510,
+                          "y":103},
+                        "size":{
+                          "width":66,
+                          "height":19}},
+                      "adaptiveStyles":{
+}}],
+                  "images":{
+                    "normal~":"resources/images/transparent.gif"}},
+{
+                  "id":"1107a73115c84d5db7aad40730567ab0",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"textBox",
+                  "styleType":"textBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":581,
+                      "y":100},
+                    "size":{
+                      "width":65,
+                      "height":25}},
+                  "adaptiveStyles":{
+}},
+{
+                  "id":"616b9ea186654985945948374fb5fbd8",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"comboBox",
+                  "styleType":"comboBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":70,
+                      "y":36},
+                    "size":{
+                      "width":90,
+                      "height":22}},
+                  "adaptiveStyles":{
+}},
+{
+                  "id":"e527dda06c874127bc06d264afd294c4",
+                  "label":"",
+                  "parentDynamicPanel":"61149ad45b004197b3f189483d0639b8",
+                  "type":"textBox",
+                  "styleType":"textBox",
+                  "visible":true,
+                  "style":{
+                    "location":{
+                      "x":560,
+                      "y":34.5},
+                    "size":{
+                      "width":86,
+                      "height":25}},
+                  "adaptiveStyles":{
+}}]}]},
+{
+          "id":"2f7bd61ca1df4f93a10f6bdc69807d69",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"paragraph",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fontSize":"14px",
+            "horizontalAlignment":"right",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFF999999,
+              "opacity":1},
+            "location":{
+              "x":933,
+              "y":277},
+            "size":{
+              "width":97,
+              "height":20}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"33ada5bc3e174032886089293eaa4ffb",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fontSize":"14px",
+                "horizontalAlignment":"right",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFF999999,
+                  "opacity":1},
+                "location":{
+                  "x":933,
+                  "y":277},
+                "size":{
+                  "width":97,
+                  "height":20}},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onClick":{
+              "description":"OnClick",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 查看过往病历",
+                      "target":{
+                        "targetType":"page",
+                        "url":"查看过往病历.html",
+                        "includeVariables":true},
+                      "linkType":"current"}]}]}},
+          "tabbable":true,
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"f123f0e7c0d644f28a71e4ad0ddb895d",
+          "label":"",
+          "type":"button",
+          "styleType":"button",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":290,
+              "y":790},
+            "size":{
+              "width":110,
+              "height":30}},
+          "adaptiveStyles":{
+},
+          "interactionMap":{
+            "onClick":{
+              "description":"OnClick",
+              "cases":[{
+                  "description":"用例 1",
+                  "isNewIfGroup":false,
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 单据打印",
+                      "target":{
+                        "targetType":"page",
+                        "url":"单据打印.html",
+                        "includeVariables":true},
+                      "linkType":"current"}]}]}},
+          "tabbable":true},
+{
+          "id":"1b9501f3dde64c3789c2a869a84e2741",
+          "label":"",
+          "type":"button",
+          "styleType":"button",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":900,
+              "y":830},
+            "size":{
+              "width":110,
+              "height":30}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"35ce4788bffa4069a4fb76a11b9b050c",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFFFFFCC},
+            "location":{
+              "x":1050,
+              "y":650},
+            "size":{
+              "width":220,
+              "height":30},
+            "cornerRadiusTopLeft":"5"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"4227395909404caf8b7a2754f6f71fa7",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFFFFFCC},
+                "location":{
+                  "x":1050,
+                  "y":650},
+                "size":{
+                  "width":220,
+                  "height":30},
+                "cornerRadiusTopLeft":"5"},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/患者内页/u36.png"}},
+{
+          "id":"067a636c87054da59cf790a1dc20087b",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFFFFFCC},
+            "location":{
+              "x":1070,
+              "y":270},
+            "size":{
+              "width":220,
+              "height":30},
+            "cornerRadiusTopLeft":"5"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"859408df238b42a79cebb107b1a87031",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFFFFFCC},
+                "location":{
+                  "x":1070,
+                  "y":270},
+                "size":{
+                  "width":220,
+                  "height":30},
+                "cornerRadiusTopLeft":"5"},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/患者内页/u36.png"}},
+{
+          "id":"1796f17115174079a8cf3867965e2a74",
+          "label":"",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":134,
+              "y":478},
+            "size":{
+              "width":716,
+              "height":25}},
+          "adaptiveStyles":{
+}},
+{
+          "id":"395e9c7908ee49e0b1ac09ebcc081951",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFFFFFCC},
+            "location":{
+              "x":1050,
+              "y":780},
+            "size":{
+              "width":220,
+              "height":30},
+            "cornerRadiusTopLeft":"5"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"b328a4c67f9a4015843df836db2fb479",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFFFFFCC},
+                "location":{
+                  "x":1050,
+                  "y":780},
+                "size":{
+                  "width":220,
+                  "height":30},
+                "cornerRadiusTopLeft":"5"},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/患者内页/u36.png"}},
+{
+          "id":"7d5249d528da4dcabe6ec122e664ec58",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFFFFFCC},
+            "location":{
+              "x":1070,
+              "y":330},
+            "size":{
+              "width":220,
+              "height":30},
+            "cornerRadiusTopLeft":"5"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"afb10afb4feb4137b16536b4b3cb0dfc",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFFFFFCC},
+                "location":{
+                  "x":1070,
+                  "y":330},
+                "size":{
+                  "width":220,
+                  "height":30},
+                "cornerRadiusTopLeft":"5"},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/患者内页/u36.png"}},
+{
+          "id":"86ff47aca6da4857926ecc8fd778f88c",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'微软雅黑 Regular', '微软雅黑'",
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFFFFFCC},
+            "location":{
+              "x":1070,
+              "y":70},
+            "size":{
+              "width":220,
+              "height":40},
+            "cornerRadiusTopLeft":"5"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"840e6c2ffb9345d9be6a6f7393486c74",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'微软雅黑 Regular', '微软雅黑'",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFFFFFCC},
+                "location":{
+                  "x":1070,
+                  "y":70},
+                "size":{
+                  "width":220,
+                  "height":40},
+                "cornerRadiusTopLeft":"5"},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/患者队列/u94.png"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "9240b6a9aa2547c9a1e28f93559c4979":{
+      "scriptId":"u0"},
+    "e717b154f525468d8679c5f1e505b2d3":{
+      "scriptId":"u1"},
+    "a98ae95eee21419db96e3b9db7613357":{
+      "scriptId":"u2"},
+    "280a465557124c639ffa7de4492da588":{
+      "scriptId":"u3"},
+    "4e86f15e3b5d44c6b3b2ec26ed4bbcd8":{
+      "scriptId":"u4"},
+    "e75aa3d979394adfabb40bd5fdb23263":{
+      "scriptId":"u5"},
+    "d32b657e2551469d9f364d1743bf0b08":{
+      "scriptId":"u6"},
+    "87dff1aab04643a4af7187f48f6c929a":{
+      "scriptId":"u7"},
+    "a20fcf99cb3446c19e1c5ada7087431c":{
+      "scriptId":"u8"},
+    "3186d4c7e45f4f539c7d0dc1e651c4a6":{
+      "scriptId":"u9"},
+    "09cd7cf21dbd42fc847ff6e44a86a6ae":{
+      "scriptId":"u10"},
+    "e7016bb4e7094598ab4d3dc1574db298":{
+      "scriptId":"u11"},
+    "0c4009c4ec994a65a1c3c3afbfeddea7":{
+      "scriptId":"u12"},
+    "dfd10479ba634d7580859a3692d7565a":{
+      "scriptId":"u13"},
+    "3fda7d477c2e438abefbd437a5431319":{
+      "scriptId":"u14"},
+    "ffdb7e4f61ac4b3991beae323732e698":{
+      "scriptId":"u15"},
+    "78970244dd6f4945aeef057f2942bbec":{
+      "scriptId":"u16"},
+    "037a9399697941519573a98b8621f6e4":{
+      "scriptId":"u17"},
+    "e92540f5df4a4cb3a428310a4cdb56a3":{
+      "scriptId":"u18"},
+    "4351c2501fe14651b818f890af339755":{
+      "scriptId":"u19"},
+    "9d910fd325304fe5b12873530e1ef741":{
+      "scriptId":"u20"},
+    "9268586ec99a447b9a0e70f954ff712e":{
+      "scriptId":"u21"},
+    "3a83565b2a9e4399b6427cfcabe03ad9":{
+      "scriptId":"u22"},
+    "0dd339ce395e4df1a5964f3c432aaad2":{
+      "scriptId":"u23"},
+    "68ff16b12d364baba56a77996cadb24c":{
+      "scriptId":"u24"},
+    "6bf75421ec2d4d569fa188fcacb2e816":{
+      "scriptId":"u25"},
+    "41bd13ae9923447b8f3c2e133451d76f":{
+      "scriptId":"u26"},
+    "4e0a2fac3b1a416da1112d754e39967f":{
+      "scriptId":"u27"},
+    "99a24e61f77e42e4a16707eeaa0229b8":{
+      "scriptId":"u28"},
+    "1e0939ebbb0f4351811ce21ddd69c192":{
+      "scriptId":"u29"},
+    "25088a3af62945a5ba6a72efb3925be7":{
+      "scriptId":"u30"},
+    "fd356019a1674ad98bf2e64cb7498d34":{
+      "scriptId":"u31"},
+    "7578b1a07e25490c8628be444ea13eef":{
+      "scriptId":"u32"},
+    "6cf58839774e4f17844059596e08d17c":{
+      "scriptId":"u33"},
+    "e6f24bb0b48b4f6181b3ddc46e03a245":{
+      "scriptId":"u34"},
+    "741b71cf724844a8b31125f8e17a1a2c":{
+      "scriptId":"u35"},
+    "a8c932e0dbc2467884462c16115c05cb":{
+      "scriptId":"u36"},
+    "519e843d984d451385444d441a82a863":{
+      "scriptId":"u37"},
+    "4da1217c370843ac9a861e493bbf28c6":{
+      "scriptId":"u38"},
+    "7bb5768f7e6b4bf1a3ac92395babdd38":{
+      "scriptId":"u39"},
+    "36a02ac839c948cb87db16d3bb6360b8":{
+      "scriptId":"u40"},
+    "47c34c5e058247e695dd4154c77a4ef0":{
+      "scriptId":"u41"},
+    "b5b2cdecb94f4f91bd62247c4d00caac":{
+      "scriptId":"u42"},
+    "c293770daf764ae085a2182ec1266c12":{
+      "scriptId":"u43"},
+    "cdbf628a993e4a7fb435c16ad285a2b0":{
+      "scriptId":"u44"},
+    "88d3e12c31b64dac89919218454161f8":{
+      "scriptId":"u45"},
+    "51956e3431d54c20ae98404e4bcfc0a5":{
+      "scriptId":"u46"},
+    "52f9c8d896a249a28dccbe2be4fdbd0f":{
+      "scriptId":"u47"},
+    "778df92c32184501a9bc49d9529fca1f":{
+      "scriptId":"u48"},
+    "fdaae8b4727e4b5c83db893ead160625":{
+      "scriptId":"u49"},
+    "72a57c6ab78944389e4ed85e0f28a5e3":{
+      "scriptId":"u50"},
+    "7175fae746b14dcf9ca358180718a292":{
+      "scriptId":"u51"},
+    "fda0ca2c094d47968b992f829092200a":{
+      "scriptId":"u52"},
+    "bdadd8537f494b74b5949016dfec963f":{
+      "scriptId":"u53"},
+    "5b1b66e1046b464d923e9c47ce1f85e7":{
+      "scriptId":"u54"},
+    "45d1c4f2f5cd45efa38b577086362a4b":{
+      "scriptId":"u55"},
+    "0b57f2030b424c3bac6e63f5e7a22222":{
+      "scriptId":"u56"},
+    "11d7e462371243279c6fd2d89e6e12c4":{
+      "scriptId":"u57"},
+    "4a21c5f15cdf403b93237ea09280b640":{
+      "scriptId":"u58"},
+    "c49cc9afb1fb4d3b956f2e76aa25e7d0":{
+      "scriptId":"u59"},
+    "7520d063f31a4aae871b9185da0c7178":{
+      "scriptId":"u60"},
+    "1583c717fb6444a88686aabe40f9752a":{
+      "scriptId":"u61"},
+    "7f7b1c343bdc41328bda19c965ef6ccd":{
+      "scriptId":"u62"},
+    "225a229c3cc5426f9a78afd8cc761975":{
+      "scriptId":"u63"},
+    "4e94434d7669488389e70272cd20a657":{
+      "scriptId":"u64"},
+    "2fc50b00d3164a7ca082fdbc4d901f20":{
+      "scriptId":"u65"},
+    "61149ad45b004197b3f189483d0639b8":{
+      "scriptId":"u66"},
+    "3fb914a1b14b4a64ab334bdd2db4fdd2":{
+      "scriptId":"u67"},
+    "77c146843a9b4eb68cef7878c836c204":{
+      "scriptId":"u68"},
+    "9c6453ff37164272ac22a0d804581ec6":{
+      "scriptId":"u69"},
+    "cc22e111429944c7be1c9ab456aad2d4":{
+      "scriptId":"u70"},
+    "78d659812e5e49a79da54daefa3dc5ce":{
+      "scriptId":"u71"},
+    "89afdd8711b3447cac5c838efb85b2ba":{
+      "scriptId":"u72"},
+    "ef2d70a84e7e4fc68244f198768fc99f":{
+      "scriptId":"u73"},
+    "82e20a5b72f84b998fccfe9b872b8a64":{
+      "scriptId":"u74"},
+    "f946e929e9aa4ac193dc04a41c3b9c57":{
+      "scriptId":"u75"},
+    "4580583ae6e74e41bfe74008eb64cd23":{
+      "scriptId":"u76"},
+    "98e0892bb732443b9cf00ecc0f146a83":{
+      "scriptId":"u77"},
+    "02400edf3d574dbc9ccecb31e4b23575":{
+      "scriptId":"u78"},
+    "170294451eca492d81c852fef0891c38":{
+      "scriptId":"u79"},
+    "eca2560d46a8456db71e01181e4a2825":{
+      "scriptId":"u80"},
+    "b490ceb2d731450c93e10f8f1c2df6e2":{
+      "scriptId":"u81"},
+    "ba0b7bfe87bb4009a8f920c53ca52fbf":{
+      "scriptId":"u82"},
+    "d25eb2629948427d81a4d68aed1b108e":{
+      "scriptId":"u83"},
+    "107a7fbf79844984b8c06a2c6f896409":{
+      "scriptId":"u84"},
+    "fe302226b952434694140ab51fbfb01d":{
+      "scriptId":"u85"},
+    "2ce9f40340ab41649fc1151d68841fc5":{
+      "scriptId":"u86"},
+    "61e7633dd92c4f67a51cc33368406d94":{
+      "scriptId":"u87"},
+    "1ec82662083d459f98a19580d3b82061":{
+      "scriptId":"u88"},
+    "9faf0fc72ce4403bbc287a2946e9298f":{
+      "scriptId":"u89"},
+    "730f598b534945b89e46d86c90336855":{
+      "scriptId":"u90"},
+    "2bac1607edaa4ed5814b4976103f43c7":{
+      "scriptId":"u91"},
+    "757157d6b44e4b999494675dee1d8f7e":{
+      "scriptId":"u92"},
+    "3e245ff6f109463ca984cdb79624aa3e":{
+      "scriptId":"u93"},
+    "4bc8578aa62d45bd860c509841598431":{
+      "scriptId":"u94"},
+    "2e7f2c46a64443f0b9db1bcf2eafa52e":{
+      "scriptId":"u95"},
+    "3b248ef8ba624da5b39b503a0434af45":{
+      "scriptId":"u96"},
+    "505549473ea74d04956ad5c94cdb7d05":{
+      "scriptId":"u97"},
+    "c9a349997a0d48a4aab11a44ed1d031c":{
+      "scriptId":"u98"},
+    "4e59e20785054e74af68deda8e189ece":{
+      "scriptId":"u99"},
+    "59ac4f7cc44c431595f8cd8b9eca9d60":{
+      "scriptId":"u100"},
+    "faf32bb3c3b94b9bbe9a5c5d00eb0ab8":{
+      "scriptId":"u101"},
+    "c7fad6bd8fd74fe898431a7977965aa2":{
+      "scriptId":"u102"},
+    "46128d2257704875aa9b82143017ef3c":{
+      "scriptId":"u103"},
+    "d8b8d38397d146479b34e04fb8c923e7":{
+      "scriptId":"u104"},
+    "7d70a920d31a4d5490ca1f22dfbd6120":{
+      "scriptId":"u105"},
+    "10f0edae695041f68522a4fc651f64b2":{
+      "scriptId":"u106"},
+    "51728c5f246747f89d305395d7481921":{
+      "scriptId":"u107"},
+    "d961c403541e490897aa9ff8727e3d50":{
+      "scriptId":"u108"},
+    "2d0e82cfcf2142a09be9d87e424fc6d1":{
+      "scriptId":"u109"},
+    "f663e28666c140419a8aed5cd0c4707b":{
+      "scriptId":"u110"},
+    "03b8fa80fe59445d8103e4bb84a50b3e":{
+      "scriptId":"u111"},
+    "2a81162c3d9f4b19862f8329b98743f6":{
+      "scriptId":"u112"},
+    "6bd9570fb3eb49b594aa8cd44460d248":{
+      "scriptId":"u113"},
+    "8235c3d40bb244958feec7e7a88aae90":{
+      "scriptId":"u114"},
+    "7ff5aae84ef045af97a9e737c43c3c76":{
+      "scriptId":"u115"},
+    "92a2e915d560493d87f52667c3a7276c":{
+      "scriptId":"u116"},
+    "982ed61a183344c5a7eef02f27d14ec6":{
+      "scriptId":"u117"},
+    "a028bdf654024f8ba2cd91e9f74b04ad":{
+      "scriptId":"u118"},
+    "1eefecbb804c4703862593cad94c05c3":{
+      "scriptId":"u119"},
+    "82125e45b33f45cb8420289fa0f4ae69":{
+      "scriptId":"u120"},
+    "660b2ee06f37489d90b8f14301bcaf66":{
+      "scriptId":"u121"},
+    "9b71f11cb3e84b2398f8f584327356d9":{
+      "scriptId":"u122"},
+    "78a0fbf8b52a45a894d06cb4e8ba6c9c":{
+      "scriptId":"u123"},
+    "248d21320ed2481b868f4e16b9f67d54":{
+      "scriptId":"u124"},
+    "641c39da14204dd6a90b156823ab0920":{
+      "scriptId":"u125"},
+    "f75b344ab5f0481dbae5f063cfb0c06c":{
+      "scriptId":"u126"},
+    "c5bc77ada4544cc1b3ebde0b8561fcd2":{
+      "scriptId":"u127"},
+    "7bf67121b5894353acc6bbfb6a0500ad":{
+      "scriptId":"u128"},
+    "ef27f60d04694736bb0b91bef5206b1d":{
+      "scriptId":"u129"},
+    "bf915c8e6aae4c9eb5724d10bbc72417":{
+      "scriptId":"u130"},
+    "2fe270d1869447538d1cfc594944f80b":{
+      "scriptId":"u131"},
+    "f6e5fc7a76404afb944d80483386ae48":{
+      "scriptId":"u132"},
+    "bcf998c7cd024680a5c564b2ad4842eb":{
+      "scriptId":"u133"},
+    "28804720e5844976bb9d35b8f82ec496":{
+      "scriptId":"u134"},
+    "dbd64bf9763f45fa8f5e92bec4d1eadf":{
+      "scriptId":"u135"},
+    "4e217da1f0854c18937e5f4d02dcc3f9":{
+      "scriptId":"u136"},
+    "9cd44af03e384b548e848ba1d70420e4":{
+      "scriptId":"u137"},
+    "861a91c13d374b4aacc419815c30f63d":{
+      "scriptId":"u138"},
+    "ca83d3f7cea44ece91725377fa19334b":{
+      "scriptId":"u139"},
+    "6f22296c6f2741a99d8c7df5c84086cb":{
+      "scriptId":"u140"},
+    "3f835e22e0da4d4ebe1e3b142f09ff93":{
+      "scriptId":"u141"},
+    "66eaf7c748a24f8e975be6655575e8a3":{
+      "scriptId":"u142"},
+    "fceaca4092a748d99564079c6c177cab":{
+      "scriptId":"u143"},
+    "3f873e1ca455458fbc173926df8c5ed0":{
+      "scriptId":"u144"},
+    "d0565dc7ea574c6ab0c3cbf26b460f96":{
+      "scriptId":"u145"},
+    "46c6fee9b23347cb985802bde55b4623":{
+      "scriptId":"u146"},
+    "a458e96f0bf441b08d5447a15b75d638":{
+      "scriptId":"u147"},
+    "84e74391801441529d903263fb4a4c00":{
+      "scriptId":"u148"},
+    "199d0c08fbe647d6b1d030886d889a8b":{
+      "scriptId":"u149"},
+    "2f87dfebfe29440b9bdf41aa73e6bb3f":{
+      "scriptId":"u150"},
+    "3ec18698bd174c149bfd6f5457ceaa5d":{
+      "scriptId":"u151"},
+    "6adc8f8aa8fe409590f0af7b1f9cd30e":{
+      "scriptId":"u152"},
+    "5b96c644acb34b6dbdbfe93b46d5ebd5":{
+      "scriptId":"u153"},
+    "b462fc24cb41428b94329f7b490ed484":{
+      "scriptId":"u154"},
+    "e05da81870bf46ca81ce9555481822e2":{
+      "scriptId":"u155"},
+    "ab9911cd67044347aa6b3e4c32751b4e":{
+      "scriptId":"u156"},
+    "305e374704554be69855bdd8b4349e80":{
+      "scriptId":"u157"},
+    "1d2c2c6f93264a5eb67df5b316b5c90c":{
+      "scriptId":"u158"},
+    "1cd15f0b16744f73aba314a181e5c8c9":{
+      "scriptId":"u159"},
+    "d7f097e022364b9d99634e55f04dd4c3":{
+      "scriptId":"u160"},
+    "1107a73115c84d5db7aad40730567ab0":{
+      "scriptId":"u161"},
+    "616b9ea186654985945948374fb5fbd8":{
+      "scriptId":"u162"},
+    "e527dda06c874127bc06d264afd294c4":{
+      "scriptId":"u163"},
+    "2f7bd61ca1df4f93a10f6bdc69807d69":{
+      "scriptId":"u164"},
+    "33ada5bc3e174032886089293eaa4ffb":{
+      "scriptId":"u165"},
+    "f123f0e7c0d644f28a71e4ad0ddb895d":{
+      "scriptId":"u166"},
+    "1b9501f3dde64c3789c2a869a84e2741":{
+      "scriptId":"u167"},
+    "35ce4788bffa4069a4fb76a11b9b050c":{
+      "scriptId":"u168"},
+    "4227395909404caf8b7a2754f6f71fa7":{
+      "scriptId":"u169"},
+    "067a636c87054da59cf790a1dc20087b":{
+      "scriptId":"u170"},
+    "859408df238b42a79cebb107b1a87031":{
+      "scriptId":"u171"},
+    "1796f17115174079a8cf3867965e2a74":{
+      "scriptId":"u172"},
+    "395e9c7908ee49e0b1ac09ebcc081951":{
+      "scriptId":"u173"},
+    "b328a4c67f9a4015843df836db2fb479":{
+      "scriptId":"u174"},
+    "7d5249d528da4dcabe6ec122e664ec58":{
+      "scriptId":"u175"},
+    "afb10afb4feb4137b16536b4b3cb0dfc":{
+      "scriptId":"u176"},
+    "86ff47aca6da4857926ecc8fd778f88c":{
+      "scriptId":"u177"},
+    "840e6c2ffb9345d9be6a6f7393486c74":{
+      "scriptId":"u178"}}});
