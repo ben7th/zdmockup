@@ -1,9 +1,14 @@
 @charset "UTF-8";
-body, .ui.header, .ui.menu, .ui.button {
+body, .ui.header, .ui.menu, .ui.button,
+.ui.cards > .card > .content > .header {
   font-family: '微软雅黑', Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif; }
 
 body.admin .page-content {
   margin-left: 88px; }
+body.admin .page-sidebar .ui.icon.menu .item.quit {
+  opacity: 0.6; }
+  body.admin .page-sidebar .ui.icon.menu .item.quit > i.icon {
+    margin-bottom: 0 !important; }
 body.admin .ui.header.page-title span {
   font-weight: bold; }
 body.admin .ui.header.page-title .sub {

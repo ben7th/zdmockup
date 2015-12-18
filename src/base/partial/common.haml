@@ -4,7 +4,7 @@
     %meta{content: 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type'}
     %meta{content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name: 'viewport'}
     
-    %title 后台管理 - 正道中医
+    %title 正道中医
     
     %link{'data-turbolinks-track' => true, rel: 'stylesheet', type: 'text/css', href: '../lib/semantic-ui/semantic.min.css'}
     %link{'data-turbolinks-track' => true, rel: 'stylesheet', type: 'text/css', href: '../dist/base/css/base.css'}
@@ -15,9 +15,6 @@
     %script{'data-turbolinks-track' => true, src: '../lib/semantic-ui/semantic.min.js'}
     %script{'data-turbolinks-track' => true, src: '../dist/base/js/base.js'}
 
-  %body.admin
-    .page-sidebar
-      = react_component 'DemoManageSidebar'
+  %body.common
     .page-content
-      - #react_component 'DemoTopMenu'
       = yield

@@ -15,6 +15,10 @@
 @DemoManageSidebar = React.createClass
   render: ->
     <div className='ui left vertical inverted sidebar labeled icon menu visible'>
+      <a className='item quit' href='index.html'>
+        <i className="icon chevron left circle" />
+      </a>
+
       <DemoManageSidebar.Item icon='hospital' text='店面人员' link='clinic' />
       <DemoManageSidebar.Item icon='user' text='患者信息' link='patient' />
       <DemoManageSidebar.Item icon='treatment' text='挂号分诊' link='register' />

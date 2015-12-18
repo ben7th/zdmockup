@@ -150,6 +150,50 @@
 }).call(this);
 
 (function() {
+  this.DemoIndexPage = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("div", {
+        "className": 'ui basic segment'
+      }, React.createElement("h1", {
+        "className": 'ui header'
+      }, React.createElement("span", null, "正道中医系统演示"))), React.createElement("div", {
+        "className": 'ui basic segment'
+      }, React.createElement("div", {
+        "className": "ui cards"
+      }, React.createElement("div", {
+        "className": "blue card"
+      }, React.createElement("div", {
+        "className": "content"
+      }, React.createElement("div", {
+        "className": "header"
+      }, "后台管理"), React.createElement("div", {
+        "className": "description"
+      }, "后台管理，维护，信息查看等功能")), React.createElement("div", {
+        "className": "extra content"
+      }, React.createElement("a", {
+        "className": "ui blue fluid button",
+        "href": 'clinic.html'
+      }, "打开 DEMO"))), React.createElement("div", {
+        "className": "orange card"
+      }, React.createElement("div", {
+        "className": "content"
+      }, React.createElement("div", {
+        "className": "header"
+      }, "前台流程"), React.createElement("div", {
+        "className": "description"
+      }, "预约，体检，诊疗业务操作演示")), React.createElement("div", {
+        "className": "extra content"
+      }, React.createElement("div", {
+        "className": "ui orange fluid button disabled"
+      }, "打开 DEMO"))))));
+    }
+  });
+
+}).call(this);
+
+(function() {
   this.DemoPlaceholder = React.createClass({
     render: function() {
       return React.createElement("div", {
@@ -682,29 +726,34 @@
             sample: [
               {
                 name: '行政管理',
+                desc: '**********',
                 privilege: {
                   '店面人员管理': null,
                   '患者信息管理': null
                 }
               }, {
                 name: '导诊',
+                desc: '**********',
                 privilege: {
                   '挂号分诊操作': null
                 }
               }, {
                 name: '医师',
+                desc: '**********',
                 privilege: {
                   '诊疗报告录入': null,
                   '收费项选取': null
                 }
               }, {
                 name: '诊疗师',
+                desc: '**********',
                 privilege: {
                   '诊疗报告录入': null,
                   '收费项选取': null
                 }
               }, {
                 name: '后勤助理',
+                desc: '**********',
                 privilege: {
                   '药品耗材管理': null
                 }
@@ -791,7 +840,12 @@
     render: function() {
       return React.createElement("div", {
         "className": 'ui left vertical inverted sidebar labeled icon menu visible'
-      }, React.createElement(DemoManageSidebar.Item, {
+      }, React.createElement("a", {
+        "className": 'item quit',
+        "href": 'index.html'
+      }, React.createElement("i", {
+        "className": "icon chevron left circle"
+      })), React.createElement(DemoManageSidebar.Item, {
         "icon": 'hospital',
         "text": '店面人员',
         "link": 'clinic'

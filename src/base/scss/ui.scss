@@ -1,10 +1,19 @@
-body, .ui.header, .ui.menu, .ui.button{
+body, .ui.header, .ui.menu, .ui.button, 
+.ui.cards>.card>.content>.header
+{
   font-family: '微软雅黑', Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
 body.admin {
   .page-content {
     margin-left: 88px;
+  }
+
+  .page-sidebar {
+    .ui.icon.menu .item.quit {
+      opacity: 0.6;
+      > i.icon {margin-bottom: 0 !important;}
+    }
   }
 
   .ui.header.page-title {

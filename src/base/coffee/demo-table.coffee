@@ -402,29 +402,34 @@
           sample: [
             {
               name: '行政管理'
+              desc: '**********'
               privilege:
                 '店面人员管理': null
                 '患者信息管理': null
             }
             {
               name: '导诊'
+              desc: '**********'
               privilege:
                 '挂号分诊操作': null
             }
             {
               name: '医师'
+              desc: '**********'
               privilege:
                 '诊疗报告录入': null
                 '收费项选取': null
             }
             {
               name: '诊疗师'
+              desc: '**********'
               privilege:
                 '诊疗报告录入': null
                 '收费项选取': null
             }
             {
               name: '后勤助理'
+              desc: '**********'
               privilege:
                 '药品耗材管理': null
             }
