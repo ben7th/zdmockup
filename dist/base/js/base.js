@@ -179,7 +179,7 @@
     statics: {
       Table: React.createClass({
         render: function() {
-          var add_button, btn_link, btn_text, icon, idx, manage, name, sdata, text, value;
+          var idx, link, manage, name, sdata, text, value;
           return React.createElement("div", {
             "className": 'ui basic segment table-table'
           }, React.createElement("table", {
@@ -204,13 +204,7 @@
               sdata = ref[i];
               results.push(React.createElement("tr", {
                 "key": idx++
-              }, React.createElement("td", {
-                "className": 'collapsing'
-              }, React.createElement("a", {
-                "className": 'ui mini button edit teal'
-              }, React.createElement("i", {
-                "className": 'ui icon pencil'
-              }), React.createElement("span", null, "修改"))), (function() {
+              }, React.createElement(DemoAdminTable.EditTD, null), (function() {
                 var ref1, ref2, ref3, results1;
                 ref1 = this.props.data.fields;
                 results1 = [];
@@ -218,46 +212,74 @@
                   text = ref1[name];
                   value = sdata[name];
                   if ((manage = (ref2 = this.props.data.manage) != null ? ref2[name] : void 0) != null) {
-                    icon = manage[0], btn_text = manage[1];
-                    btn_link = ((ref3 = this.props.data.manage_links) != null ? ref3[name] : void 0) || 'javascript:;';
-                    results1.push(React.createElement("td", {
+                    link = (ref3 = this.props.data.manage_links) != null ? ref3[name] : void 0;
+                    results1.push(React.createElement(DemoAdminTable.ManageTD, {
                       "key": name,
-                      "className": 'manage'
-                    }, React.createElement(DemoAdminTable.TDValue, {
-                      "data": value
-                    }), React.createElement("a", {
-                      "className": 'ui mini manage button teal basic',
-                      "href": btn_link
-                    }, React.createElement("i", {
-                      "className": "ui icon " + icon
-                    }), React.createElement("span", null, btn_text))));
+                      "value": value,
+                      "manage": manage,
+                      "link": link
+                    }));
                   } else {
-                    results1.push(React.createElement("td", {
-                      "key": name
-                    }, React.createElement("span", null, value)));
+                    results1.push(React.createElement(DemoAdminTable.CommonTD, {
+                      "key": name,
+                      "value": value
+                    }));
                   }
                 }
                 return results1;
               }).call(this)));
             }
             return results;
-          }).call(this))), React.createElement("tfoot", null, React.createElement("tr", null, React.createElement("th", null), React.createElement("th", {
-            "colSpan": (Object.keys(this.props.data.fields).length)
-          }, ((add_button = this.props.data.add_button) != null ? React.createElement("a", {
-            "className": 'ui labeled icon button large green'
+          }).call(this))), React.createElement(DemoAdminTable.Tfoot, {
+            "data": this.props.data
+          })));
+        }
+      }),
+      ManageTD: React.createClass({
+        render: function() {
+          var btn_text, icon, link, ref;
+          ref = this.props.manage, icon = ref[0], btn_text = ref[1];
+          link = this.props.link || 'javascript:;';
+          return React.createElement("td", {
+            "className": 'manage collapsing'
+          }, React.createElement("a", {
+            "className": 'ui compact mini manage button teal basic',
+            "href": link
           }, React.createElement("i", {
-            "className": 'ui icon add'
-          }), React.createElement("span", null, add_button)) : void 0), React.createElement(DemoAdminTable.Pagination, null))))));
+            "className": "icon " + icon
+          }), React.createElement("span", null, btn_text)), React.createElement(DemoAdminTable.TDValue, {
+            "data": this.props.value
+          }));
+        }
+      }),
+      CommonTD: React.createClass({
+        render: function() {
+          return React.createElement("td", null, React.createElement(DemoAdminTable.TDValue, {
+            "data": this.props.value
+          }));
+        }
+      }),
+      EditTD: React.createClass({
+        render: function() {
+          return React.createElement("td", {
+            "className": 'collapsing'
+          }, React.createElement("a", {
+            "className": 'ui compact mini button edit teal'
+          }, React.createElement("i", {
+            "className": 'icon pencil'
+          }), React.createElement("span", null, "修改")));
         }
       }),
       TDValue: React.createClass({
         render: function() {
           var key, value;
           if (this.props.data == null) {
-            return React.createElement("span", null, " ");
+            return React.createElement("span", {
+              "className": 'value'
+            }, " ");
           } else if (typeof this.props.data === 'object') {
             return React.createElement("div", {
-              "className": 'value-labels'
+              "className": 'value labels'
             }, (function() {
               var ref, results;
               ref = this.props.data;
@@ -266,7 +288,7 @@
                 value = ref[key];
                 results.push(React.createElement("div", {
                   "key": key,
-                  "className": 'ui label basic brown'
+                  "className": 'ui label'
                 }, React.createElement("span", null, key), (value != null ? React.createElement("div", {
                   "className": 'detail'
                 }, value) : void 0)));
@@ -274,7 +296,9 @@
               return results;
             }).call(this));
           } else {
-            return React.createElement("span", null, this.props.data);
+            return React.createElement("span", {
+              "className": 'value'
+            }, this.props.data);
           }
         }
       }),
@@ -356,6 +380,15 @@
           }
         }
       }),
+      Tfoot: React.createClass({
+        render: function() {
+          return React.createElement("tfoot", null, React.createElement("tr", null, React.createElement("th", null), React.createElement("th", {
+            "colSpan": (Object.keys(this.props.data.fields).length)
+          }, React.createElement(DemoAdminTable.AddButton, {
+            "data": this.props.data.add_button
+          }), React.createElement(DemoAdminTable.Pagination, null))));
+        }
+      }),
       Pagination: React.createClass({
         render: function() {
           return React.createElement("div", {
@@ -375,6 +408,19 @@
           }, React.createElement("i", {
             "className": 'icon right chevron'
           })));
+        }
+      }),
+      AddButton: React.createClass({
+        render: function() {
+          if (this.props.data != null) {
+            return React.createElement("a", {
+              "className": 'ui labeled icon button green'
+            }, React.createElement("i", {
+              "className": 'icon add'
+            }), React.createElement("span", null, this.props.data));
+          } else {
+            return React.createElement("div", null);
+          }
         }
       }),
       Company: React.createClass({

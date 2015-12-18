@@ -12,34 +12,30 @@ body.admin .ui.segment.secondry-nav {
   padding-top: 0; }
 body.admin .ui.segment.demo-admin-table {
   padding-top: 0; }
-  body.admin .ui.segment.demo-admin-table td {
-    line-height: 20px;
-    padding: 10px; }
   body.admin .ui.segment.demo-admin-table td.manage {
-    background-color: #F8FFFF; }
-    body.admin .ui.segment.demo-admin-table td.manage > span {
-      color: #00B5AD;
-      font-weight: bold; }
-  body.admin .ui.segment.demo-admin-table td .value-labels {
-    float: left;
-    font-weight: normal; }
-    body.admin .ui.segment.demo-admin-table td .value-labels .label {
-      margin-top: -2.5px;
-      margin-bottom: -2.5px; }
-      body.admin .ui.segment.demo-admin-table td .value-labels .label .detail {
-        font-weight: normal; }
-  body.admin .ui.segment.demo-admin-table .ui.manage.button {
-    float: right;
-    height: 30px;
-    line-height: 30px;
-    margin: -5px -5px -5px;
-    padding: 0 1em; }
-  body.admin .ui.segment.demo-admin-table .ui.edit.button {
-    float: left;
-    height: 30px;
-    line-height: 30px;
-    margin: -5px;
-    padding: 0 1em; }
+    background-color: #F8FFFF;
+    min-height: 27px; }
+    body.admin .ui.segment.demo-admin-table td.manage > .value {
+      color: #00827c;
+      font-weight: bold;
+      display: block;
+      margin-right: 100px;
+      padding: 3.5px 0; }
+    body.admin .ui.segment.demo-admin-table td.manage .value.labels {
+      font-weight: inherit;
+      padding: 0; }
+      body.admin .ui.segment.demo-admin-table td.manage .value.labels .detail {
+        font-family: lato; }
+    body.admin .ui.segment.demo-admin-table td.manage .ui.manage.button {
+      margin-right: 0;
+      float: right; }
+  body.admin .ui.segment.demo-admin-table td .ui.edit.button {
+    margin-right: 0; }
+  body.admin .ui.segment.demo-admin-table tfoot .ui.pagination.menu {
+    min-height: 0; }
+    body.admin .ui.segment.demo-admin-table tfoot .ui.pagination.menu > .item {
+      min-width: 0;
+      padding: 10px 13px; }
   body.admin .ui.segment.demo-admin-table .ui.segment.basic.table-filter {
     padding-top: 0;
     padding-bottom: 0;

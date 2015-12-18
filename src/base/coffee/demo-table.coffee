@@ -27,59 +27,60 @@
               idx = 0
               for sdata in @props.data.sample || [{}, {}, {}]
                 <tr key={idx++}>
-                  <td className='collapsing'>
-                    <a className='ui mini button edit teal'>
-                      <i className='ui icon pencil' />
-                      <span>修改</span>
-                    </a>
-                  </td>
+                  <DemoAdminTable.EditTD />
                   {
                     for name, text of @props.data.fields
                       value = sdata[name]
                       if (manage = @props.data.manage?[name])?
-                        [icon, btn_text] = manage
-                        btn_link = @props.data.manage_links?[name] || 'javascript:;'
-                        <td key={name} className='manage'>
-                          <DemoAdminTable.TDValue data={value} />
-                          <a className='ui mini manage button teal basic' href={btn_link}>
-                            <i className="ui icon #{icon}" />
-                            <span>{btn_text}</span>
-                          </a>
-                        </td>
+                        link = @props.data.manage_links?[name]
+                        <DemoAdminTable.ManageTD key={name} value={value} manage={manage} link={link} />
                       else
-                        <td key={name}>
-                          <span>{value}</span>
-                        </td>
+                        <DemoAdminTable.CommonTD key={name} value={value} />
+
                   }
                 </tr>
             }
             </tbody>
-            <tfoot><tr>
-              <th></th>
-              <th colSpan={Object.keys(@props.data.fields).length}>
-                {
-                  if (add_button = @props.data.add_button)?
-                    <a className='ui labeled icon button large green'>
-                      <i className='ui icon add' />
-                      <span>{add_button}</span>
-                    </a>
-                }
-
-                <DemoAdminTable.Pagination />
-              </th>
-            </tr></tfoot>
+            <DemoAdminTable.Tfoot data={@props.data} />
           </table>
         </div>
+
+    ManageTD: React.createClass
+      render: ->
+        [icon, btn_text] = @props.manage
+        link = @props.link || 'javascript:;'
+        <td className='manage collapsing'>
+          <a className='ui compact mini manage button teal basic' href={link}>
+            <i className="icon #{icon}" />
+            <span>{btn_text}</span>
+          </a>
+          <DemoAdminTable.TDValue data={@props.value} />
+        </td>
+
+    CommonTD: React.createClass
+      render: ->
+        <td>
+          <DemoAdminTable.TDValue data={@props.value} />
+        </td>
+
+    EditTD: React.createClass
+      render: ->
+        <td className='collapsing'>
+          <a className='ui compact mini button edit teal'>
+            <i className='icon pencil' />
+            <span>修改</span>
+          </a>
+        </td>
 
     TDValue: React.createClass
       render: ->
         if not @props.data?
-          <span>&nbsp;</span> 
+          <span className='value'>&nbsp;</span> 
         else if typeof(@props.data) is 'object'
-          <div className='value-labels'>
+          <div className='value labels'>
           {
             for key, value of @props.data
-              <div key={key} className='ui label basic brown'>
+              <div key={key} className='ui label'>
                 <span>{key}</span>
                 {
                   if value?
@@ -89,7 +90,7 @@
           }
           </div>
         else
-          <span>{@props.data}</span>
+          <span className='value'>{@props.data}</span>
 
     Filter: React.createClass
       render: ->
@@ -136,6 +137,16 @@
             <span>{@props.data}</span>
           </div>
 
+    Tfoot: React.createClass
+      render: ->
+        <tfoot><tr>
+          <th></th>
+          <th colSpan={Object.keys(@props.data.fields).length}>
+            <DemoAdminTable.AddButton data={@props.data.add_button} />
+            <DemoAdminTable.Pagination />
+          </th>
+        </tr></tfoot>
+
     Pagination: React.createClass
       render: ->
         <div className='ui right floated pagination menu'>
@@ -145,6 +156,18 @@
           <a className='item'>3</a>
           <a className='icon item'><i className='icon right chevron' /></a>
         </div>
+
+    AddButton: React.createClass
+      render: ->
+        if @props.data?
+          <a className='ui labeled icon button green'>
+            <i className='icon add' />
+            <span>{@props.data}</span>
+          </a>
+        else
+          <div></div>
+
+    # -----------------
 
     Company: React.createClass
       render: ->

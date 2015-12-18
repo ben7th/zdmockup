@@ -8,12 +8,8 @@ body.admin {
   }
 
   .ui.header.page-title {
-    span {
-      font-weight: bold;
-    }
-    .sub {
-      margin-top: 0.5em;
-    }
+    span { font-weight: bold; }
+    .sub { margin-top: 0.5em; }
   }
 
   .ui.segment.secondry-nav {
@@ -22,36 +18,41 @@ body.admin {
 
   .ui.segment.demo-admin-table {
     padding-top: 0;
-    td {
-      line-height: 20px;
-      padding: 10px;
-    }
+
     td.manage {
       background-color: #F8FFFF;
-      > span {color: #00B5AD;font-weight:bold;}
-    }
+      min-height: 27px;
+      > .value {
+        color:darken(#00B5AD, 10%);font-weight:bold;
+        display: block;
+        margin-right: 100px;
+        padding: 3.5px 0;
+      }
 
-    td .value-labels {
-      float: left;
-      font-weight: normal;
-      .label {
-        margin-top: -2.5px;
-        margin-bottom: -2.5px;
-        .detail {font-weight: normal;}
+      .value.labels {
+        font-weight: inherit;
+        padding: 0;
+        .detail {font-family: lato;}
+      }
+
+      .ui.manage.button {
+        margin-right: 0;
+        float: right;
       }
     }
 
-    .ui.manage.button {
-      float: right;
-      height: 30px; line-height: 30px;
-      margin: -5px -5px -5px;
-      padding: 0 1em;
+    td .ui.edit.button {
+      margin-right: 0;
     }
-    .ui.edit.button {
-      float: left;
-      height: 30px; line-height: 30px;
-      margin: -5px;
-      padding: 0 1em;
+
+    tfoot {
+      .ui.pagination.menu {
+        min-height:0;
+        > .item {
+          min-width: 0;
+          padding:10px 13px;
+        }
+      }
     }
 
     // ---------
