@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body, .ui.header, .ui.menu, .ui.button,
-.ui.cards > .card > .content > .header {
+.ui.cards > .card > .content > .header,
+.ui.card > .content > .header {
   font-family: '微软雅黑', Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif; }
 
 body.admin .page-content {
@@ -14,6 +15,8 @@ body.admin .ui.header.page-title span {
 body.admin .ui.header.page-title .sub {
   margin-top: 0.5em; }
 body.admin .ui.segment.secondry-nav {
+  padding-top: 0; }
+body.admin .ui.segment.special-page {
   padding-top: 0; }
 body.admin .ui.segment.demo-admin-table {
   padding-top: 0; }

@@ -19,13 +19,11 @@
         <i className="icon chevron left circle" />
       </a>
 
+      <DemoManageSidebar.Item icon='setting' text='基础定义' link='system' />
       <DemoManageSidebar.Item icon='hospital' text='店面人员' link='clinic' />
-      <DemoManageSidebar.Item icon='user' text='患者信息' link='patient' />
-      <DemoManageSidebar.Item icon='treatment' text='挂号分诊' link='register' />
       <DemoManageSidebar.Item icon='yen' text='收费项目' link='charge' />
-      <DemoManageSidebar.Item icon='file text outline' text='诊疗方案' link='plan' />
       <DemoManageSidebar.Item icon='first aid' text='药品耗材' link='resource' />
-      <DemoManageSidebar.Item icon='setting' text='系统设置' link='system' />
+      <DemoManageSidebar.Item icon='user' text='患者信息' link='patient' />
     </div>
 
   statics:

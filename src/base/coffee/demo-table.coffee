@@ -16,7 +16,10 @@
         <div className='ui basic segment table-table'>
           <table className='ui celled table'>
             <thead><tr>
-              <th></th>
+              {
+                if not @props.data.no_edit
+                  <th></th>
+              }
               {
                 for name, text of @props.data.fields
                   <th key={name}>{text}</th>
@@ -27,7 +30,10 @@
               idx = 0
               for sdata in @props.data.sample || [{}, {}, {}]
                 <tr key={idx++}>
-                  <DemoAdminTable.EditTD />
+                  {
+                    if not @props.data.no_edit
+                      <DemoAdminTable.EditTD />
+                  }
                   {
                     for name, text of @props.data.fields
                       value = sdata[name]
@@ -140,7 +146,10 @@
     Tfoot: React.createClass
       render: ->
         <tfoot><tr>
-          <th></th>
+          {
+            if not @props.data.no_edit
+              <th></th>
+          }
           <th colSpan={Object.keys(@props.data.fields).length}>
             <DemoAdminTable.AddButton data={@props.data.add_button} />
             <DemoAdminTable.Pagination />
@@ -179,7 +188,7 @@
             director: '负责人'
             underlings: '下辖店面'
           manage:
-            underlings: ['list layout', '设置']
+            underlings: ['list', '设置']
           manage_links:
             underlings: 'clinic-branch.html'
           add_button: '增加分公司'
@@ -212,7 +221,7 @@
             belongs_to: '所属分公司'
             beds: '床位数'
           manage:
-            beds: ['list layout', '设置']
+            beds: ['list', '设置']
           manage_links:
             beds: 'clinic-room.html'
           add_button: '增加店面'
@@ -248,7 +257,7 @@
             name: '部门名称'
             persons: '部门人员'
           manage:
-            persons: ['list layout', '设置']
+            persons: ['list', '设置']
           manage_links:
             persons: 'clinic-person.html'
           add_button: '增加部门'
@@ -442,18 +451,26 @@
         data = 
           fields: 
             name: '诊疗项目名称'
-            need_bed: '是否需要床位'
+            type: '类型'
+            need_bed: '需要床位'
             input_type: '报告录入方式'
+            need_photo:  '需要拍照'
             input_items: '包含录入项'
-            need_photo:  '是否拍照'
             template: '模板'
           add_button: '增加诊疗项目'
+          filters: 
+            type:
+              text: '类型' 
+              values: ['诊断', '治疗']
           manage:
-            input_items: ['setting layout', '调整']
+            input_items: ['list', '设置']
             template: ['setting layout', '调整']
+          manage_links:
+            input_items: 'system-input-item.html'
           sample: [
             {
-              name: '普通体检'
+              name: '常规体检'
+              type: '诊断'
               need_bed: '否'
               input_type: '普通录入'
               input_items: 44
@@ -462,6 +479,7 @@
             }
             {
               name: '面诊'
+              type: '诊断'
               need_bed: '否'
               input_type: '触点录入'
               input_items: 13
@@ -470,11 +488,286 @@
             }
             {
               name: '背诊'
-              need_bed: '否'
+              type: '诊断'
+              need_bed: '是'
               input_type: '触点录入'
               input_items: 9
               need_photo: '是'
               template: '有'
+            }
+            {
+              name: '推拿'
+              type: '治疗'
+              need_bed: '是'
+              input_type: '普通录入'
+              input_items: 10
+              need_photo: '是'
+              template: '有'
+            }
+          ]
+
+        <DemoAdminTable data={data} />
+
+    InputItem: React.createClass
+      render: ->
+        data = 
+          fields: 
+            name: '录入项名称'
+            type: '类型'
+            unit: '单位'
+            values: '枚举值'
+          add_button: '增加录入项'
+          filters: 
+            type:
+              text: '类型' 
+              values: ['填空', '长记录', '数值', '单选枚举', '多选枚举', '拍照']
+          sample: [
+            {
+              name: '面部照片'
+              type: '拍照'
+              unit: ''
+              values: ''
+            }
+            {
+              name: '舌形'
+              type: '多选枚举'
+              unit: ''
+              values: '老舌, 嫩舌, 胖大, 瘦薄, 芒刺, 裂纹, 齿痕, 光滑'
+            }
+            {
+              name: '体重'
+              type: '数值'
+              unit: 'kg'
+              values: ''
+            }
+            {
+              name: '健康评估'
+              type: '长记录'
+              unit: ''
+              values: ''
+            }
+            {
+              name: '睡眠时间'
+              type: '填空'
+              unit: ''
+              values: ''
+            }
+          ]
+
+        <DemoAdminTable data={data} />
+
+    ChargeItem: React.createClass
+      render: ->
+        data = 
+          fields: 
+            name: '收费项名称'
+            price: '单价'
+            unit: '单位'
+            project: '关联诊疗项'
+            resource: '关联药品耗材'
+          add_button: '增加收费项'
+          sample: [
+            {
+              name: '体检费'
+              price: '¥ 100.00'
+              unit: '次'
+              project: {
+                '常规体检': null
+              }
+            }
+            {
+              name: '针灸治疗费'
+              price: '¥ 50.00'
+              unit: '小时'
+              project: {
+                '针灸': null
+              }
+            }
+            {
+              name: '复诊费'
+              price: '¥ 100.00'
+              unit: '次'
+              project: {
+                '面诊' : null
+                '背诊' : null
+                '脉诊' : null
+              }
+            }
+            {
+              name: '板蓝根'
+              price: '¥ 8.00'
+              unit: 'kg'
+              resource: {
+                '板蓝根': null
+              }
+            }
+          ]
+
+        <DemoAdminTable data={data} />
+
+    VIP: React.createClass
+      render: ->
+        data = 
+          fields: 
+            name: 'VIP 等级'
+            desc: '说明'
+            off: '折扣'
+          add_button: '增加 VIP 等级'
+          sample: [
+            {
+              name: '黄金会员'
+              off: '9 折'
+            }
+            {
+              name: '白金会员'
+              off: '8.5 折'
+            }
+            {
+              name: '钻石会员'
+              off: '8 折'
+            }
+          ]
+
+        <DemoAdminTable data={data} />
+
+    ResourceItem: React.createClass
+      render: ->
+        data = 
+          fields: 
+            name: '库存项目名称'
+            desc: '保存方式'
+            expire: '有保质期'
+            unit: '单位'
+          add_button: '增加库存项目'
+          sample: [
+            {
+              name: '板蓝根'
+              desc: '干燥保存'
+              expire: '是'
+              unit: 'kg'
+            }
+            {
+              name: '医用酒精'
+              desc: '密封保存'
+              expire: '否'
+              unit: 'kg'
+            }
+            {
+              name: '棉签'
+              desc: '干燥保存'
+              expire: '否'
+              unit: 'kg'
+            }
+            {
+              name: '玻璃火罐'
+              desc: '避光保存'
+              expire: '否'
+              unit: 'kg'
+            }
+          ]
+
+        <DemoAdminTable data={data} />
+
+    ResourceIn: React.createClass
+      render: ->
+        data = 
+          fields: 
+            name: '入库项目'
+            count: '入库数量'
+            time: '入库时间'
+            person: '操作人'
+          no_edit: true
+          add_button: '入库登记'
+          sample: [
+            {
+              name: '板蓝根'
+              count: '100 kg'
+              time: '2015-12-18 17:30'
+              person: '孙思邈'
+            }
+            {
+              name: '板蓝根'
+              count: '50 kg'
+              time: '2015-12-18 17:30'
+              person: '孙思邈'
+            }
+            {
+              name: '医用酒精'
+              count: '10 kg'
+              time: '2015-12-18 17:30'
+              person: '孙思邈'
+            }
+          ]
+
+        <DemoAdminTable data={data} />
+
+    ResourceOut: React.createClass
+      render: ->
+        data = 
+          fields: 
+            name: '出库项目'
+            count: '出库数量'
+            time: '出库时间'
+            usage: '用途'
+            person: '操作人'
+          no_edit: true
+          sample: [
+            {
+              name: '板蓝根'
+              count: '10 kg'
+              time: '2015-12-18 17:30'
+              usage: '过期销毁'
+              person: '张仲景'
+            }
+            {
+              name: '医用酒精'
+              count: '5 kg'
+              time: '2015-12-18 17:30'
+              usage: '第一诊疗室储备'
+              person: '张仲景'
+            }
+            {
+              name: '玻璃火罐'
+              count: '50 个'
+              time: '2015-12-18 17:30'
+              usage: '第二诊疗室储备'
+              person: '张仲景'
+            }
+          ]
+
+        <DemoAdminTable data={data} />
+
+    ResourceBalance: React.createClass
+      render: ->
+        data = 
+          fields: 
+            name: '库存项目'
+            count: '在库数量'
+            operation: '最近操作'
+          no_edit: true
+          manage: {
+            operation: ['list', '明细']
+          }
+          sample: [
+            {
+              name: '板蓝根'
+              count: '200 kg'
+              operation: '2015-12-18 17:30, 出库, 孙思邈'
+            }
+            {
+              name: '医用酒精'
+              count: '100 kg'
+              operation: '2015-12-18 17:30, 出库, 孙思邈'
+            }
+            {
+              name: '棉签'
+              count: '200 kg'
+              operation: '2015-12-18 17:30, 出库, 孙思邈'
+            }
+            {
+              name: '玻璃火罐'
+              count: '1000 个'
+              operation: '2015-12-18 17:30, 出库, 孙思邈'
             }
           ]
 

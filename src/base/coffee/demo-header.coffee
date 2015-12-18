@@ -52,7 +52,10 @@
           title: '患者信息管理'
           desc: '查看与管理患者档案，病历，以及诊疗回访信息'
           secondary_items: [
-            '患者名单', '档案病历', '诊疗回访'
+            '患者名单', '诊疗记录'
+          ],
+          links: [
+            'patient'
           ]
 
         <DemoAdminHeader data={data} />
@@ -74,24 +77,27 @@
       render: ->
         data =
           title: '收费项目管理'
-          desc: '设置收费项目， VIP 等级，以及进行会员充值'
+          desc: '设置收费项目， VIP 等级'
           secondary_items: [
-            '收费项管理', 'VIP 等级设置', '会员充值'
+            '收费项目定义', 'VIP 等级定义'
+          ]
+          links: [
+            'charge', 'charge-vip'
           ]
 
         <DemoAdminHeader data={data} />
 
-    Plan: React.createClass
-      displayName: 'DemoAdminHeader.Plan'
-      render: ->
-        data =
-          title: '诊疗方案管理'
-          desc: '设置各阶段诊疗方案录入项构成'
-          secondary_items: [
-            '方案定义', '录入项定义', '诊断模板管理'
-          ]
+    # Plan: React.createClass
+    #   displayName: 'DemoAdminHeader.Plan'
+    #   render: ->
+    #     data =
+    #       title: '诊疗方案管理'
+    #       desc: '设置各阶段诊疗方案录入项构成'
+    #       secondary_items: [
+    #         '方案定义', '录入项定义', '诊断模板管理'
+    #       ]
 
-        <DemoAdminHeader data={data} />
+    #     <DemoAdminHeader data={data} />
 
     Resource: React.createClass
       displayName: 'DemoAdminHeader.Resource'
@@ -100,7 +106,10 @@
           title: '药品耗材管理'
           desc: '管理药品耗材的库存信息'
           secondary_items: [
-            '分类管理', '信息维护', '入库管理', '出库管理', '在库盘点'
+            '库存项目定义', '入库管理', '出库管理', '在库盘点'
+          ]
+          links: [
+            'resource', 'resource-in', 'resource-out', 'resource-balance'
           ]
 
         <DemoAdminHeader data={data} />
@@ -109,13 +118,13 @@
       displayName: 'DemoAdminHeader.System'
       render: ->
         data =
-          title: '系统基础设置'
-          desc: '设置系统其它功能用到的基础数据'
+          title: '基础数据定义'
+          desc: '定义系统其它功能用到的基础数据'
           secondary_items: [
-            '人员岗位定义', '诊疗项目定义'
+            '人员岗位定义', '诊疗项目定义', '录入项定义'
           ],
           links: [
-            'system', 'system-project'
+            'system', 'system-project', 'system-input-item'
           ]
 
         <DemoAdminHeader data={data} />
