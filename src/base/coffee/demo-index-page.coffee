@@ -27,6 +27,7 @@
             name: '诊断'
             desc: '综合规范化诊断记录系统'
             key: 'zhenduan'
+            href: 'diagnosis.html'
           }
           {
             name: '业务'

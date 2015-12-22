@@ -17,6 +17,7 @@ $site-title-image-url: 'http://i.teamkn.com/i/TUBBczNz.png';
 $yunwen-url: 'http://i.teamkn.com/i/WEwYNX6i.png';
 $yunwen-border-hor: 'http://i.teamkn.com/i/GLOu27NH.png';
 $yunwen-border-hor-brown: 'http://i.teamkn.com/i/cIb9z3S9.png';
+$yunwen-border-ver-brown: 'http://i.teamkn.com/i/f5U8oIpG.png';
 
 $old-paper-color: #FBF5E6;
 $brown-color: #A5673F;
@@ -27,6 +28,10 @@ body {
 
 body.common {
   // background-color: #FBF5E6;
+}
+
+body.diagnosis {
+  background-color: #f0f0f0;
 }
 
 body.admin {
@@ -191,5 +196,43 @@ body.admin {
     }
 
     .description {display: none;}
+  }
+}
+
+.diagnosis-page {
+  position: absolute;
+  $pd: 0;
+  top:$pd;left:$pd;right:$pd;bottom:$pd;
+  background-color: $old-paper-color;
+
+  $sidebar-w: 200px;
+  $bdw: 14px;
+
+  .page-paper {
+    position: absolute;
+    top:0;left:0;bottom:0;
+    right:$sidebar-w + $bdw;
+    overflow:hidden;
+    img {
+      pointer-events: none;
+      position: absolute;
+      top:0;left:0;right:0;bottom:0;
+      margin:auto;
+    }
+  }
+
+  .page-sidebar {
+    position: absolute;
+    top:0;right:0;bottom:0;
+    width:200px + $bdw;
+    background-color: darken($old-paper-color, 5%);
+    &:before {
+      content:"";
+      position: absolute;
+      left:0;top:0;bottom:0;width:$bdw;
+      background-image: url($yunwen-border-ver-brown);
+      background-repeat: repeat-y;
+      opacity: 0.1;
+    }
   }
 }

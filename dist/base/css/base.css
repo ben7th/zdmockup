@@ -15,6 +15,9 @@ body, .ui.header, .ui.menu, .ui.button,
 body {
   background-color: #fdfdfd; }
 
+body.diagnosis {
+  background-color: #f0f0f0; }
+
 body.admin .page-content {
   margin-left: 88px; }
 body.admin .page-sidebar .ui.icon.menu .item.quit {
@@ -136,3 +139,43 @@ body.admin .ui.segment.demo-admin-table {
       background-image: url(http://i.teamkn.com/i/XnGX76wL.png); }
   .demo-index-page .ui.cards .card .description {
     display: none; }
+
+.diagnosis-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FBF5E6; }
+  .diagnosis-page .page-paper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 214px;
+    overflow: hidden; }
+    .diagnosis-page .page-paper img {
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; }
+  .diagnosis-page .page-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 214px;
+    background-color: #f7ecd0; }
+    .diagnosis-page .page-sidebar:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 14px;
+      background-image: url("http://i.teamkn.com/i/f5U8oIpG.png");
+      background-repeat: repeat-y;
+      opacity: 0.1; }

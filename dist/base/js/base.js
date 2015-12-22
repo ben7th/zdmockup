@@ -168,7 +168,8 @@
             {
               name: '诊断',
               desc: '综合规范化诊断记录系统',
-              key: 'zhenduan'
+              key: 'zhenduan',
+              href: 'diagnosis.html'
             }, {
               name: '业务',
               desc: '预约，体检，诊疗业务操作演示',
@@ -1131,6 +1132,70 @@
           };
           return React.createElement(DemoAdminTable, {
             "data": data
+          });
+        }
+      })
+    }
+  });
+
+}).call(this);
+
+(function() {
+  this.DiagnosisPage = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'diagnosis-page'
+      }, React.createElement(DiagnosisPage.Paper, null), React.createElement(DiagnosisPage.Sidebar, null));
+    },
+    statics: {
+      Paper: React.createClass({
+        getInitialState: function() {
+          return {
+            scale: 1
+          };
+        },
+        render: function() {
+          return React.createElement("div", {
+            "className": 'page-paper',
+            "onWheel": this.scale
+          }, React.createElement(DiagnosisPage.SVG, {
+            "name": 'test',
+            "scale": this.state.scale
+          }));
+        },
+        scale: function(evt) {
+          var i, scale;
+          scale = this.state.scale;
+          i = 1.1;
+          if (evt.deltaY > 0) {
+            this.setState({
+              scale: scale / i
+            });
+          }
+          if (evt.deltaY < 0) {
+            return this.setState({
+              scale: scale * i
+            });
+          }
+        }
+      }),
+      Sidebar: React.createClass({
+        render: function() {
+          return React.createElement("div", {
+            "className": 'page-sidebar'
+          });
+        }
+      }),
+      SVG: React.createClass({
+        render: function() {
+          var src;
+          src = "../svg/" + this.props.name + ".svg";
+          return React.createElement("img", {
+            "src": src,
+            "height": '600px',
+            "style": {
+              'transform': "scale(" + this.props.scale + ")"
+            }
           });
         }
       })
