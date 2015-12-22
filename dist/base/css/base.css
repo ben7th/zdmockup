@@ -3,6 +3,17 @@ body, .ui.header, .ui.menu, .ui.button,
 .ui.cards > .card > .content > .header,
 .ui.card > .content > .header {
   font-family: '微软雅黑', Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif; }
+  body.lishu, .ui.header.lishu, .ui.menu.lishu, .ui.button.lishu,
+  .ui.cards > .card > .content > .header.lishu,
+  .ui.card > .content > .header.lishu {
+    font-family: '隶书'; }
+  body.kaiti, .ui.header.kaiti, .ui.menu.kaiti, .ui.button.kaiti,
+  .ui.cards > .card > .content > .header.kaiti,
+  .ui.card > .content > .header.kaiti {
+    font-family: '楷体'; }
+
+body {
+  background-color: #fdfdfd; }
 
 body.admin .page-content {
   margin-left: 88px; }
@@ -56,3 +67,72 @@ body.admin .ui.segment.demo-admin-table {
 .demo-placeholder {
   font-size: 16px;
   font-weight: bold; }
+
+.demo-index-page .page-title {
+  border-bottom: 0 none !important;
+  padding-top: 1.5em !important;
+  padding-bottom: 0 !important; }
+  .demo-index-page .page-title:after {
+    content: '';
+    height: 14px;
+    display: block;
+    margin-top: 1.5em;
+    background-image: url("http://i.teamkn.com/i/GLOu27NH.png");
+    background-repeat: repeat-x;
+    opacity: 0.15; }
+.demo-index-page h1.ui.header {
+  background-image: url("http://i.teamkn.com/i/TUBBczNz.png");
+  background-size: cover;
+  height: 40px;
+  width: 250px;
+  opacity: 0.8; }
+  .demo-index-page h1.ui.header span {
+    display: none; }
+.demo-index-page .ui.cards .card {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  width: auto;
+  padding: 0;
+  background-color: #f1f1f1;
+  transition: all ease .3s; }
+  .demo-index-page .ui.cards .card:hover {
+    background-color: #FBF5E6;
+    box-shadow: none !important; }
+  .demo-index-page .ui.cards .card .content {
+    padding: 0;
+    height: 210px;
+    width: 210px; }
+  .demo-index-page .ui.cards .card .yunwen {
+    background-image: url("http://i.teamkn.com/i/WEwYNX6i.png");
+    background-size: cover;
+    width: 135px;
+    height: 135px;
+    opacity: 0.10;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: auto; }
+  .demo-index-page .ui.cards .card .header {
+    width: 90px;
+    height: 180px;
+    opacity: 0.7;
+    background-size: cover;
+    float: right;
+    margin-top: 0 !important;
+    position: absolute;
+    top: 15px;
+    left: 45px;
+    right: 0;
+    margin: auto; }
+    .demo-index-page .ui.cards .card .header span {
+      display: none; }
+    .demo-index-page .ui.cards .card .header.zhenduan {
+      background-image: url(http://i.teamkn.com/i/xA4FmuvZ.png); }
+    .demo-index-page .ui.cards .card .header.yewu {
+      background-image: url(http://i.teamkn.com/i/uGWRXrKg.png); }
+    .demo-index-page .ui.cards .card .header.guanli {
+      background-image: url(http://i.teamkn.com/i/XnGX76wL.png); }
+  .demo-index-page .ui.cards .card .description {
+    display: none; }

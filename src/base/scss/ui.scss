@@ -3,6 +3,30 @@ body, .ui.header, .ui.menu, .ui.button,
 .ui.card>.content>.header
 {
   font-family: '微软雅黑', Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  &.lishu {
+    font-family: '隶书';
+  }
+  &.kaiti {
+    font-family: '楷体';
+  }
+}
+
+$body-bg-color: #fdfdfd;
+
+$site-title-image-url: 'http://i.teamkn.com/i/TUBBczNz.png';
+$yunwen-url: 'http://i.teamkn.com/i/WEwYNX6i.png';
+$yunwen-border-hor: 'http://i.teamkn.com/i/GLOu27NH.png';
+$yunwen-border-hor-brown: 'http://i.teamkn.com/i/cIb9z3S9.png';
+
+$old-paper-color: #FBF5E6;
+$brown-color: #A5673F;
+
+body {
+  background-color: $body-bg-color;
+}
+
+body.common {
+  // background-color: #FBF5E6;
 }
 
 body.admin {
@@ -86,4 +110,86 @@ body.admin {
 .demo-placeholder {
   font-size: 16px;
   font-weight: bold;
+}
+
+.demo-index-page {
+  .page-title {
+    // background-color: $old-paper-color !important;
+    border-bottom: 0 none !important;
+    padding-top: 1.5em !important;
+    padding-bottom: 0 !important;
+    &:after {
+      content: '';
+      height: 14px;
+      display: block;
+      margin-top: 1.5em;
+      // background-image: url($yunwen-border-hor-brown);
+      background-image: url($yunwen-border-hor);
+      background-repeat: repeat-x;
+      opacity: 0.15;
+    }
+  }
+
+  h1.ui.header {
+    span{display:none;}
+    background-image: url($site-title-image-url);
+    background-size: cover;
+    $scale: 0.5;
+    height: 80px * $scale;
+    width: 500px * $scale;
+    opacity: 0.8;
+  }
+
+  .ui.cards .card {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    width: auto;
+    $size: 90px;
+    padding: 0;
+    background-color: grayscale($old-paper-color);
+    transition: all ease .3s;
+    &:hover {
+      background-color: $old-paper-color;
+      box-shadow: none !important;
+    }
+
+    .content {
+      padding: 0;
+      height: $size * 2 + 30px;
+      width: $size * 2 + 30px;
+    }
+
+    .yunwen {
+      background-image: url($yunwen-url);
+      background-size: cover;
+      $scale: 1.5;
+      width: $size * $scale;
+      height: $size * $scale;
+      opacity: 0.10;
+      position: absolute;
+      top: 20px;
+      left:0;right:0;
+      margin: auto;
+    }
+    .header {
+      $scale: 1;
+      width: $size * $scale;
+      height: $size * 2 * $scale;
+      span {display:none;}
+      opacity: 0.7;
+      background-size: cover;
+      float: right;
+      margin-top: 0 !important;
+      position: absolute;
+      top:15px;left:45px;right:0;
+      margin:auto;
+
+      &.zhenduan { background-image: url(http://i.teamkn.com/i/xA4FmuvZ.png); }
+      &.yewu { background-image: url(http://i.teamkn.com/i/uGWRXrKg.png); }
+      &.guanli { background-image: url(http://i.teamkn.com/i/XnGX76wL.png); }
+    }
+
+    .description {display: none;}
+  }
 }

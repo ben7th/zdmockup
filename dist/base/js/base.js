@@ -142,41 +142,70 @@
   this.DemoIndexPage = React.createClass({
     render: function() {
       return React.createElement("div", {
+        "className": 'demo-index-page'
+      }, React.createElement("div", {
+        "className": 'ui vertical segment page-title'
+      }, React.createElement("div", {
         "className": 'ui container'
+      }, React.createElement(DemoIndexPage.Header, null))), React.createElement("div", {
+        "className": 'ui vertical segment'
       }, React.createElement("div", {
-        "className": 'ui basic segment'
-      }, React.createElement("h1", {
-        "className": 'ui header'
-      }, React.createElement("span", null, "正道中医系统演示"))), React.createElement("div", {
-        "className": 'ui basic segment'
-      }, React.createElement("div", {
-        "className": "ui cards"
-      }, React.createElement("div", {
-        "className": "blue card"
-      }, React.createElement("div", {
-        "className": "content"
-      }, React.createElement("div", {
-        "className": "header"
-      }, "后台管理"), React.createElement("div", {
-        "className": "description"
-      }, "后台管理，维护，信息查看等功能")), React.createElement("div", {
-        "className": "extra content"
-      }, React.createElement("a", {
-        "className": "ui blue fluid button",
-        "href": 'clinic.html'
-      }, "打开 DEMO"))), React.createElement("div", {
-        "className": "orange card"
-      }, React.createElement("div", {
-        "className": "content"
-      }, React.createElement("div", {
-        "className": "header"
-      }, "前台流程"), React.createElement("div", {
-        "className": "description"
-      }, "预约，体检，诊疗业务操作演示")), React.createElement("div", {
-        "className": "extra content"
-      }, React.createElement("div", {
-        "className": "ui orange fluid button disabled"
-      }, "打开 DEMO"))))));
+        "className": 'ui container'
+      }, React.createElement(DemoIndexPage.Cards, null))));
+    },
+    statics: {
+      Header: React.createClass({
+        render: function() {
+          return React.createElement("h1", {
+            "className": 'ui header lishu'
+          }, React.createElement("span", null, "正道中医系统演示"));
+        }
+      }),
+      Cards: React.createClass({
+        render: function() {
+          var data, href, idx, item;
+          data = [
+            {
+              name: '诊断',
+              desc: '综合规范化诊断记录系统',
+              key: 'zhenduan'
+            }, {
+              name: '业务',
+              desc: '预约，体检，诊疗业务操作演示',
+              key: 'yewu'
+            }, {
+              name: '管理',
+              desc: '后台管理，维护，信息查看等功能',
+              href: 'clinic.html',
+              key: 'guanli'
+            }
+          ];
+          return React.createElement("div", {
+            "className": "ui cards"
+          }, (function() {
+            var i, len, results;
+            results = [];
+            for (idx = i = 0, len = data.length; i < len; idx = ++i) {
+              item = data[idx];
+              href = item.href || 'javascript:;';
+              results.push(React.createElement("a", {
+                "key": idx,
+                "className": "card",
+                "href": href
+              }, React.createElement("div", {
+                "className": "content"
+              }, React.createElement("div", {
+                "className": 'yunwen'
+              }), React.createElement("div", {
+                "className": "header lishu " + item.key
+              }, React.createElement("span", null, item.name)), React.createElement("div", {
+                "className": "description"
+              }, item.desc))));
+            }
+            return results;
+          })());
+        }
+      })
     }
   });
 

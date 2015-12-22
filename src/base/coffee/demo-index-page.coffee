@@ -1,37 +1,57 @@
 @DemoIndexPage = React.createClass
   render: ->
-    <div className='ui container'>
-      <div className='ui basic segment'>
-        <h1 className='ui header'>
-          <span>正道中医系统演示</span>
-        </h1>
+    <div className='demo-index-page'>
+      <div className='ui vertical segment page-title'>
+        <div className='ui container'>
+          <DemoIndexPage.Header />
+        </div>
       </div>
-      <div className='ui basic segment'>
-        <div className="ui cards">
-          <div className="blue card">
-            <div className="content">
-              <div className="header">后台管理</div>
-              <div className="description">
-                后台管理，维护，信息查看等功能
-              </div>
-            </div>
-            <div className="extra content">
-              <a className="ui blue fluid button" href='clinic.html'>打开 DEMO</a>
-            </div>
-          </div>
-          <div className="orange card">
-            <div className="content">
-              <div className="header">
-                前台流程
-              </div>
-              <div className="description">
-                预约，体检，诊疗业务操作演示
-              </div>
-            </div>
-            <div className="extra content">
-              <div className="ui orange fluid button disabled">打开 DEMO</div>
-            </div>
-          </div>
+      <div className='ui vertical segment'>
+        <div className='ui container'>
+          <DemoIndexPage.Cards />
         </div>
       </div>
     </div>
+
+  statics:
+    Header: React.createClass
+      render: ->
+        <h1 className='ui header lishu'>
+          <span>正道中医系统演示</span>
+        </h1>
+
+    Cards: React.createClass
+      render: ->
+        data = [
+          {
+            name: '诊断'
+            desc: '综合规范化诊断记录系统'
+            key: 'zhenduan'
+          }
+          {
+            name: '业务'
+            desc: '预约，体检，诊疗业务操作演示'
+            key: 'yewu'
+          }
+          {
+            name: '管理'
+            desc: '后台管理，维护，信息查看等功能'
+            href: 'clinic.html'
+            key: 'guanli'
+          }
+        ]
+
+        <div className="ui cards">
+        {
+          for item, idx in data
+            href = item.href || 'javascript:;'
+
+            <a key={idx} className="card" href={href}>
+              <div className="content">
+                <div className='yunwen' />
+                <div className="header lishu #{item.key}"><span>{item.name}</span></div>
+                <div className="description">{item.desc}</div>
+              </div>
+            </a>
+        }
+        </div>
