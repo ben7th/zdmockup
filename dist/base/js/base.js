@@ -1151,16 +1151,24 @@
       Paper: React.createClass({
         getInitialState: function() {
           return {
-            scale: 1
+            scale: 1,
+            x: 0,
+            y: 0
           };
         },
         render: function() {
           return React.createElement("div", {
             "className": 'page-paper',
-            "onWheel": this.scale
+            "onWheel": this.scale,
+            "draggable": true,
+            "onDragStart": this.drag_start,
+            "onMouseMove": this.drag_move,
+            "onMouseUp": this.drag_end
           }, React.createElement(DiagnosisPage.SVG, {
             "name": 'test',
-            "scale": this.state.scale
+            "scale": this.state.scale,
+            "x": this.state.x,
+            "y": this.state.y
           }));
         },
         scale: function(evt) {
@@ -1177,6 +1185,28 @@
               scale: scale * i
             });
           }
+        },
+        drag_start: function(evt) {
+          this.origin_x = this.state.x;
+          this.origin_y = this.state.y;
+          this.drag_start_x = evt.pageX;
+          this.drag_start_y = evt.pageY;
+          this.on_drag = true;
+          return evt.preventDefault();
+        },
+        drag_move: function(evt) {
+          var delta_x, delta_y;
+          if (this.on_drag) {
+            delta_x = evt.pageX - this.drag_start_x;
+            delta_y = evt.pageY - this.drag_start_y;
+            return this.setState({
+              x: this.origin_x + delta_x,
+              y: this.origin_y + delta_y
+            });
+          }
+        },
+        drag_end: function(evt) {
+          return this.on_drag = false;
         }
       }),
       Sidebar: React.createClass({
@@ -1190,13 +1220,18 @@
         render: function() {
           var src;
           src = "../svg/" + this.props.name + ".svg";
-          return React.createElement("img", {
+          return React.createElement("div", {
+            "className": 'img-container',
+            "style": {
+              'transform': "translate(" + this.props.x + "px, " + this.props.y + "px)"
+            }
+          }, React.createElement("img", {
             "src": src,
             "height": '600px',
             "style": {
               'transform': "scale(" + this.props.scale + ")"
             }
-          });
+          }));
         }
       })
     }
