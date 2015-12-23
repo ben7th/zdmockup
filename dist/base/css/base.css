@@ -175,8 +175,7 @@ body.admin .ui.segment.demo-admin-table {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 214px;
-    background-color: #f7ecd0; }
+    width: 214px; }
     .diagnosis-page .page-sidebar:before {
       content: "";
       position: absolute;

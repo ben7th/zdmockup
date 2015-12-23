@@ -46,8 +46,8 @@
           # console.log delta_x, delta_y
 
           @setState
-            x: @origin_x + delta_x
-            y: @origin_y + delta_y
+            x: @origin_x + delta_x / @state.scale
+            y: @origin_y + delta_y / @state.scale
 
       drag_end: (evt)->
         @on_drag = false #if @on_drag
@@ -61,6 +61,11 @@
     SVG: React.createClass
       render: ->
         src = "../svg/#{@props.name}.svg"
-        <div className='img-container' style={'transform': "translate(#{@props.x}px, #{@props.y}px)"}>
-          <img src={src} height='600px' style={'transform': "scale(#{@props.scale})"}/>
+        container_style =
+          'transform': "translate(#{@props.x * @props.scale}px, #{@props.y * @props.scale}px)"
+        svg_style =
+          'transform': "scale(#{@props.scale})"
+
+        <div className='img-container' style={container_style}>
+          <img src={src} height='600px' style={svg_style}/>
         </div>

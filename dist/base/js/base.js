@@ -1200,8 +1200,8 @@
             delta_x = evt.pageX - this.drag_start_x;
             delta_y = evt.pageY - this.drag_start_y;
             return this.setState({
-              x: this.origin_x + delta_x,
-              y: this.origin_y + delta_y
+              x: this.origin_x + delta_x / this.state.scale,
+              y: this.origin_y + delta_y / this.state.scale
             });
           }
         },
@@ -1218,19 +1218,21 @@
       }),
       SVG: React.createClass({
         render: function() {
-          var src;
+          var container_style, src, svg_style;
           src = "../svg/" + this.props.name + ".svg";
+          container_style = {
+            'transform': "translate(" + (this.props.x * this.props.scale) + "px, " + (this.props.y * this.props.scale) + "px)"
+          };
+          svg_style = {
+            'transform': "scale(" + this.props.scale + ")"
+          };
           return React.createElement("div", {
             "className": 'img-container',
-            "style": {
-              'transform': "translate(" + this.props.x + "px, " + this.props.y + "px)"
-            }
+            "style": container_style
           }, React.createElement("img", {
             "src": src,
             "height": '600px',
-            "style": {
-              'transform': "scale(" + this.props.scale + ")"
-            }
+            "style": svg_style
           }));
         }
       })

@@ -227,6 +227,8 @@ body.admin {
       position: absolute;
       top:0;left:0;right:0;bottom:0;
       margin:auto;
+      // background-color: rgba(white, 1);
+      // box-shadow: 0px 1px 3px rgba(black, 0.2);
     }
   }
 
@@ -234,7 +236,7 @@ body.admin {
     position: absolute;
     top:0;right:0;bottom:0;
     width:200px + $bdw;
-    background-color: darken($old-paper-color, 5%);
+    // background-color: darken($old-paper-color, 5%);
     &:before {
       content:"";
       position: absolute;
