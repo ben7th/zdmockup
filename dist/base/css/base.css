@@ -162,6 +162,12 @@ body.admin .ui.segment.demo-admin-table {
       left: 0;
       right: 0;
       bottom: 0; }
+      .diagnosis-page .page-paper .img-container .point {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 100px;
+        background-color: rgba(0, 0, 0, 0.6); }
     .diagnosis-page .page-paper img {
       pointer-events: none;
       position: absolute;
@@ -169,7 +175,9 @@ body.admin .ui.segment.demo-admin-table {
       left: 0;
       right: 0;
       bottom: 0;
-      margin: auto; }
+      margin: auto;
+      background-color: white;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); }
   .diagnosis-page .page-sidebar {
     position: absolute;
     top: 0;

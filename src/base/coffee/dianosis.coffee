@@ -11,10 +11,13 @@
         scale: 1
         x: 0
         y: 0
+        points: [
+          {x:100, y:100}
+        ]
 
       render: ->
         <div className='page-paper' onWheel={@scale} draggable onDragStart={@drag_start} onMouseMove={@drag_move} onMouseUp={@drag_end}>
-          <DiagnosisPage.SVG name='test' scale={@state.scale} x={@state.x} y={@state.y}/>
+          <DiagnosisPage.SVG name='test' scale={@state.scale} x={@state.x} y={@state.y} points={@state.points}/>
         </div>
 
       scale: (evt)->
@@ -68,4 +71,11 @@
 
         <div className='img-container' style={container_style}>
           <img src={src} height='600px' style={svg_style}/>
+          {
+            for point, idx in @props.points
+              style =
+                left: point.x / @props.scale
+                top: point.y / @props.scale
+              <div key={idx} className='point' style={style}></div>
+          }
         </div>

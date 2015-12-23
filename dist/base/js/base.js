@@ -1153,7 +1153,13 @@
           return {
             scale: 1,
             x: 0,
-            y: 0
+            y: 0,
+            points: [
+              {
+                x: 100,
+                y: 100
+              }
+            ]
           };
         },
         render: function() {
@@ -1168,7 +1174,8 @@
             "name": 'test',
             "scale": this.state.scale,
             "x": this.state.x,
-            "y": this.state.y
+            "y": this.state.y,
+            "points": this.state.points
           }));
         },
         scale: function(evt) {
@@ -1218,7 +1225,7 @@
       }),
       SVG: React.createClass({
         render: function() {
-          var container_style, src, svg_style;
+          var container_style, idx, point, src, style, svg_style;
           src = "../svg/" + this.props.name + ".svg";
           container_style = {
             'transform': "translate(" + (this.props.x * this.props.scale) + "px, " + (this.props.y * this.props.scale) + "px)"
@@ -1233,7 +1240,24 @@
             "src": src,
             "height": '600px',
             "style": svg_style
-          }));
+          }), (function() {
+            var j, len, ref, results;
+            ref = this.props.points;
+            results = [];
+            for (idx = j = 0, len = ref.length; j < len; idx = ++j) {
+              point = ref[idx];
+              style = {
+                left: point.x / this.props.scale,
+                top: point.y / this.props.scale
+              };
+              results.push(React.createElement("div", {
+                "key": idx,
+                "className": 'point',
+                "style": style
+              }));
+            }
+            return results;
+          }).call(this));
         }
       })
     }
