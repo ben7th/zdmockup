@@ -54,12 +54,6 @@
 
       drag_end: (evt)->
         @on_drag = false #if @on_drag
-          
-
-
-    Sidebar: React.createClass
-      render: ->
-        <div className='page-sidebar'></div>
 
     SVG: React.createClass
       render: ->
@@ -68,14 +62,29 @@
           'transform': "translate(#{@props.x * @props.scale}px, #{@props.y * @props.scale}px)"
         svg_style =
           'transform': "scale(#{@props.scale})"
+          'transformOrigin': "0 0"
 
         <div className='img-container' style={container_style}>
           <img src={src} height='600px' style={svg_style}/>
           {
             for point, idx in @props.points
               style =
-                left: point.x / @props.scale
-                top: point.y / @props.scale
+                left: point.x * @props.scale
+                top: point.y * @props.scale
               <div key={idx} className='point' style={style}></div>
           }
+        </div>
+
+    Sidebar: React.createClass
+      render: ->
+        <div className='page-sidebar'>
+          <DiagnosisPage.Logo />
+        </div>
+
+    Logo: React.createClass
+      render: ->
+        <div className='title-logo'>
+          <div className='yw' />
+          <div className='img' />
+          <div className='yz' />
         </div>

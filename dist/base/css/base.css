@@ -113,7 +113,8 @@ body.admin .ui.segment.demo-admin-table {
     height: 135px;
     opacity: 0.10;
     position: absolute;
-    top: 20px;
+    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     margin: auto; }
@@ -126,7 +127,7 @@ body.admin .ui.segment.demo-admin-table {
     margin-top: 0 !important;
     position: absolute;
     top: 15px;
-    left: 45px;
+    left: 0;
     right: 0;
     margin: auto; }
     .demo-index-page .ui.cards .card .header span {
@@ -157,33 +158,24 @@ body.admin .ui.segment.demo-admin-table {
     cursor: pointer !important; }
     .diagnosis-page .page-paper .img-container {
       pointer-events: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0; }
+      position: absolute; }
       .diagnosis-page .page-paper .img-container .point {
         position: absolute;
         width: 10px;
         height: 10px;
         border-radius: 100px;
         background-color: rgba(0, 0, 0, 0.6); }
-    .diagnosis-page .page-paper img {
-      pointer-events: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      background-color: white;
-      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); }
+      .diagnosis-page .page-paper .img-container img {
+        pointer-events: none;
+        background-color: white;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); }
   .diagnosis-page .page-sidebar {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    width: 214px; }
+    width: 214px;
+    padding-left: 14px; }
     .diagnosis-page .page-sidebar:before {
       content: "";
       position: absolute;
@@ -193,4 +185,35 @@ body.admin .ui.segment.demo-admin-table {
       width: 14px;
       background-image: url("http://i.teamkn.com/i/f5U8oIpG.png");
       background-repeat: repeat-y;
-      opacity: 0.1; }
+      opacity: 0.3; }
+    .diagnosis-page .page-sidebar .title-logo {
+      width: 200px;
+      height: 200px;
+      position: relative; }
+      .diagnosis-page .page-sidebar .title-logo .yw {
+        background-image: url("http://i.teamkn.com/i/e4OwTrQc.png");
+        background-size: cover;
+        width: 180px;
+        height: 72px;
+        position: absolute;
+        right: 10px;
+        top: 40px;
+        opacity: 0.2; }
+      .diagnosis-page .page-sidebar .title-logo .img {
+        width: 70px;
+        height: 140px;
+        background-image: url(http://i.teamkn.com/i/r9UurnsF.png);
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 46px;
+        opacity: 0.9; }
+      .diagnosis-page .page-sidebar .title-logo .yz {
+        width: 25px;
+        height: 100px;
+        background-image: url("http://i.teamkn.com/i/y3sAFlhE.png");
+        background-size: cover;
+        opacity: 0.8;
+        position: absolute;
+        top: 30px;
+        right: 126px; }

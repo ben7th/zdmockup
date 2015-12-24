@@ -18,9 +18,14 @@ $yunwen-url: 'http://i.teamkn.com/i/WEwYNX6i.png';
 $yunwen-border-hor: 'http://i.teamkn.com/i/GLOu27NH.png';
 $yunwen-border-hor-brown: 'http://i.teamkn.com/i/cIb9z3S9.png';
 $yunwen-border-ver-brown: 'http://i.teamkn.com/i/f5U8oIpG.png';
+$yunwen2: 'http://i.teamkn.com/i/gSdBsiSv.png';
+$yunwen2-1: 'http://i.teamkn.com/i/e4OwTrQc.png';
 
 $old-paper-color: #FBF5E6;
 $brown-color: #A5673F;
+
+$zdzy-yz-0-url: 'http://i.teamkn.com/i/UFicC2DF.png';
+$zdzy-yz-1-url: 'http://i.teamkn.com/i/y3sAFlhE.png';
 
 body {
   background-color: $body-bg-color;
@@ -173,7 +178,7 @@ body.admin {
       height: $size * $scale;
       opacity: 0.10;
       position: absolute;
-      top: 20px;
+      top:0;bottom:0;
       left:0;right:0;
       margin: auto;
     }
@@ -187,7 +192,7 @@ body.admin {
       float: right;
       margin-top: 0 !important;
       position: absolute;
-      top:15px;left:45px;right:0;
+      top:15px;left:0;right:0;
       margin:auto;
 
       &.zhenduan { background-image: url(http://i.teamkn.com/i/xA4FmuvZ.png); }
@@ -218,7 +223,7 @@ body.admin {
     .img-container {
       pointer-events: none;
       position: absolute;
-      top:0;left:0;right:0;bottom:0;
+      // top:0;left:0;right:0;bottom:0;
       // background-color: rgba(black, 0.1);
 
       .point {
@@ -227,15 +232,15 @@ body.admin {
         border-radius:100px;
         background-color:rgba(black, 0.6);
       }
-    }
 
-    img {
-      pointer-events: none;
-      position: absolute;
-      top:0;left:0;right:0;bottom:0;
-      margin:auto;
-      background-color: rgba(white, 1);
-      box-shadow: 0px 1px 3px rgba(black, 0.2);
+      img {
+        pointer-events: none;
+        // position: absolute;
+        // top:0;left:0;right:0;bottom:0;
+        // margin:auto;
+        background-color: rgba(white, 1);
+        box-shadow: 0px 1px 3px rgba(black, 0.2);
+      }
     }
   }
 
@@ -244,13 +249,58 @@ body.admin {
     top:0;right:0;bottom:0;
     width:200px + $bdw;
     // background-color: darken($old-paper-color, 5%);
+    padding-left: $bdw;
     &:before {
       content:"";
       position: absolute;
       left:0;top:0;bottom:0;width:$bdw;
       background-image: url($yunwen-border-ver-brown);
       background-repeat: repeat-y;
-      opacity: 0.1;
+      opacity: 0.3;
+    }
+
+    .title-logo {
+      width:200px;height:200px;
+      // background-color: rgba(black, 0.1);
+      position: relative;
+
+      .yw {
+        $scale: 0.9;
+        background-image: url($yunwen2-1);
+        background-size: cover;
+        width: 200px * $scale;height:80px * $scale;
+        position: absolute;
+        right:10px;top:40px;
+        opacity: 0.2;
+      }
+
+      .img {
+        $scale: 0.7;
+        width:100px * $scale;height:200px * $scale;
+        background-image:url(http://i.teamkn.com/i/r9UurnsF.png);
+        background-size:cover;
+        position: absolute;
+        top:0px;right:10px + 36px;
+        opacity: 0.9;
+      }
+      // .yz {
+      //   $scale: 0.5;
+      //   width:80px * $scale;
+      //   height:120px * $scale;
+      //   background-image:url($zdzy-yz-0-url);
+      //   background-size:cover;
+      //   opacity: 0.5;
+      // }
+      .yz {
+        $scale: 0.5;
+        width:50px * $scale;
+        height:200px * $scale;
+        background-image:url($zdzy-yz-1-url);
+        background-size:cover;
+        opacity: 0.8;
+        position: absolute;
+        top:30px;right:90px + 36px;
+      }
     }
   }
 }

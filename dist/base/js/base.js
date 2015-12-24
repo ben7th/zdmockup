@@ -1216,13 +1216,6 @@
           return this.on_drag = false;
         }
       }),
-      Sidebar: React.createClass({
-        render: function() {
-          return React.createElement("div", {
-            "className": 'page-sidebar'
-          });
-        }
-      }),
       SVG: React.createClass({
         render: function() {
           var container_style, idx, point, src, style, svg_style;
@@ -1231,7 +1224,8 @@
             'transform': "translate(" + (this.props.x * this.props.scale) + "px, " + (this.props.y * this.props.scale) + "px)"
           };
           svg_style = {
-            'transform': "scale(" + this.props.scale + ")"
+            'transform': "scale(" + this.props.scale + ")",
+            'transformOrigin': "0 0"
           };
           return React.createElement("div", {
             "className": 'img-container',
@@ -1247,8 +1241,8 @@
             for (idx = j = 0, len = ref.length; j < len; idx = ++j) {
               point = ref[idx];
               style = {
-                left: point.x / this.props.scale,
-                top: point.y / this.props.scale
+                left: point.x * this.props.scale,
+                top: point.y * this.props.scale
               };
               results.push(React.createElement("div", {
                 "key": idx,
@@ -1258,6 +1252,26 @@
             }
             return results;
           }).call(this));
+        }
+      }),
+      Sidebar: React.createClass({
+        render: function() {
+          return React.createElement("div", {
+            "className": 'page-sidebar'
+          }, React.createElement(DiagnosisPage.Logo, null));
+        }
+      }),
+      Logo: React.createClass({
+        render: function() {
+          return React.createElement("div", {
+            "className": 'title-logo'
+          }, React.createElement("div", {
+            "className": 'yw'
+          }), React.createElement("div", {
+            "className": 'img'
+          }), React.createElement("div", {
+            "className": 'yz'
+          }));
         }
       })
     }
