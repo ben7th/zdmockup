@@ -204,6 +204,22 @@ body.admin {
   }
 }
 
+@keyframes pointflash {
+  0% {
+    opacity:1;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity:0;
+    transform: scale(1.0);
+  }
+
+  // 100% {
+  //   opacity:0;
+  //   transform: scale(1.5);
+  // }
+}
+
 .diagnosis-page {
   position: absolute;
   $pd: 0;
@@ -212,37 +228,6 @@ body.admin {
 
   $sidebar-w: 200px;
   $bdw: 14px;
-
-  .page-paper {
-    position: absolute;
-    top:0;left:0;bottom:0;
-    right:$sidebar-w + $bdw;
-    overflow:hidden;
-    cursor:pointer !important;
-
-    .img-container {
-      pointer-events: none;
-      position: absolute;
-      // top:0;left:0;right:0;bottom:0;
-      // background-color: rgba(black, 0.1);
-
-      .point {
-        position: absolute;
-        width:10px;height:10px;
-        border-radius:100px;
-        background-color:rgba(black, 0.6);
-      }
-
-      img {
-        pointer-events: none;
-        // position: absolute;
-        // top:0;left:0;right:0;bottom:0;
-        // margin:auto;
-        background-color: rgba(white, 1);
-        box-shadow: 0px 1px 3px rgba(black, 0.2);
-      }
-    }
-  }
 
   .page-sidebar {
     position: absolute;
@@ -260,7 +245,7 @@ body.admin {
     }
 
     .title-logo {
-      width:200px;height:200px;
+      width:200px;height:150px;
       // background-color: rgba(black, 0.1);
       position: relative;
 
@@ -300,6 +285,46 @@ body.admin {
         opacity: 0.8;
         position: absolute;
         top:30px;right:90px + 36px;
+      }
+    }
+  }
+
+  .page-paper {
+    position: absolute;
+    top:0;left:0;bottom:0;
+    right:$sidebar-w + $bdw;
+    overflow:hidden;
+    background-color: rgba(white, 0.4);
+
+    .svg-toucher {
+      position: absolute;
+      top:0;left:0;right:0;bottom:0;
+
+      .points-area {
+        background-color: rgba(white, 1);
+        position: absolute;
+        box-shadow:0 1px 3px rgba(black, 0.2);
+
+        .point {
+          $w: 20px;
+
+          position: absolute;
+          width: $w;
+          height: $w;
+          // background-color: rgba(darken(red, 10%), 0.5);
+          border:solid 3px rgba(black, 0.6);
+          border-radius: 100%;
+          margin-top: -$w/2;
+          margin-left: -$w/2;
+          // transition: left linear .1s, top linear .1s;
+          // left:0;top:0;
+          cursor:pointer;
+          animation: pointflash 1s infinite;
+        }
+
+        img {
+          // transition: width linear .1s, height linear .1s;
+        }
       }
     }
   }

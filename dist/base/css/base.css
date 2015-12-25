@@ -141,6 +141,13 @@ body.admin .ui.segment.demo-admin-table {
   .demo-index-page .ui.cards .card .description {
     display: none; }
 
+@keyframes pointflash {
+  0% {
+    opacity: 1;
+    transform: scale(0.3); }
+  100% {
+    opacity: 0;
+    transform: scale(1); } }
 .diagnosis-page {
   position: absolute;
   top: 0;
@@ -148,27 +155,6 @@ body.admin .ui.segment.demo-admin-table {
   right: 0;
   bottom: 0;
   background-color: #FBF5E6; }
-  .diagnosis-page .page-paper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 214px;
-    overflow: hidden;
-    cursor: pointer !important; }
-    .diagnosis-page .page-paper .img-container {
-      pointer-events: none;
-      position: absolute; }
-      .diagnosis-page .page-paper .img-container .point {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 100px;
-        background-color: rgba(0, 0, 0, 0.6); }
-      .diagnosis-page .page-paper .img-container img {
-        pointer-events: none;
-        background-color: white;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); }
   .diagnosis-page .page-sidebar {
     position: absolute;
     top: 0;
@@ -188,7 +174,7 @@ body.admin .ui.segment.demo-admin-table {
       opacity: 0.3; }
     .diagnosis-page .page-sidebar .title-logo {
       width: 200px;
-      height: 200px;
+      height: 150px;
       position: relative; }
       .diagnosis-page .page-sidebar .title-logo .yw {
         background-image: url("http://i.teamkn.com/i/e4OwTrQc.png");
@@ -217,3 +203,31 @@ body.admin .ui.segment.demo-admin-table {
         position: absolute;
         top: 30px;
         right: 126px; }
+  .diagnosis-page .page-paper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 214px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.4); }
+    .diagnosis-page .page-paper .svg-toucher {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0; }
+      .diagnosis-page .page-paper .svg-toucher .points-area {
+        background-color: white;
+        position: absolute;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
+        .diagnosis-page .page-paper .svg-toucher .points-area .point {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border: solid 3px rgba(0, 0, 0, 0.6);
+          border-radius: 100%;
+          margin-top: -10px;
+          margin-left: -10px;
+          cursor: pointer;
+          animation: pointflash 1s infinite; }

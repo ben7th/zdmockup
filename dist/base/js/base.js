@@ -1141,6 +1141,226 @@
 }).call(this);
 
 (function() {
+  var SVGToucher, ScaleDragPaper;
+
+  ScaleDragPaper = React.createClass({
+    getInitialState: function() {
+      return {
+        scale: 1.0,
+        x: 0,
+        y: 0
+      };
+    },
+    render: function() {
+      var position;
+      position = {
+        scale: this.state.scale,
+        x: this.state.x,
+        y: this.state.y
+      };
+      return React.createElement("div", {
+        "className": 'scale-drag-paper',
+        "ref": 'paper',
+        "draggable": true,
+        "onDragStart": this.drag_start,
+        "onMouseMove": this.drag_move,
+        "onMouseUp": this.drag_end,
+        "onWheel": this.do_scale
+      }, React.createElement(ScaleDragPaper.ScaleContainer, {
+        "ref": 'container',
+        "position": position
+      }, this.props.children));
+    },
+    componentDidMount: function() {},
+    statics: {
+      ScaleContainer: React.createClass({
+        render: function() {
+          var style;
+          style = {
+            "transform": "translate(" + this.props.position.x + "px, " + this.props.position.y + "px) scale(" + this.props.position.scale + ")"
+          };
+          return React.createElement("div", {
+            "className": 'paper-container',
+            "style": style
+          }, this.props.children);
+        }
+      })
+    }
+  });
+
+  SVGToucher = React.createClass({
+    displayName: 'SVGToucher',
+    render: function() {
+      return React.createElement("div", {
+        "className": 'svg-toucher',
+        "draggable": true,
+        "onDragStart": this.drag_start,
+        "onMouseMove": this.drag_move,
+        "onMouseUp": this.drag_end,
+        "onWheel": this.do_scale
+      }, React.createElement(SVGToucher.PointsArea, {
+        "ref": 'area',
+        "template": this.props.template,
+        "toucher": this
+      }));
+    },
+    drag_start: function(evt) {
+      evt.preventDefault();
+      this.origin_x = this.refs.area.state.x;
+      this.origin_y = this.refs.area.state.y;
+      this.mouse_start_x = evt.pageX;
+      this.mouse_start_y = evt.pageY;
+      return this.on_drag = true;
+    },
+    drag_move: function(evt) {
+      var delta_x, delta_y;
+      if (this.on_drag) {
+        delta_x = evt.pageX - this.mouse_start_x;
+        delta_y = evt.pageY - this.mouse_start_y;
+        return this.refs.area.setState({
+          x: this.origin_x + delta_x,
+          y: this.origin_y + delta_y
+        });
+      }
+    },
+    drag_end: function(evt) {
+      return this.on_drag = false;
+    },
+    do_scale: function(evt) {
+      var $toucher, cx, cy, offset, px, py;
+      $toucher = jQuery(ReactDOM.findDOMNode(this));
+      offset = $toucher.offset();
+      px = evt.pageX - offset.left;
+      py = evt.pageY - offset.top;
+      cx = (px - this.refs.area.state.x) / this.refs.area.state.scale;
+      cy = (py - this.refs.area.state.y) / this.refs.area.state.scale;
+      return this.refs.area.compute_scale(evt.deltaY, cx, cy);
+    },
+    statics: {
+      PointsArea: React.createClass({
+        getInitialState: function() {
+          return {
+            origin_width: 596,
+            origin_height: 842,
+            x: 0,
+            y: 0,
+            scale: 1.0
+          };
+        },
+        render: function() {
+          var height, idx, pdata, points, style, width;
+          width = this.state.origin_width * this.state.scale;
+          height = this.state.origin_height * this.state.scale;
+          style = {
+            'width': width + "px",
+            'height': height + "px",
+            'left': this.state.x + "px",
+            'top': this.state.y + "px"
+          };
+          points = [
+            {
+              x: 100,
+              y: 100
+            }, {
+              x: 200,
+              y: 200
+            }, {
+              x: 100,
+              y: 140
+            }
+          ];
+          return React.createElement("div", {
+            "className": 'points-area',
+            "style": style
+          }, React.createElement(SVGToucher.SVG, {
+            "name": this.props.template,
+            "width": this.state.origin_width,
+            "height": this.state.origin_height,
+            "scale": this.state.scale
+          }), (function() {
+            var j, len, results;
+            results = [];
+            for (idx = j = 0, len = points.length; j < len; idx = ++j) {
+              pdata = points[idx];
+              results.push(React.createElement(SVGToucher.Point, {
+                "key": idx,
+                "data": pdata,
+                "scale": this.state.scale
+              }));
+            }
+            return results;
+          }).call(this));
+        },
+        componentDidMount: function() {
+          return this.aim_to_center();
+        },
+        aim_to_center: function() {
+          var $toucher, th, tw;
+          $toucher = jQuery(ReactDOM.findDOMNode(this.props.toucher));
+          tw = $toucher.width();
+          th = $toucher.height();
+          return this.setState({
+            x: (tw - this.state.origin_width) / 2,
+            y: (th - this.state.origin_height) / 2
+          });
+        },
+        compute_scale: function(dir, center_x, center_y) {
+          var i, new_scale, old_scale;
+          i = 1.1;
+          if (dir > 0) {
+            old_scale = this.state.scale;
+            new_scale = this.state.scale / i;
+            this.setState({
+              scale: new_scale,
+              x: this.state.x - center_x * (new_scale - old_scale),
+              y: this.state.y - center_y * (new_scale - old_scale)
+            });
+          }
+          if (dir < 0) {
+            old_scale = this.state.scale;
+            new_scale = this.state.scale * i;
+            return this.setState({
+              scale: new_scale,
+              x: this.state.x - center_x * (new_scale - old_scale),
+              y: this.state.y - center_y * (new_scale - old_scale)
+            });
+          }
+        }
+      }),
+      SVG: React.createClass({
+        render: function() {
+          var src, style;
+          src = "../svg/" + this.props.name + ".svg";
+          style = {
+            'transform': "scale(" + this.props.scale + ")",
+            'transformOrigin': '0 0'
+          };
+          return React.createElement("img", {
+            "src": src,
+            "width": this.props.width,
+            "height": this.props.height,
+            "style": style
+          });
+        }
+      }),
+      Point: React.createClass({
+        render: function() {
+          var left, style, top;
+          left = this.props.data.x * this.props.scale;
+          top = this.props.data.y * this.props.scale;
+          style = {
+            'left': left + "px",
+            'top': top + "px"
+          };
+          return React.createElement("div", {
+            "className": 'point',
+            "style": style
+          });
+        }
+      })
+    }
+  });
+
   this.DiagnosisPage = React.createClass({
     render: function() {
       return React.createElement("div", {
@@ -1148,112 +1368,6 @@
       }, React.createElement(DiagnosisPage.Paper, null), React.createElement(DiagnosisPage.Sidebar, null));
     },
     statics: {
-      Paper: React.createClass({
-        getInitialState: function() {
-          return {
-            scale: 1,
-            x: 0,
-            y: 0,
-            points: [
-              {
-                x: 100,
-                y: 100
-              }
-            ]
-          };
-        },
-        render: function() {
-          return React.createElement("div", {
-            "className": 'page-paper',
-            "onWheel": this.scale,
-            "draggable": true,
-            "onDragStart": this.drag_start,
-            "onMouseMove": this.drag_move,
-            "onMouseUp": this.drag_end
-          }, React.createElement(DiagnosisPage.SVG, {
-            "name": 'test',
-            "scale": this.state.scale,
-            "x": this.state.x,
-            "y": this.state.y,
-            "points": this.state.points
-          }));
-        },
-        scale: function(evt) {
-          var i, scale;
-          scale = this.state.scale;
-          i = 1.1;
-          if (evt.deltaY > 0) {
-            this.setState({
-              scale: scale / i
-            });
-          }
-          if (evt.deltaY < 0) {
-            return this.setState({
-              scale: scale * i
-            });
-          }
-        },
-        drag_start: function(evt) {
-          this.origin_x = this.state.x;
-          this.origin_y = this.state.y;
-          this.drag_start_x = evt.pageX;
-          this.drag_start_y = evt.pageY;
-          this.on_drag = true;
-          return evt.preventDefault();
-        },
-        drag_move: function(evt) {
-          var delta_x, delta_y;
-          if (this.on_drag) {
-            delta_x = evt.pageX - this.drag_start_x;
-            delta_y = evt.pageY - this.drag_start_y;
-            return this.setState({
-              x: this.origin_x + delta_x / this.state.scale,
-              y: this.origin_y + delta_y / this.state.scale
-            });
-          }
-        },
-        drag_end: function(evt) {
-          return this.on_drag = false;
-        }
-      }),
-      SVG: React.createClass({
-        render: function() {
-          var container_style, idx, point, src, style, svg_style;
-          src = "../svg/" + this.props.name + ".svg";
-          container_style = {
-            'transform': "translate(" + (this.props.x * this.props.scale) + "px, " + (this.props.y * this.props.scale) + "px)"
-          };
-          svg_style = {
-            'transform': "scale(" + this.props.scale + ")",
-            'transformOrigin': "0 0"
-          };
-          return React.createElement("div", {
-            "className": 'img-container',
-            "style": container_style
-          }, React.createElement("img", {
-            "src": src,
-            "height": '600px',
-            "style": svg_style
-          }), (function() {
-            var j, len, ref, results;
-            ref = this.props.points;
-            results = [];
-            for (idx = j = 0, len = ref.length; j < len; idx = ++j) {
-              point = ref[idx];
-              style = {
-                left: point.x * this.props.scale,
-                top: point.y * this.props.scale
-              };
-              results.push(React.createElement("div", {
-                "key": idx,
-                "className": 'point',
-                "style": style
-              }));
-            }
-            return results;
-          }).call(this));
-        }
-      }),
       Sidebar: React.createClass({
         render: function() {
           return React.createElement("div", {
@@ -1271,6 +1385,15 @@
             "className": 'img'
           }), React.createElement("div", {
             "className": 'yz'
+          }));
+        }
+      }),
+      Paper: React.createClass({
+        render: function() {
+          return React.createElement("div", {
+            "className": 'page-paper'
+          }, React.createElement(SVGToucher, {
+            "template": 'test'
           }));
         }
       })
