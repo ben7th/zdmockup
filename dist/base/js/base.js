@@ -1191,6 +1191,253 @@
   SVGToucher = React.createClass({
     displayName: 'SVGToucher',
     render: function() {
+      this.points = [
+        {
+          x: 293,
+          y: 78,
+          text: '大椎'
+        }, {
+          x: 293,
+          y: 107,
+          text: '陶道'
+        }, {
+          x: 293,
+          y: 152,
+          text: '身柱'
+        }, {
+          x: 294,
+          y: 222,
+          text: '神道'
+        }, {
+          x: 294,
+          y: 252,
+          text: '灵台'
+        }, {
+          x: 294,
+          y: 282,
+          text: '至阳'
+        }, {
+          x: 295,
+          y: 342,
+          text: '筋缩'
+        }, {
+          x: 295,
+          y: 365,
+          text: '中枢'
+        }, {
+          x: 295,
+          y: 391,
+          text: '脊中'
+        }, {
+          x: 296,
+          y: 472,
+          text: '命门'
+        }, {
+          x: 297,
+          y: 534,
+          text: '腰阳关'
+        }, {
+          x: 274,
+          y: 583,
+          text: '上髎'
+        }, {
+          x: 273,
+          y: 600,
+          text: '次髎'
+        }, {
+          x: 274,
+          y: 624,
+          text: '中髎'
+        }, {
+          x: 277,
+          y: 644,
+          text: '下髎'
+        }, {
+          x: 298,
+          y: 653,
+          text: '腰俞'
+        }, {
+          x: 299,
+          y: 722,
+          text: '长强'
+        }, {
+          x: 344,
+          y: 78,
+          text: '肩中俞'
+        }, {
+          x: 368,
+          y: 99,
+          text: '肩外俞'
+        }, {
+          x: 396,
+          y: 96,
+          text: '肩井'
+        }, {
+          x: 397,
+          y: 114,
+          text: '天臑'
+        }, {
+          x: 396,
+          y: 135,
+          text: '曲坦'
+        }, {
+          x: 440,
+          y: 133,
+          text: '秉风'
+        }, {
+          x: 438,
+          y: 192,
+          text: '天宗'
+        }, {
+          x: 476,
+          y: 153,
+          text: '臑俞'
+        }, {
+          x: 481,
+          y: 224,
+          text: '肩贞'
+        }, {
+          x: 367,
+          y: 126,
+          text: '附分'
+        }, {
+          x: 367,
+          y: 156,
+          text: '魄户'
+        }, {
+          x: 367,
+          y: 190,
+          text: '膏肓'
+        }, {
+          x: 367,
+          y: 219,
+          text: '神堂'
+        }, {
+          x: 367,
+          y: 248,
+          text: '意喜'
+        }, {
+          x: 367,
+          y: 279,
+          text: '隔关'
+        }, {
+          x: 367,
+          y: 339,
+          text: '魂门'
+        }, {
+          x: 367,
+          y: 363,
+          text: '阳纲'
+        }, {
+          x: 368,
+          y: 389,
+          text: '意舍'
+        }, {
+          x: 368,
+          y: 410,
+          text: '胃仓'
+        }, {
+          x: 368,
+          y: 436,
+          text: '盲门'
+        }, {
+          x: 369,
+          y: 466,
+          text: '志室'
+        }, {
+          x: 372,
+          y: 599,
+          text: '胞盲'
+        }, {
+          x: 333,
+          y: 106,
+          text: '大杼'
+        }, {
+          x: 333,
+          y: 129,
+          text: '风门'
+        }, {
+          x: 331,
+          y: 152,
+          text: '肺俞'
+        }, {
+          x: 331,
+          y: 188,
+          text: '厥阴俞'
+        }, {
+          x: 332,
+          y: 219,
+          text: '心俞'
+        }, {
+          x: 332,
+          y: 249,
+          text: '督俞'
+        }, {
+          x: 331,
+          y: 277,
+          text: '膈俞'
+        }, {
+          x: 333,
+          y: 335,
+          text: '肝俞'
+        }, {
+          x: 332,
+          y: 360,
+          text: '胆俞'
+        }, {
+          x: 334,
+          y: 389,
+          text: '脾俞'
+        }, {
+          x: 334,
+          y: 410,
+          text: '胃俞'
+        }, {
+          x: 334,
+          y: 435,
+          text: '三焦俞'
+        }, {
+          x: 336,
+          y: 470,
+          text: '肾俞'
+        }, {
+          x: 334,
+          y: 500,
+          text: '气海俞'
+        }, {
+          x: 336,
+          y: 531,
+          text: '大肠俞'
+        }, {
+          x: 336,
+          y: 561,
+          text: '关元俞'
+        }, {
+          x: 336,
+          y: 582,
+          text: '小肠俞'
+        }, {
+          x: 338,
+          y: 604,
+          text: '膀胱俞'
+        }, {
+          x: 339,
+          y: 622,
+          text: '中膂俞'
+        }, {
+          x: 341,
+          y: 646,
+          text: '白环俞'
+        }, {
+          x: 314,
+          y: 689,
+          text: '会阳'
+        }, {
+          x: 369,
+          y: 646,
+          text: '秩边'
+        }
+      ];
       return React.createElement("div", {
         "className": 'svg-toucher',
         "draggable": true,
@@ -1201,7 +1448,8 @@
       }, React.createElement(SVGToucher.PointsArea, {
         "ref": 'area',
         "template": this.props.template,
-        "toucher": this
+        "toucher": this,
+        "points": this.points
       }));
     },
     drag_start: function(evt) {
@@ -1236,19 +1484,23 @@
       cy = (py - this.refs.area.state.y) / this.refs.area.state.scale;
       return this.refs.area.compute_scale(evt.deltaY, cx, cy);
     },
+    do_click_idx: function(idx) {
+      var point;
+      return point = this.points[idx];
+    },
     statics: {
       PointsArea: React.createClass({
         getInitialState: function() {
           return {
-            origin_width: 596,
-            origin_height: 842,
+            origin_width: 595,
+            origin_height: 841,
             x: 0,
             y: 0,
             scale: 1.0
           };
         },
         render: function() {
-          var height, idx, pdata, points, style, width;
+          var height, idx, pdata, style, width;
           width = this.state.origin_width * this.state.scale;
           height = this.state.origin_height * this.state.scale;
           style = {
@@ -1257,18 +1509,6 @@
             'left': this.state.x + "px",
             'top': this.state.y + "px"
           };
-          points = [
-            {
-              x: 100,
-              y: 100
-            }, {
-              x: 200,
-              y: 200
-            }, {
-              x: 100,
-              y: 140
-            }
-          ];
           return React.createElement("div", {
             "className": 'points-area',
             "style": style
@@ -1278,14 +1518,17 @@
             "height": this.state.origin_height,
             "scale": this.state.scale
           }), (function() {
-            var j, len, results;
+            var j, len, ref, results;
+            ref = this.props.points;
             results = [];
-            for (idx = j = 0, len = points.length; j < len; idx = ++j) {
-              pdata = points[idx];
+            for (idx = j = 0, len = ref.length; j < len; idx = ++j) {
+              pdata = ref[idx];
               results.push(React.createElement(SVGToucher.Point, {
                 "key": idx,
+                "idx": idx,
                 "data": pdata,
-                "scale": this.state.scale
+                "scale": this.state.scale,
+                "toucher": this.props.toucher
               }));
             }
             return results;
@@ -1355,7 +1598,15 @@
           return React.createElement("div", {
             "className": 'point',
             "style": style
-          });
+          }, React.createElement("div", {
+            "className": 'circle',
+            "onClick": this.click
+          }), React.createElement("div", {
+            "className": 'text'
+          }, this.props.data.text));
+        },
+        click: function(evt) {
+          return this.props.toucher.do_click_idx(this.props.idx);
         }
       })
     }
@@ -1393,7 +1644,7 @@
           return React.createElement("div", {
             "className": 'page-paper'
           }, React.createElement(SVGToucher, {
-            "template": 'test'
+            "template": 'back'
           }));
         }
       })

@@ -97,10 +97,10 @@ body.admin .ui.segment.demo-admin-table {
   box-shadow: none;
   width: auto;
   padding: 0;
-  background-color: #f1f1f1;
+  background-color: #e3e3e3;
   transition: all ease .3s; }
   .demo-index-page .ui.cards .card:hover {
-    background-color: #FBF5E6;
+    background-color: #f1ebd4;
     box-shadow: none !important; }
   .demo-index-page .ui.cards .card .content {
     padding: 0;
@@ -142,19 +142,19 @@ body.admin .ui.segment.demo-admin-table {
     display: none; }
 
 @keyframes pointflash {
-  0% {
-    opacity: 1;
-    transform: scale(0.3); }
   100% {
+    opacity: 1;
+    transform: scale(0.5); }
+  0% {
     opacity: 0;
-    transform: scale(1); } }
+    transform: scale(1.5); } }
 .diagnosis-page {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #FBF5E6; }
+  background-color: #f1ebd4; }
   .diagnosis-page .page-sidebar {
     position: absolute;
     top: 0;
@@ -174,8 +174,10 @@ body.admin .ui.segment.demo-admin-table {
       opacity: 0.3; }
     .diagnosis-page .page-sidebar .title-logo {
       width: 200px;
-      height: 150px;
-      position: relative; }
+      height: 140px;
+      position: relative;
+      margin-top: 15px;
+      margin-bottom: 15px; }
       .diagnosis-page .page-sidebar .title-logo .yw {
         background-image: url("http://i.teamkn.com/i/e4OwTrQc.png");
         background-size: cover;
@@ -188,7 +190,7 @@ body.admin .ui.segment.demo-admin-table {
       .diagnosis-page .page-sidebar .title-logo .img {
         width: 70px;
         height: 140px;
-        background-image: url(http://i.teamkn.com/i/r9UurnsF.png);
+        background-image: url("http://i.teamkn.com/i/iuTohFMc.png");
         background-size: cover;
         position: absolute;
         top: 0px;
@@ -222,12 +224,25 @@ body.admin .ui.segment.demo-admin-table {
         position: absolute;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
         .diagnosis-page .page-paper .svg-toucher .points-area .point {
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          border: solid 3px rgba(0, 0, 0, 0.6);
-          border-radius: 100%;
-          margin-top: -10px;
-          margin-left: -10px;
-          cursor: pointer;
-          animation: pointflash 1s infinite; }
+          position: absolute; }
+          .diagnosis-page .page-paper .svg-toucher .points-area .point .circle {
+            width: 20px;
+            height: 20px;
+            background-color: #a5241c;
+            border-radius: 100%;
+            margin-top: -10px;
+            margin-left: -10px;
+            cursor: pointer;
+            animation: pointflash 2s infinite;
+            top: 0;
+            left: 0; }
+          .diagnosis-page .page-paper .svg-toucher .points-area .point .text {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            width: 100px;
+            font-size: 20px;
+            line-height: 20px;
+            font-family: '楷体';
+            font-weight: bold;
+            pointer-events: none; }

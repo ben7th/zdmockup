@@ -21,11 +21,15 @@ $yunwen-border-ver-brown: 'http://i.teamkn.com/i/f5U8oIpG.png';
 $yunwen2: 'http://i.teamkn.com/i/gSdBsiSv.png';
 $yunwen2-1: 'http://i.teamkn.com/i/e4OwTrQc.png';
 
-$old-paper-color: #FBF5E6;
+// $old-paper-color: #FBF5E6;
+$old-paper-color: lighten(#ebe2c1, 5%);
 $brown-color: #A5673F;
 
 $zdzy-yz-0-url: 'http://i.teamkn.com/i/UFicC2DF.png';
 $zdzy-yz-1-url: 'http://i.teamkn.com/i/y3sAFlhE.png';
+
+$mianzhen-title: 'http://i.teamkn.com/i/r9UurnsF.png';
+$beizhen-title: 'http://i.teamkn.com/i/iuTohFMc.png';
 
 body {
   background-color: $body-bg-color;
@@ -205,19 +209,23 @@ body.admin {
 }
 
 @keyframes pointflash {
-  0% {
-    opacity:1;
-    transform: scale(0.3);
-  }
-  100% {
-    opacity:0;
-    transform: scale(1.0);
-  }
-
+  // 0% {
+  //   opacity:1;
+  //   transform: scale(0.3);
+  // }
   // 100% {
   //   opacity:0;
-  //   transform: scale(1.5);
+  //   transform: scale(1.0);
   // }
+
+  100% {
+    opacity:1;
+    transform: scale(0.5);
+  }
+  0% {
+    opacity:0;
+    transform: scale(1.5);
+  }
 }
 
 .diagnosis-page {
@@ -245,9 +253,11 @@ body.admin {
     }
 
     .title-logo {
-      width:200px;height:150px;
+      width:200px;height:140px;
       // background-color: rgba(black, 0.1);
       position: relative;
+      margin-top: 15px;
+      margin-bottom: 15px;
 
       .yw {
         $scale: 0.9;
@@ -262,7 +272,7 @@ body.admin {
       .img {
         $scale: 0.7;
         width:100px * $scale;height:200px * $scale;
-        background-image:url(http://i.teamkn.com/i/r9UurnsF.png);
+        background-image:url($beizhen-title);
         background-size:cover;
         position: absolute;
         top:0px;right:10px + 36px;
@@ -306,20 +316,33 @@ body.admin {
         box-shadow:0 1px 3px rgba(black, 0.2);
 
         .point {
-          $w: 20px;
-
           position: absolute;
-          width: $w;
-          height: $w;
-          // background-color: rgba(darken(red, 10%), 0.5);
-          border:solid 3px rgba(black, 0.6);
-          border-radius: 100%;
-          margin-top: -$w/2;
-          margin-left: -$w/2;
-          // transition: left linear .1s, top linear .1s;
-          // left:0;top:0;
-          cursor:pointer;
-          animation: pointflash 1s infinite;
+
+          .circle {
+            $w: 20px;
+            width: $w;
+            height: $w;
+            background-color: #a5241c;
+            // border:solid 3px rgba(black, 0.6);
+            border-radius: 100%;
+            margin-top: -$w/2;
+            margin-left: -$w/2;
+            // transition: left linear .1s, top linear .1s;
+            // left:0;top:0;
+            cursor:pointer;
+            animation: pointflash 2s infinite;
+            top:0;left:0;
+          }
+
+          .text {
+            position: absolute;
+            top:-10px;left:10px;
+            width:100px;
+            font-size: 20px;line-height: 20px;
+            font-family: '楷体';
+            font-weight: bold;
+            pointer-events: none;
+          }
         }
 
         img {
