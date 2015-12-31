@@ -151,7 +151,7 @@
         "className": 'ui vertical segment'
       }, React.createElement("div", {
         "className": 'ui container'
-      }, React.createElement(DemoIndexPage.Cards, null))));
+      }, React.createElement(HorizontalChineseScroll, null, React.createElement(DemoIndexPage.Cards, null)))));
     },
     statics: {
       Header: React.createClass({
@@ -2563,6 +2563,37 @@
     supported: browserSupportsTurbolinks,
     EVENTS: clone(EVENTS)
   };
+
+}).call(this);
+
+(function() {
+  this.HorizontalChineseScroll = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'horizontal-chinese-scroll'
+      }, React.createElement("div", {
+        "className": 'handle begin'
+      }, React.createElement("div", {
+        "className": 'handle-border top'
+      }), React.createElement("div", {
+        "className": 'handle-border bottom'
+      })), React.createElement("div", {
+        "className": 'scroll-inner'
+      }, React.createElement("div", {
+        "className": 'scroll-border top'
+      }), React.createElement("div", {
+        "className": 'content-inner'
+      }, this.props.children), React.createElement("div", {
+        "className": 'scroll-border bottom'
+      })), React.createElement("div", {
+        "className": 'handle end'
+      }, React.createElement("div", {
+        "className": 'handle-border top'
+      }), React.createElement("div", {
+        "className": 'handle-border bottom'
+      })));
+    }
+  });
 
 }).call(this);
 

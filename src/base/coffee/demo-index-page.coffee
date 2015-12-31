@@ -6,11 +6,16 @@
           <DemoIndexPage.Header />
         </div>
       </div>
+
+
       <div className='ui vertical segment'>
         <div className='ui container'>
-          <DemoIndexPage.Cards />
+          <HorizontalChineseScroll>
+            <DemoIndexPage.Cards />
+          </HorizontalChineseScroll>
         </div>
       </div>
+      
     </div>
 
   statics:

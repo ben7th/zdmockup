@@ -97,15 +97,16 @@ body.admin .ui.segment.demo-admin-table {
   box-shadow: none;
   width: auto;
   padding: 0;
-  background-color: #e3e3e3;
-  transition: all ease .3s; }
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all ease .3s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
   .demo-index-page .ui.cards .card:hover {
-    background-color: #f1ebd4;
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: none !important; }
   .demo-index-page .ui.cards .card .content {
     padding: 0;
     height: 210px;
-    width: 210px; }
+    width: 165px; }
   .demo-index-page .ui.cards .card .yunwen {
     background-image: url("http://i.teamkn.com/i/WEwYNX6i.png");
     background-size: cover;
@@ -246,3 +247,55 @@ body.admin .ui.segment.demo-admin-table {
             font-family: '楷体';
             font-weight: bold;
             pointer-events: none; }
+
+.horizontal-chinese-scroll {
+  position: relative;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px; }
+  .horizontal-chinese-scroll .handle {
+    position: absolute;
+    width: 20px;
+    background-color: #A5673F;
+    top: 12px;
+    bottom: 12px; }
+    .horizontal-chinese-scroll .handle.begin {
+      left: 0; }
+    .horizontal-chinese-scroll .handle.end {
+      right: 0; }
+    .horizontal-chinese-scroll .handle .handle-border.top {
+      position: absolute;
+      top: -12px;
+      left: 3px;
+      right: 3px;
+      height: 12px;
+      background-color: #422919; }
+    .horizontal-chinese-scroll .handle .handle-border.bottom {
+      position: absolute;
+      bottom: -12px;
+      left: 3px;
+      right: 3px;
+      height: 12px;
+      background-color: #422919; }
+  .horizontal-chinese-scroll .scroll-inner {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    background-color: #f1ebd4; }
+    .horizontal-chinese-scroll .scroll-inner .scroll-border {
+      position: absolute;
+      height: 20px;
+      background-color: rgba(194, 169, 146, 0.6);
+      left: 0;
+      right: 0; }
+      .horizontal-chinese-scroll .scroll-inner .scroll-border.top {
+        top: 0; }
+      .horizontal-chinese-scroll .scroll-inner .scroll-border.bottom {
+        bottom: 0; }
+    .horizontal-chinese-scroll .scroll-inner .content-inner {
+      min-height: 100px;
+      padding: 15px;
+      background-color: #f1ebd4; }

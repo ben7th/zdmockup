@@ -161,17 +161,20 @@ body.admin {
     width: auto;
     $size: 90px;
     padding: 0;
-    background-color: grayscale($old-paper-color);
+    // background-color: grayscale($old-paper-color);
+    background-color: rgba(white, 0.6);
     transition: all ease .3s;
+    box-shadow:0 1px 2px rgba(black, 0.1);
     &:hover {
-      background-color: $old-paper-color;
+      // background-color: $old-paper-color;
+      background-color: rgba(white, 0.8);
       box-shadow: none !important;
     }
 
     .content {
       padding: 0;
       height: $size * 2 + 30px;
-      width: $size * 2 + 30px;
+      width: $size * 1.5 + 30px;
     }
 
     .yunwen {
@@ -349,6 +352,75 @@ body.admin {
           // transition: width linear .1s, height linear .1s;
         }
       }
+    }
+  }
+}
+
+.horizontal-chinese-scroll {
+  $handle-width: 20px;
+  $handle-overflow: $handle-width * 0.6;
+
+  position: relative;
+  padding-top: $handle-overflow;
+  padding-bottom: $handle-overflow;
+  padding-left: $handle-width;
+  padding-right: $handle-width;
+
+  .handle {
+    position: absolute;
+    width: $handle-width;
+    background-color: #A5673F;
+    top:$handle-overflow;
+    bottom:$handle-overflow;
+
+    &.begin {
+      left:0;
+    }
+    &.end {
+      right:0;
+    }
+
+    $hbc: #422919;
+    $pd: 3px;
+    .handle-border.top {
+      position: absolute;
+      top:-$handle-overflow;
+      left:$pd;right:$pd;
+      height:$handle-overflow;
+      background-color: #422919;
+    }
+    .handle-border.bottom {
+      position: absolute;
+      bottom:-$handle-overflow;
+      left:$pd;right:$pd;
+      height:$handle-overflow;
+      background-color: #422919;
+    }
+  }
+  .scroll-inner {
+    margin-top: $handle-width * 0.3;
+    margin-bottom: $handle-width * 0.3;
+    padding-top: $handle-width;
+    padding-bottom: $handle-width;
+    position: relative;
+    background-color: $old-paper-color;
+
+    .scroll-border {
+      position: absolute;
+      height: $handle-width;
+      background-color: rgba(#C2A992, 0.6);
+      // background-image: url("http://i.teamkn.com/i/GLOu27NH.png");
+      // background-position: center center;
+      // opacity: 0.2;
+      left:0;right:0;
+      &.top {top:0;}
+      &.bottom {bottom:0;}
+    }
+
+    .content-inner {
+      min-height: 100px;
+      padding: 15px;
+      background-color: $old-paper-color;
     }
   }
 }
