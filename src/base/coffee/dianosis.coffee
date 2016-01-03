@@ -1,41 +1,3 @@
-ScaleDragPaper = React.createClass
-  getInitialState: ->
-    scale: 1.0
-    x: 0
-    y: 0
-
-  render: ->
-    position =
-      scale: @state.scale
-      x: @state.x
-      y: @state.y
-
-    <div className='scale-drag-paper' ref='paper' draggable 
-      onDragStart={@drag_start} 
-      onMouseMove={@drag_move} 
-      onMouseUp={@drag_end} 
-      onWheel={@do_scale}
-    >
-      <ScaleDragPaper.ScaleContainer ref='container' position={position}>
-      {@props.children}
-      </ScaleDragPaper.ScaleContainer>
-    </div>
-
-
-  componentDidMount: ->
-
-
-
-  statics:
-    ScaleContainer: React.createClass
-      render: ->
-        style =
-          "transform": "translate(#{@props.position.x}px, #{@props.position.y}px) scale(#{@props.position.scale})"
-
-        <div className='paper-container' style={style}>
-        {@props.children}
-        </div>
-
 SVGToucher = React.createClass
   displayName: 'SVGToucher'
   render: ->
@@ -121,22 +83,37 @@ SVGToucher = React.createClass
       onMouseMove={@drag_move} 
       onMouseUp={@drag_end} 
       onWheel={@do_scale}
+
+      onTouchStart={@drag_start}
+      onTouchMove={@drag_move}
+      onTouchEn={@drag_end}
     >
       <SVGToucher.PointsArea ref='area' template={@props.template} toucher={@} points={@points}/>
     </div>
 
   drag_start: (evt)->
     evt.preventDefault()
+
     @origin_x = @refs.area.state.x
     @origin_y = @refs.area.state.y
-    @mouse_start_x = evt.pageX
-    @mouse_start_y = evt.pageY
     @on_drag = true
+    
+    if evt.touches?
+      @mouse_start_x = evt.touches[0].pageX
+      @mouse_start_y = evt.touches[0].pageY
+    else
+      @mouse_start_x = evt.pageX
+      @mouse_start_y = evt.pageY
 
   drag_move: (evt)->
     if @on_drag
-      delta_x = evt.pageX - @mouse_start_x
-      delta_y = evt.pageY - @mouse_start_y
+      if evt.touches?
+        delta_x = evt.touches[0].pageX - @mouse_start_x
+        delta_y = evt.touches[0].pageY - @mouse_start_y
+      else
+        delta_x = evt.pageX - @mouse_start_x
+        delta_y = evt.pageY - @mouse_start_y
+
 
       @refs.area.setState
         x: @origin_x + delta_x
@@ -160,6 +137,14 @@ SVGToucher = React.createClass
 
   do_click_idx: (idx)->
     point = @points[idx]
+    [x, y] = [point.x, point.y]
+    [area_x, area_y] = [@refs.area.state.x, @refs.area.state.y]
+    area_scale = @refs.area.state.scale
+    
+    posx = area_x + x * area_scale
+    posy = area_y + y * area_scale
+
+    @props.page.show_box(point, posx, posy)
 
   statics:
     PointsArea: React.createClass
@@ -240,7 +225,7 @@ SVGToucher = React.createClass
           'left': "#{left}px"
           'top': "#{top}px"
         <div className='point' style={style}>
-          <div className='circle' onClick={@click}></div>
+          <div className='circle' onClick={@click} onTouchStart={@click}></div>
           <div className='text'>{@props.data.text}</div>
         </div>
 
@@ -251,16 +236,65 @@ SVGToucher = React.createClass
 @DiagnosisPage = React.createClass
   render: ->
     <div className='diagnosis-page'>
-      <DiagnosisPage.Paper />
-      <DiagnosisPage.Sidebar />
+      <h2 className='ui header topbar'>
+        <TopbarBack href='zd-patient-info.html' />
+        <span>中医体检</span>
+        <div className='buttons'>
+          <a className='ui button brown small' href='zd-zhenduan-result.html'>
+            <i className='icon checkmark' />
+            <span>保存体检记录</span>
+          </a>
+        </div>
+      </h2>
+      <DiagnosisPage.Paper page={@}/>
+      <DiagnosisPage.Sidebar ref='sidebar'/>
+      <DiagnosisPage.Popbox page={@} ref='popbox'/>
     </div>
+
+  show_box: (point, x, y)->
+    @refs.popbox.show(point, x, y)
 
   statics:
     Sidebar: React.createClass
+      getInitialState: ->
+        records: []
       render: ->
         <div className='page-sidebar'>
           <DiagnosisPage.Logo />
+          <div className='records'>
+            <h3 className='ui header'>记录</h3>
+          {
+            for record, idx in @state.records
+              <div key={idx} className='record'>
+                <span className='key'>{record.key}</span>
+                <span className='value'>{record.value}</span>
+              </div>
+          }
+          </div>
+          <div className='records'>
+            <h3 className='ui header'>拍照</h3>
+            <a href='javascript:;' className='ui button brown take-photo labeled icon'>
+              <i className='icon photo' />
+              <span>点击拍照</span>
+            </a>
+          </div>
+          <div className='records'>
+            <h3 className='ui header'>综合结论</h3>
+            <a href='javascript:;' className='ui button brown take-photo labeled icon'>
+              <i className='icon pencil' />
+              <span>输入综合结论</span>
+            </a>
+          </div>
         </div>
+
+      record: (key, value)->
+        records = @state.records
+        records.push {
+          key: key
+          value: value
+        }
+        @setState records: records
+
 
     Logo: React.createClass
       render: ->
@@ -273,5 +307,79 @@ SVGToucher = React.createClass
     Paper: React.createClass
       render: ->
         <div className='page-paper'>
-          <SVGToucher template='back' />
+          <SVGToucher template='back' page={@props.page} />
         </div>
+
+    Popbox: React.createClass
+      getInitialState: ->
+        x: 0
+        y: 0
+        show: false
+        point: null
+        selected_values: {}
+      render: ->
+        style = 
+          left: @state.x
+          top: @state.y
+          display: if @state.show then 'block' else 'none'
+
+        <div className='popbox' style={style}>
+          {# <h3 className='ui header'>记录检查项</h3>}
+          <div className='name'>
+            <span>{@state.point?.text}</span>
+            <a href='javascript:;' className='ui icon button circular brown small'>
+              <i className='icon pencil' />
+            </a>
+          </div>
+          <div className='values'>
+          {
+            values = ['阴', '阳', '虚', '实', '表', '里', '寒', '热']
+            for value, idx in values
+              klass = new ClassName {
+                value: true
+                active: @state.selected_values[value] is true
+              }
+
+              <div key={idx} className={klass} onClick={@click_value}>{value}</div>
+          }
+          </div>
+          <a className='ui button self brown'>输入自定义内容</a>
+          <a className='ui button self' onClick={@close}>关闭</a>
+          {
+            klass = new ClassName {
+              'ui button self brown': true
+              'disabled': Object.keys(@state.selected_values).length == 0
+            }
+            <a className={klass} onClick={@submit}>确定</a>
+          }
+        </div>
+
+      show: (point, x, y)->
+        console.log point, x, y
+        @setState
+          x: x
+          y: y
+          show: true
+          point: point
+          selected_values: {}
+
+      close: ->
+        @setState
+          show: false
+
+      click_value: (evt)->
+        value = jQuery(evt.target).text()
+        selected_values = @state.selected_values
+        if not selected_values[value]
+          selected_values[value] = true
+        else
+          delete selected_values[value]
+
+        @setState selected_values: selected_values
+
+      submit: ->
+        values = Object.keys(@state.selected_values)
+        key = @state.point.text
+        value = values.join('')
+        @props.page.refs.sidebar.record key, value
+        @close()

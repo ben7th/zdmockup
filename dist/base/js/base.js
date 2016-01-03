@@ -166,14 +166,15 @@
           var data, href, idx, item;
           data = [
             {
-              name: '诊断',
+              name: '体检',
               desc: '综合规范化诊断记录系统',
-              key: 'zhenduan',
-              href: 'diagnosis.html'
+              key: 'tijian',
+              href: 'zd-patient-list.html'
             }, {
-              name: '业务',
+              name: '挂号',
               desc: '预约，体检，诊疗业务操作演示',
-              key: 'yewu'
+              key: 'guahao',
+              href: 'gh-select.html'
             }, {
               name: '管理',
               desc: '后台管理，维护，信息查看等功能',
@@ -182,7 +183,7 @@
             }
           ];
           return React.createElement("div", {
-            "className": "ui cards"
+            "className": "ui cards three doubling"
           }, (function() {
             var i, len, results;
             results = [];
@@ -1141,52 +1142,7 @@
 }).call(this);
 
 (function() {
-  var SVGToucher, ScaleDragPaper;
-
-  ScaleDragPaper = React.createClass({
-    getInitialState: function() {
-      return {
-        scale: 1.0,
-        x: 0,
-        y: 0
-      };
-    },
-    render: function() {
-      var position;
-      position = {
-        scale: this.state.scale,
-        x: this.state.x,
-        y: this.state.y
-      };
-      return React.createElement("div", {
-        "className": 'scale-drag-paper',
-        "ref": 'paper',
-        "draggable": true,
-        "onDragStart": this.drag_start,
-        "onMouseMove": this.drag_move,
-        "onMouseUp": this.drag_end,
-        "onWheel": this.do_scale
-      }, React.createElement(ScaleDragPaper.ScaleContainer, {
-        "ref": 'container',
-        "position": position
-      }, this.props.children));
-    },
-    componentDidMount: function() {},
-    statics: {
-      ScaleContainer: React.createClass({
-        render: function() {
-          var style;
-          style = {
-            "transform": "translate(" + this.props.position.x + "px, " + this.props.position.y + "px) scale(" + this.props.position.scale + ")"
-          };
-          return React.createElement("div", {
-            "className": 'paper-container',
-            "style": style
-          }, this.props.children);
-        }
-      })
-    }
-  });
+  var SVGToucher;
 
   SVGToucher = React.createClass({
     displayName: 'SVGToucher',
@@ -1444,7 +1400,10 @@
         "onDragStart": this.drag_start,
         "onMouseMove": this.drag_move,
         "onMouseUp": this.drag_end,
-        "onWheel": this.do_scale
+        "onWheel": this.do_scale,
+        "onTouchStart": this.drag_start,
+        "onTouchMove": this.drag_move,
+        "onTouchEn": this.drag_end
       }, React.createElement(SVGToucher.PointsArea, {
         "ref": 'area',
         "template": this.props.template,
@@ -1456,15 +1415,25 @@
       evt.preventDefault();
       this.origin_x = this.refs.area.state.x;
       this.origin_y = this.refs.area.state.y;
-      this.mouse_start_x = evt.pageX;
-      this.mouse_start_y = evt.pageY;
-      return this.on_drag = true;
+      this.on_drag = true;
+      if (evt.touches != null) {
+        this.mouse_start_x = evt.touches[0].pageX;
+        return this.mouse_start_y = evt.touches[0].pageY;
+      } else {
+        this.mouse_start_x = evt.pageX;
+        return this.mouse_start_y = evt.pageY;
+      }
     },
     drag_move: function(evt) {
       var delta_x, delta_y;
       if (this.on_drag) {
-        delta_x = evt.pageX - this.mouse_start_x;
-        delta_y = evt.pageY - this.mouse_start_y;
+        if (evt.touches != null) {
+          delta_x = evt.touches[0].pageX - this.mouse_start_x;
+          delta_y = evt.touches[0].pageY - this.mouse_start_y;
+        } else {
+          delta_x = evt.pageX - this.mouse_start_x;
+          delta_y = evt.pageY - this.mouse_start_y;
+        }
         return this.refs.area.setState({
           x: this.origin_x + delta_x,
           y: this.origin_y + delta_y
@@ -1485,8 +1454,14 @@
       return this.refs.area.compute_scale(evt.deltaY, cx, cy);
     },
     do_click_idx: function(idx) {
-      var point;
-      return point = this.points[idx];
+      var area_scale, area_x, area_y, point, posx, posy, ref, ref1, x, y;
+      point = this.points[idx];
+      ref = [point.x, point.y], x = ref[0], y = ref[1];
+      ref1 = [this.refs.area.state.x, this.refs.area.state.y], area_x = ref1[0], area_y = ref1[1];
+      area_scale = this.refs.area.state.scale;
+      posx = area_x + x * area_scale;
+      posy = area_y + y * area_scale;
+      return this.props.page.show_box(point, posx, posy);
     },
     statics: {
       PointsArea: React.createClass({
@@ -1600,7 +1575,8 @@
             "style": style
           }, React.createElement("div", {
             "className": 'circle',
-            "onClick": this.click
+            "onClick": this.click,
+            "onTouchStart": this.click
           }), React.createElement("div", {
             "className": 'text'
           }, this.props.data.text));
@@ -1616,14 +1592,90 @@
     render: function() {
       return React.createElement("div", {
         "className": 'diagnosis-page'
-      }, React.createElement(DiagnosisPage.Paper, null), React.createElement(DiagnosisPage.Sidebar, null));
+      }, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, React.createElement(TopbarBack, {
+        "href": 'zd-patient-info.html'
+      }), React.createElement("span", null, "中医体检"), React.createElement("div", {
+        "className": 'buttons'
+      }, React.createElement("a", {
+        "className": 'ui button brown small',
+        "href": 'zd-zhenduan-result.html'
+      }, React.createElement("i", {
+        "className": 'icon checkmark'
+      }), React.createElement("span", null, "保存体检记录")))), React.createElement(DiagnosisPage.Paper, {
+        "page": this
+      }), React.createElement(DiagnosisPage.Sidebar, {
+        "ref": 'sidebar'
+      }), React.createElement(DiagnosisPage.Popbox, {
+        "page": this,
+        "ref": 'popbox'
+      }));
+    },
+    show_box: function(point, x, y) {
+      return this.refs.popbox.show(point, x, y);
     },
     statics: {
       Sidebar: React.createClass({
+        getInitialState: function() {
+          return {
+            records: []
+          };
+        },
         render: function() {
+          var idx, record;
           return React.createElement("div", {
             "className": 'page-sidebar'
-          }, React.createElement(DiagnosisPage.Logo, null));
+          }, React.createElement(DiagnosisPage.Logo, null), React.createElement("div", {
+            "className": 'records'
+          }, React.createElement("h3", {
+            "className": 'ui header'
+          }, "记录"), (function() {
+            var j, len, ref, results;
+            ref = this.state.records;
+            results = [];
+            for (idx = j = 0, len = ref.length; j < len; idx = ++j) {
+              record = ref[idx];
+              results.push(React.createElement("div", {
+                "key": idx,
+                "className": 'record'
+              }, React.createElement("span", {
+                "className": 'key'
+              }, record.key), React.createElement("span", {
+                "className": 'value'
+              }, record.value)));
+            }
+            return results;
+          }).call(this)), React.createElement("div", {
+            "className": 'records'
+          }, React.createElement("h3", {
+            "className": 'ui header'
+          }, "拍照"), React.createElement("a", {
+            "href": 'javascript:;',
+            "className": 'ui button brown take-photo labeled icon'
+          }, React.createElement("i", {
+            "className": 'icon photo'
+          }), React.createElement("span", null, "点击拍照"))), React.createElement("div", {
+            "className": 'records'
+          }, React.createElement("h3", {
+            "className": 'ui header'
+          }, "综合结论"), React.createElement("a", {
+            "href": 'javascript:;',
+            "className": 'ui button brown take-photo labeled icon'
+          }, React.createElement("i", {
+            "className": 'icon pencil'
+          }), React.createElement("span", null, "输入综合结论"))));
+        },
+        record: function(key, value) {
+          var records;
+          records = this.state.records;
+          records.push({
+            key: key,
+            value: value
+          });
+          return this.setState({
+            records: records
+          });
         }
       }),
       Logo: React.createClass({
@@ -1644,10 +1696,174 @@
           return React.createElement("div", {
             "className": 'page-paper'
           }, React.createElement(SVGToucher, {
-            "template": 'back'
+            "template": 'back',
+            "page": this.props.page
           }));
         }
+      }),
+      Popbox: React.createClass({
+        getInitialState: function() {
+          return {
+            x: 0,
+            y: 0,
+            show: false,
+            point: null,
+            selected_values: {}
+          };
+        },
+        render: function() {
+          var idx, klass, ref, style, value, values;
+          style = {
+            left: this.state.x,
+            top: this.state.y,
+            display: this.state.show ? 'block' : 'none'
+          };
+          return React.createElement("div", {
+            "className": 'popbox',
+            "style": style
+          }, React.createElement("div", {
+            "className": 'name'
+          }, React.createElement("span", null, ((ref = this.state.point) != null ? ref.text : void 0)), React.createElement("a", {
+            "href": 'javascript:;',
+            "className": 'ui icon button circular brown small'
+          }, React.createElement("i", {
+            "className": 'icon pencil'
+          }))), React.createElement("div", {
+            "className": 'values'
+          }, ((function() {
+            var j, len, results;
+            values = ['阴', '阳', '虚', '实', '表', '里', '寒', '热'];
+            results = [];
+            for (idx = j = 0, len = values.length; j < len; idx = ++j) {
+              value = values[idx];
+              klass = new ClassName({
+                value: true,
+                active: this.state.selected_values[value] === true
+              });
+              results.push(React.createElement("div", {
+                "key": idx,
+                "className": klass,
+                "onClick": this.click_value
+              }, value));
+            }
+            return results;
+          }).call(this))), React.createElement("a", {
+            "className": 'ui button self brown'
+          }, "输入自定义内容"), React.createElement("a", {
+            "className": 'ui button self',
+            "onClick": this.close
+          }, "关闭"), (klass = new ClassName({
+            'ui button self brown': true,
+            'disabled': Object.keys(this.state.selected_values).length === 0
+          }), React.createElement("a", {
+            "className": klass,
+            "onClick": this.submit
+          }, "确定")));
+        },
+        show: function(point, x, y) {
+          console.log(point, x, y);
+          return this.setState({
+            x: x,
+            y: y,
+            show: true,
+            point: point,
+            selected_values: {}
+          });
+        },
+        close: function() {
+          return this.setState({
+            show: false
+          });
+        },
+        click_value: function(evt) {
+          var selected_values, value;
+          value = jQuery(evt.target).text();
+          selected_values = this.state.selected_values;
+          if (!selected_values[value]) {
+            selected_values[value] = true;
+          } else {
+            delete selected_values[value];
+          }
+          return this.setState({
+            selected_values: selected_values
+          });
+        },
+        submit: function() {
+          var key, value, values;
+          values = Object.keys(this.state.selected_values);
+          key = this.state.point.text;
+          value = values.join('');
+          this.props.page.refs.sidebar.record(key, value);
+          return this.close();
+        }
       })
+    }
+  });
+
+}).call(this);
+
+(function() {
+  this.GHSelectPage = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'gh-page'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, React.createElement(TopbarBack, {
+        "href": 'index.html'
+      }), React.createElement("span", null, "预约挂号")), React.createElement("div", {
+        "className": 'select'
+      }, React.createElement("div", {
+        "className": "ui cards two"
+      }, React.createElement("a", {
+        "className": "card",
+        "href": 'gh-xc.html'
+      }, React.createElement("div", {
+        "className": "content"
+      }, React.createElement("div", {
+        "className": 'yunwen'
+      }), React.createElement("div", {
+        "className": "ui header"
+      }, React.createElement("span", null, "现场挂号")))), React.createElement("a", {
+        "className": "card",
+        "href": 'gh-yy.html'
+      }, React.createElement("div", {
+        "className": "content"
+      }, React.createElement("div", {
+        "className": 'yunwen'
+      }), React.createElement("div", {
+        "className": "ui header"
+      }, React.createElement("span", null, "预约取号"))))))));
+    }
+  });
+
+  this.GHXCPage = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'gh-page'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, React.createElement(TopbarBack, {
+        "href": 'gh-select.html'
+      }), React.createElement("span", null, "现场挂号"))));
+    }
+  });
+
+  this.GHYYPage = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'gh-page'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, React.createElement(TopbarBack, {
+        "href": 'gh-select.html'
+      }), React.createElement("span", null, "预约取号"))));
     }
   });
 
@@ -2615,6 +2831,258 @@
       return Object.prototype.toString.call(arr) === '[object Array]';
     };
   }
+
+  window.ClassName = (function() {
+    function _Class(hash) {
+      this.hash = hash;
+    }
+
+    _Class.prototype.toString = function() {
+      var arr, key, ref, value;
+      arr = [];
+      ref = this.hash;
+      for (key in ref) {
+        value = ref[key];
+        if (value) {
+          arr.push(key);
+        }
+      }
+      return arr.join(' ');
+    };
+
+    return _Class;
+
+  })();
+
+}).call(this);
+
+(function() {
+  this.TopbarBack = React.createClass({
+    render: function() {
+      return React.createElement("a", {
+        "className": 'topbar-back',
+        "href": this.props.href
+      }, React.createElement("i", {
+        "className": 'icon chevron left'
+      }));
+    }
+  });
+
+  this.ZDPatientInfoPage = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'zd-patient-info-page'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, React.createElement(TopbarBack, {
+        "href": 'zd-patient-list.html'
+      }), React.createElement("span", null, "患者信息")), React.createElement("div", {
+        "className": 'table-div'
+      }, React.createElement("table", {
+        "className": 'ui very basic celled table'
+      }, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing'
+      }, "姓名："), React.createElement("td", null, "王大锤"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "性别："), React.createElement("td", null, "男"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "年龄："), React.createElement("td", null, "33")), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing'
+      }, "日期："), React.createElement("td", null, "2015-12-08"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "就诊号："), React.createElement("td", null, "301"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "诊疗卡："), React.createElement("td", null, "1234567")), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing'
+      }, "身高："), React.createElement("td", null, "180 cm"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "体重："), React.createElement("td", null, "70 kg"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "血压："), React.createElement("td", null, "70\x2F100 mmHg")), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing top aligned'
+      }, "既往史："), React.createElement("td", {
+        "colSpan": '5',
+        "className": 'desc'
+      }, React.createElement("span", null))), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing top aligned'
+      }, "体质类型："), React.createElement("td", {
+        "colSpan": '5',
+        "className": 'desc'
+      }, React.createElement("span", null))))), React.createElement("div", null, React.createElement("a", {
+        "className": 'ui labeled icon button back',
+        "href": 'zd-patient-list.html'
+      }, React.createElement("i", {
+        "className": 'left arrow icon'
+      }), React.createElement("span", null, "返回患者队列")), React.createElement("a", {
+        "className": 'ui right labeled icon button brown next',
+        "href": 'zd-diagnosis.html'
+      }, React.createElement("i", {
+        "className": 'right arrow icon'
+      }), React.createElement("span", null, "进入体检系统"))))));
+    }
+  });
+
+  this.ZDPatientResultPage = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'zd-patient-info-page'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, React.createElement(TopbarBack, {
+        "href": 'zd-patient-list.html'
+      }), React.createElement("span", null, "患者信息")), React.createElement("div", {
+        "className": 'table-div'
+      }, React.createElement("table", {
+        "className": 'ui very basic celled table'
+      }, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing'
+      }, "姓名："), React.createElement("td", null, "王大锤"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "性别："), React.createElement("td", null, "男"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "年龄："), React.createElement("td", null, "33")), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing'
+      }, "日期："), React.createElement("td", null, "2015-12-08"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "就诊号："), React.createElement("td", null, "301"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "诊疗卡："), React.createElement("td", null, "1234567"))))), React.createElement("div", {
+        "className": 'table-div'
+      }, React.createElement("div", {
+        "className": 'record'
+      }, React.createElement("h3", {
+        "className": 'ui header'
+      }, "已检查项目：背诊")), React.createElement("div", null, React.createElement("a", {
+        "className": 'ui labeled icon button back',
+        "href": 'javascript:;'
+      }, React.createElement("i", {
+        "className": 'icon file'
+      }), React.createElement("span", null, "查看体检记录")), React.createElement("a", {
+        "className": 'ui right labeled icon button brown next',
+        "href": 'zd-diagnosis.html'
+      }, React.createElement("i", {
+        "className": 'pencil icon'
+      }), React.createElement("span", null, "修改体检记录")))), React.createElement("div", {
+        "className": 'table-div'
+      }, React.createElement("div", {
+        "className": 'record'
+      }, React.createElement("h3", {
+        "className": 'ui header'
+      }, "已检查项目：舌诊")), React.createElement("div", null, React.createElement("a", {
+        "className": 'ui labeled icon button back',
+        "href": 'javascript:;'
+      }, React.createElement("i", {
+        "className": 'icon file'
+      }), React.createElement("span", null, "查看体检记录")), React.createElement("a", {
+        "className": 'ui right labeled icon button brown next',
+        "href": 'zd-diagnosis.html'
+      }, React.createElement("i", {
+        "className": 'pencil icon'
+      }), React.createElement("span", null, "修改体检记录")))), React.createElement("div", {
+        "className": 'table-div'
+      }, React.createElement("div", null, React.createElement("a", {
+        "className": 'ui right labeled icon button brown next',
+        "href": 'zd-diagnosis.html'
+      }, React.createElement("i", {
+        "className": 'plus icon'
+      }), React.createElement("span", null, "检查其他项目")))), React.createElement("div", {
+        "className": 'table-div'
+      }, React.createElement("div", null, React.createElement("a", {
+        "className": 'ui right labeled icon button brown next',
+        "href": 'index.html'
+      }, React.createElement("i", {
+        "className": 'icon check'
+      }), React.createElement("span", null, "保存体检结果"))))));
+    }
+  });
+
+}).call(this);
+
+(function() {
+  this.ZDPatientListPage = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'zd-patient-list-page'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement(ZDPatientListPage.Dates, null), React.createElement(ZDPatientListPage.List, null)));
+    },
+    statics: {
+      Dates: React.createClass({
+        render: function() {
+          var date, dates, idx, klass;
+          dates = [['12-08，星期二，上午', '8/10'], ['12-08，星期二，下午', '14/20'], ['12-09，星期三，上午', '2/10'], ['12-09，星期三，下午', '1/20']];
+          return React.createElement("div", {
+            "className": 'dates'
+          }, React.createElement("h2", {
+            "className": 'ui header topbar'
+          }, React.createElement(TopbarBack, {
+            "href": 'index.html'
+          }), "就诊日期"), React.createElement("div", {
+            "className": 'dlist'
+          }, (function() {
+            var i, len, results;
+            results = [];
+            for (idx = i = 0, len = dates.length; i < len; idx = ++i) {
+              date = dates[idx];
+              klass = new ClassName({
+                'ditem': true,
+                'active': idx === 0
+              });
+              results.push(React.createElement("a", {
+                "key": idx,
+                "className": klass,
+                "href": 'javascript:;'
+              }, React.createElement("span", null, date[0]), React.createElement("span", {
+                "className": 'persons-number'
+              }, React.createElement("span", null, date[1]), React.createElement("i", {
+                "className": 'icon chevron right'
+              }))));
+            }
+            return results;
+          })()));
+        }
+      }),
+      List: React.createClass({
+        render: function() {
+          var idx, klass, patient, patients;
+          patients = [['301', '王大锤', '男'], ['302', '张本煜', '男'], ['303', '小爱', '女'], ['304', '孔连顺', '女'], ['305', '刘循子墨', '男'], ['306', '易小星', '男'], ['307', '至尊玉', '男'], ['308', '葛布', '女']];
+          return React.createElement("div", {
+            "className": 'list'
+          }, React.createElement("h2", {
+            "className": 'ui header topbar'
+          }, "患者队列"), React.createElement("div", {
+            "className": 'plist'
+          }, (function() {
+            var i, len, results;
+            results = [];
+            for (idx = i = 0, len = patients.length; i < len; idx = ++i) {
+              patient = patients[idx];
+              klass = new ClassName({
+                'pitem': true
+              });
+              results.push(React.createElement("a", {
+                "key": idx,
+                "className": klass,
+                "href": 'zd-patient-info.html'
+              }, React.createElement("span", {
+                "className": 'ui label'
+              }, patient[0]), React.createElement("span", null, " - "), React.createElement("span", null, patient[1]), React.createElement("span", null, " - "), React.createElement("span", null, patient[2]), React.createElement("span", {
+                "className": 'tail'
+              }, React.createElement("i", {
+                "className": 'icon chevron right'
+              }))));
+            }
+            return results;
+          })()));
+        }
+      })
+    }
+  });
 
 }).call(this);
 

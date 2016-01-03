@@ -95,7 +95,6 @@ body.admin .ui.segment.demo-admin-table {
   background-color: transparent;
   border-radius: 0;
   box-shadow: none;
-  width: auto;
   padding: 0;
   background-color: rgba(255, 255, 255, 0.6);
   transition: all ease .3s;
@@ -135,10 +134,14 @@ body.admin .ui.segment.demo-admin-table {
       display: none; }
     .demo-index-page .ui.cards .card .header.zhenduan {
       background-image: url(http://i.teamkn.com/i/xA4FmuvZ.png); }
+    .demo-index-page .ui.cards .card .header.tijian {
+      background-image: url(http://i.teamkn.com/i/uZYHm8ld.png); }
     .demo-index-page .ui.cards .card .header.yewu {
       background-image: url(http://i.teamkn.com/i/uGWRXrKg.png); }
     .demo-index-page .ui.cards .card .header.guanli {
       background-image: url(http://i.teamkn.com/i/XnGX76wL.png); }
+    .demo-index-page .ui.cards .card .header.guahao {
+      background-image: url(http://i.teamkn.com/i/uwkgkPxk.png); }
   .demo-index-page .ui.cards .card .description {
     display: none; }
 
@@ -158,7 +161,7 @@ body.admin .ui.segment.demo-admin-table {
   background-color: #f1ebd4; }
   .diagnosis-page .page-sidebar {
     position: absolute;
-    top: 0;
+    top: 0px;
     right: 0;
     bottom: 0;
     width: 214px;
@@ -174,11 +177,14 @@ body.admin .ui.segment.demo-admin-table {
       background-repeat: repeat-y;
       opacity: 0.3; }
     .diagnosis-page .page-sidebar .title-logo {
-      width: 200px;
-      height: 140px;
+      width: 190px;
+      height: 170px;
       position: relative;
-      margin-top: 15px;
-      margin-bottom: 15px; }
+      margin-bottom: 5px;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
       .diagnosis-page .page-sidebar .title-logo .yw {
         background-image: url("http://i.teamkn.com/i/e4OwTrQc.png");
         background-size: cover;
@@ -186,7 +192,7 @@ body.admin .ui.segment.demo-admin-table {
         height: 72px;
         position: absolute;
         right: 10px;
-        top: 40px;
+        top: 50px;
         opacity: 0.2; }
       .diagnosis-page .page-sidebar .title-logo .img {
         width: 70px;
@@ -194,7 +200,7 @@ body.admin .ui.segment.demo-admin-table {
         background-image: url("http://i.teamkn.com/i/iuTohFMc.png");
         background-size: cover;
         position: absolute;
-        top: 0px;
+        top: 10px;
         right: 46px;
         opacity: 0.9; }
       .diagnosis-page .page-sidebar .title-logo .yz {
@@ -204,11 +210,38 @@ body.admin .ui.segment.demo-admin-table {
         background-size: cover;
         opacity: 0.8;
         position: absolute;
-        top: 30px;
+        top: 40px;
         right: 126px; }
+    .diagnosis-page .page-sidebar .records h3 {
+      margin: 5px;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+      font-weight: normal;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 0; }
+    .diagnosis-page .page-sidebar .records .record {
+      background-color: rgba(255, 255, 255, 0.6);
+      margin: 5px;
+      height: 40px;
+      line-height: 20px;
+      padding: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
+      .diagnosis-page .page-sidebar .records .record .key {
+        float: left;
+        background-color: rgba(165, 103, 63, 0.1);
+        height: 36px;
+        line-height: 20px;
+        padding: 8px 10px;
+        margin-right: 15px;
+        margin-top: -8px;
+        margin-left: -8px;
+        color: #A5673F; }
+    .diagnosis-page .page-sidebar .records .take-photo {
+      display: block;
+      margin: 5px; }
   .diagnosis-page .page-paper {
     position: absolute;
-    top: 0;
+    top: 50px;
     left: 0;
     bottom: 0;
     right: 214px;
@@ -221,7 +254,7 @@ body.admin .ui.segment.demo-admin-table {
       right: 0;
       bottom: 0; }
       .diagnosis-page .page-paper .svg-toucher .points-area {
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.6);
         position: absolute;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
         .diagnosis-page .page-paper .svg-toucher .points-area .point {
@@ -244,9 +277,52 @@ body.admin .ui.segment.demo-admin-table {
             width: 100px;
             font-size: 20px;
             line-height: 20px;
-            font-family: '楷体';
-            font-weight: bold;
             pointer-events: none; }
+  .diagnosis-page .popbox {
+    width: 300px;
+    min-height: 200px;
+    background-color: #F9F7ED;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    position: absolute;
+    margin-top: 50px;
+    padding: 5px; }
+    .diagnosis-page .popbox .header {
+      background-color: #F1EBD4;
+      text-align: center;
+      font-weight: normal;
+      height: 40px;
+      line-height: 40px;
+      margin-bottom: 5px; }
+    .diagnosis-page .popbox .name {
+      height: 50px;
+      line-height: 50px;
+      font-size: 20px;
+      text-align: center;
+      position: relative; }
+      .diagnosis-page .popbox .name .button {
+        position: absolute;
+        top: 8px;
+        right: 0; }
+    .diagnosis-page .popbox .values {
+      overflow: hidden;
+      border: solid 1px rgba(0, 0, 0, 0.1); }
+      .diagnosis-page .popbox .values .value {
+        float: left;
+        width: 50%;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        border: solid 1px rgba(0, 0, 0, 0.1);
+        cursor: pointer; }
+        .diagnosis-page .popbox .values .value.active {
+          background-color: rgba(165, 103, 63, 0.1); }
+    .diagnosis-page .popbox .button.self {
+      display: block;
+      margin-top: 5px;
+      font-size: 16px; }
 
 .horizontal-chinese-scroll {
   position: relative;
@@ -299,3 +375,216 @@ body.admin .ui.segment.demo-admin-table {
       min-height: 100px;
       padding: 15px;
       background-color: #f1ebd4; }
+
+.zd-patient-info-page,
+.zd-patient-list-page,
+.diagnosis-page,
+.gh-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f1ebd4; }
+  .zd-patient-info-page .container,
+  .zd-patient-list-page .container,
+  .diagnosis-page .container,
+  .gh-page .container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-left: solid 1px rgba(0, 0, 0, 0.2);
+    border-right: solid 1px rgba(0, 0, 0, 0.2); }
+  @media only screen and (max-width: 991px) and (min-width: 768px) {
+    .zd-patient-info-page .container,
+    .zd-patient-list-page .container,
+    .diagnosis-page .container,
+    .gh-page .container {
+      width: auto !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important; } }
+  .zd-patient-info-page h2.topbar,
+  .zd-patient-list-page h2.topbar,
+  .diagnosis-page h2.topbar,
+  .gh-page h2.topbar {
+    text-align: center;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.6);
+    position: relative;
+    margin-top: 0 !important; }
+    .zd-patient-info-page h2.topbar .topbar-back,
+    .zd-patient-list-page h2.topbar .topbar-back,
+    .diagnosis-page h2.topbar .topbar-back,
+    .gh-page h2.topbar .topbar-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 49px;
+      line-height: 49px;
+      width: 49px;
+      text-align: center;
+      color: #A5673F;
+      font-size: 20px; }
+      .zd-patient-info-page h2.topbar .topbar-back:hover,
+      .zd-patient-list-page h2.topbar .topbar-back:hover,
+      .diagnosis-page h2.topbar .topbar-back:hover,
+      .gh-page h2.topbar .topbar-back:hover {
+        background-color: white; }
+      .zd-patient-info-page h2.topbar .topbar-back i,
+      .zd-patient-list-page h2.topbar .topbar-back i,
+      .diagnosis-page h2.topbar .topbar-back i,
+      .gh-page h2.topbar .topbar-back i {
+        margin-right: 0 !important; }
+
+.diagnosis-page h2.topbar {
+  margin-right: 214px; }
+  .diagnosis-page h2.topbar .buttons {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 0; }
+
+.zd-patient-info-page .table-div {
+  margin: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  overflow: hidden; }
+  .zd-patient-info-page .table-div td.label {
+    color: #A5673F; }
+  .zd-patient-info-page .table-div td.desc span {
+    display: block;
+    min-height: 80px; }
+  .zd-patient-info-page .table-div .button.next {
+    float: right; }
+  .zd-patient-info-page .table-div .record {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px; }
+    .zd-patient-info-page .table-div .record .header {
+      height: 40px;
+      line-height: 40px;
+      font-weight: normal; }
+
+.zd-patient-list-page .dates {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  border-right: solid 1px rgba(0, 0, 0, 0.2); }
+  .zd-patient-list-page .dates .dlist {
+    margin: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+    .zd-patient-list-page .dates .dlist .ditem {
+      background-color: rgba(255, 255, 255, 0.6);
+      height: 40px;
+      line-height: 40px;
+      padding: 0 15px;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+      position: relative;
+      display: block;
+      color: rgba(0, 0, 0, 0.87); }
+      .zd-patient-list-page .dates .dlist .ditem:last-child {
+        border-bottom: 0 none; }
+      .zd-patient-list-page .dates .dlist .ditem:hover {
+        background-color: #FFF; }
+      .zd-patient-list-page .dates .dlist .ditem .persons-number {
+        float: right; }
+        .zd-patient-list-page .dates .dlist .ditem .persons-number i {
+          position: relative;
+          left: 10px;
+          color: #A5673F; }
+      .zd-patient-list-page .dates .dlist .ditem.active {
+        background-color: white; }
+        .zd-patient-list-page .dates .dlist .ditem.active:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 5px;
+          background-color: #A5673F; }
+.zd-patient-list-page .list {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  bottom: 0;
+  right: 0; }
+  .zd-patient-list-page .list .plist {
+    margin: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+    .zd-patient-list-page .list .plist .pitem {
+      background-color: rgba(255, 255, 255, 0.6);
+      height: 40px;
+      line-height: 40px;
+      padding: 0 15px;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+      position: relative;
+      display: block;
+      color: rgba(0, 0, 0, 0.87); }
+      .zd-patient-list-page .list .plist .pitem:last-child {
+        border-bottom: 0 none; }
+      .zd-patient-list-page .list .plist .pitem:hover {
+        background-color: #FFF; }
+      .zd-patient-list-page .list .plist .pitem .label {
+        margin-left: -5px;
+        background-color: rgba(165, 103, 63, 0.1); }
+      .zd-patient-list-page .list .plist .pitem .tail {
+        float: right; }
+        .zd-patient-list-page .list .plist .pitem .tail i {
+          position: relative;
+          left: 10px;
+          color: #A5673F; }
+      .zd-patient-list-page .list .plist .pitem.active {
+        background-color: white; }
+        .zd-patient-list-page .list .plist .pitem.active:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 5px;
+          background-color: #A5673F; }
+
+.gh-page .horizontal-chinese-scroll {
+  margin-left: 20px;
+  margin-right: 20px; }
+.gh-page .select {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 40px; }
+.gh-page .cards .card {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all ease .3s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  height: 200px; }
+  .gh-page .cards .card:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: none !important; }
+  .gh-page .cards .card .ui.header {
+    text-align: center;
+    font-size: 40px;
+    line-height: 172px;
+    margin-top: 0; }
+  .gh-page .cards .card .yunwen {
+    background-image: url("http://i.teamkn.com/i/WEwYNX6i.png");
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    opacity: 0.10;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; }
