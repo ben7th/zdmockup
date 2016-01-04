@@ -588,3 +588,23 @@ body.admin .ui.segment.demo-admin-table {
     left: 0;
     right: 0;
     margin: auto; }
+.gh-page .ui.menu {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+.gh-page .info-input-form {
+  width: 600px;
+  padding: 20px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+  .gh-page .info-input-form .panel {
+    width: 400px;
+    margin: auto; }
+  .gh-page .info-input-form h3.ui.header {
+    text-align: center;
+    font-weight: normal;
+    margin-top: 30px; }
+  .gh-page .info-input-form .ui.input {
+    margin-bottom: 10px; }
+    .gh-page .info-input-form .ui.input .ui.label {
+      background-color: rgba(165, 103, 63, 0.1);
+      color: #A5673F; }
