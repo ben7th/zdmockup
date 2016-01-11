@@ -770,6 +770,14 @@ body.admin {
     background-color: rgba(white, 0.6);
     box-shadow: 0 1px 2px rgba(black, 0.1);
 
+    &.result {
+      width: 300px;
+      margin-top: 30px;
+    }
+
+    .menu {
+      margin-bottom: 30px;
+    }
 
     .panel {
       width: 400px;
@@ -779,7 +787,6 @@ body.admin {
     h3.ui.header {
       text-align: center;
       font-weight: normal;
-      margin-top: 30px;
     }
 
     .ui.input {
@@ -788,6 +795,68 @@ body.admin {
         background-color: rgba($brown-color, 0.1);
         color: $brown-color;
       }
+    }
+
+    .enter-yy {
+      display: block;
+      margin: 0;
+    }
+
+    .exit {
+      margin-top: 10px;
+    }
+  }
+}
+
+.gh-page {
+  $left-w: 40%;
+  .pad-left-panel {
+    position: absolute;
+    top:0;left:0;bottom:0;
+    width:$left-w;
+    border-right:solid 1px rgba(black, 0.2);
+  }
+  .pad-right-panel {
+    position: absolute;
+    top:0;left:$left-w;bottom:0;right:0;
+  }
+  .pad-panel-list {
+    margin: 5px;
+    box-shadow: 0 1px 2px rgba(black, 0.1);
+
+    .item {
+      background-color: rgba(white, 0.6);
+      padding-left:10px;
+      padding-right:10px;
+      position: relative;
+      display: block;
+      color: rgba(0,0,0,.87);
+      // transition: all ease .1s;
+      // &:last-child {
+      //   border-bottom: 0 none;
+      // }
+      // &:hover {
+      //   background-color: #FFF;
+      // }
+
+      .tail {
+        float:right;
+        i {
+          position: relative;
+          left:10px;
+          color: $brown-color;
+        }
+      }
+
+      // &.active {
+      //   background-color: white;
+      //   &:before {
+      //     content: "";
+      //     position: absolute;
+      //     top:0;bottom:0;left:0;width:5px;
+      //     background-color: $brown-color;
+      //   }
+      // }
     }
   }
 }

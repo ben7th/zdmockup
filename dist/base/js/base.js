@@ -1803,6 +1803,8 @@
 }).call(this);
 
 (function() {
+  var ConfirmYYInfoPanel, FormPanel, GHMenu, PADLeftPanel, PADPanelList, PADRightPanel;
+
   this.GHSelectPage = React.createClass({
     render: function() {
       return React.createElement("div", {
@@ -1816,7 +1818,7 @@
       }), React.createElement("span", null, "预约挂号")), React.createElement("div", {
         "className": 'select'
       }, React.createElement("div", {
-        "className": "ui cards two"
+        "className": "ui cards three"
       }, React.createElement("a", {
         "className": "card",
         "href": 'gh-xc.html'
@@ -1835,13 +1837,22 @@
         "className": 'yunwen'
       }), React.createElement("div", {
         "className": "ui header"
-      }, React.createElement("span", null, "预约取号"))))))));
+      }, React.createElement("span", null, "预约取号")))), React.createElement("a", {
+        "className": "card",
+        "href": 'gh-zl.html'
+      }, React.createElement("div", {
+        "className": "content"
+      }, React.createElement("div", {
+        "className": 'yunwen'
+      }), React.createElement("div", {
+        "className": "ui header"
+      }, React.createElement("span", null, "治疗预约"))))))));
     }
   });
 
   this.GHXCPage = React.createClass({
     render: function() {
-      var idx, input, inputs;
+      var inputs;
       return React.createElement("div", {
         "className": 'gh-page'
       }, React.createElement("div", {
@@ -1852,22 +1863,72 @@
         "href": 'gh-select.html'
       }), React.createElement("span", null, "现场挂号")), React.createElement("div", {
         "className": 'info-input-form'
+      }, React.createElement(GHMenu, {
+        "active": 0
+      }), (inputs = ['　就诊人', '身份证号', '　手机号', '诊疗卡号', '症状描述', '个人病史', '家庭病史'], React.createElement(FormPanel, {
+        "title": '输入患者信息',
+        "inputs": inputs,
+        "to": 'gh-doctor-select.html'
+      })))));
+    }
+  });
+
+  this.GHYYPage = React.createClass({
+    render: function() {
+      var inputs;
+      return React.createElement("div", {
+        "className": 'gh-page'
       }, React.createElement("div", {
-        "className": "ui two item menu"
-      }, React.createElement("a", {
-        "className": "active item"
-      }, "初次来访"), React.createElement("a", {
-        "className": "item"
-      }, "再次来访")), React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, React.createElement(TopbarBack, {
+        "href": 'gh-select.html'
+      }), React.createElement("span", null, "预约取号")), React.createElement("div", {
+        "className": 'info-input-form'
+      }, (inputs = ['　预约号', '　手机号', '诊疗卡号'], React.createElement(FormPanel, {
+        "title": '输入预约信息',
+        "inputs": inputs,
+        "to": 'gh-confirm.html'
+      })))));
+    }
+  });
+
+  GHMenu = React.createClass({
+    render: function() {
+      if (this.props.active === 0) {
+        return React.createElement("div", {
+          "className": "ui two item menu"
+        }, React.createElement("a", {
+          "className": "active item"
+        }, "初次来访"), React.createElement("a", {
+          "className": "item"
+        }, "再次来访"));
+      } else if (this.props.active === 1) {
+        return React.createElement("div", {
+          "className": "ui two item menu"
+        }, React.createElement("a", {
+          "className": "item"
+        }, "初次来访"), React.createElement("a", {
+          "className": "active item"
+        }, "再次来访"));
+      }
+    }
+  });
+
+  FormPanel = React.createClass({
+    render: function() {
+      var idx, input;
+      return React.createElement("div", {
         "className": 'panel'
       }, React.createElement("h3", {
         "className": 'ui header'
-      }, "输入患者信息"), ((function() {
-        var i, len, results;
-        inputs = ['　就诊人', '身份证号', '　手机号', '诊疗卡号', '症状描述', '个人病史', '家庭病史'];
+      }, this.props.title), (function() {
+        var i, len, ref, results;
+        ref = this.props.inputs;
         results = [];
-        for (idx = i = 0, len = inputs.length; i < len; idx = ++i) {
-          input = inputs[idx];
+        for (idx = i = 0, len = ref.length; i < len; idx = ++i) {
+          input = ref[idx];
           results.push(React.createElement("div", {
             "key": idx,
             "className": 'ui labeled input fluid'
@@ -1878,15 +1939,16 @@
           })));
         }
         return results;
-      })()), React.createElement("a", {
-        "className": 'ui labeled button brown'
-      }, "进入预约", React.createElement("i", {
+      }).call(this), React.createElement("a", {
+        "className": 'ui right labeled icon button brown enter-yy',
+        "href": this.props.to
+      }, React.createElement("i", {
         "className": 'icon arrow right'
-      }))))));
+      }), React.createElement("span", null, "获取预约信息")));
     }
   });
 
-  this.GHYYPage = React.createClass({
+  this.GHYYConfirmPage = React.createClass({
     render: function() {
       return React.createElement("div", {
         "className": 'gh-page'
@@ -1895,8 +1957,131 @@
       }, React.createElement("h2", {
         "className": 'ui header topbar'
       }, React.createElement(TopbarBack, {
+        "href": 'gh-yy.html'
+      }), React.createElement("span", null, "预约取号")), React.createElement(ConfirmYYInfoPanel, null)));
+    }
+  });
+
+  ConfirmYYInfoPanel = React.createClass({
+    render: function() {
+      var data, idx, item;
+      data = [['　就诊人', '王大锤'], ['预约医师', '叶建华（主任医师 - 体检科）'], ['就诊时间', '2015-12-08（星期二）上午'], ['门诊类型', '专家门诊']];
+      return React.createElement("div", {
+        "className": 'info-input-form yy-info'
+      }, React.createElement("h3", {
+        "className": 'ui header'
+      }, "预约信息确认"), React.createElement("div", {
+        "className": "ui divided list"
+      }, (function() {
+        var i, len, results;
+        results = [];
+        for (idx = i = 0, len = data.length; i < len; idx = ++i) {
+          item = data[idx];
+          results.push(React.createElement("div", {
+            "className": 'item',
+            "key": idx
+          }, React.createElement("div", {
+            "className": "ui horizontal label"
+          }, item[0]), React.createElement("span", null, item[1])));
+        }
+        return results;
+      })()), React.createElement("a", {
+        "className": 'ui right labeled icon button brown enter-yy',
+        "href": 'gh-result.html'
+      }, React.createElement("i", {
+        "className": 'icon arrow right'
+      }), React.createElement("span", null, "确认挂号")));
+    }
+  });
+
+  this.GHYYResultPage = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'gh-page'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("div", {
+        "className": 'info-input-form result'
+      }, React.createElement("h3", {
+        "className": 'ui header'
+      }, "挂号成功"), React.createElement("p", {
+        "style": {
+          'text-align': 'center'
+        }
+      }, "就诊号：", React.createElement("strong", null, "105")), React.createElement("a", {
+        "className": 'ui right labeled icon button brown enter-yy',
+        "href": 'javascript:;'
+      }, React.createElement("i", {
+        "className": 'icon print'
+      }), React.createElement("span", null, "打印挂号单")), React.createElement("a", {
+        "className": 'ui right labeled icon button enter-yy exit',
         "href": 'gh-select.html'
-      }), React.createElement("span", null, "预约取号"))));
+      }, React.createElement("i", {
+        "className": 'icon arrow left'
+      }), React.createElement("span", null, "退出")))));
+    }
+  });
+
+  this.GHDoctorSelectPage = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'gh-page'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement(PADLeftPanel, null, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, React.createElement(TopbarBack, {
+        "href": 'gh-xc.html'
+      }), "医师"), React.createElement(PADPanelList, null)), React.createElement(PADRightPanel, null, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, "排班表"))));
+    }
+  });
+
+  PADLeftPanel = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'pad-left-panel'
+      }, this.props.children);
+    }
+  });
+
+  PADRightPanel = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'pad-right-panel'
+      }, this.props.children);
+    }
+  });
+
+  PADPanelList = React.createClass({
+    render: function() {
+      var idx, klass, patient, patients;
+      patients = [['301', '王大锤', '男'], ['302', '张本煜', '男'], ['303', '小爱', '女'], ['304', '孔连顺', '女'], ['305', '刘循子墨', '男'], ['306', '易小星', '男'], ['307', '至尊玉', '男'], ['308', '葛布', '女']];
+      return React.createElement("div", {
+        "className": 'ui relaxed divided list pad-panel-list'
+      }, (function() {
+        var i, len, results;
+        results = [];
+        for (idx = i = 0, len = patients.length; i < len; idx = ++i) {
+          patient = patients[idx];
+          klass = new ClassName({
+            'item': true
+          });
+          results.push(React.createElement("a", {
+            "key": idx,
+            "className": klass,
+            "href": 'zd-patient-info.html'
+          }, React.createElement("span", {
+            "className": 'ui label'
+          }, patient[0]), React.createElement("span", null, " - "), React.createElement("span", null, patient[1]), React.createElement("span", null, " - "), React.createElement("span", null, patient[2]), React.createElement("span", {
+            "className": 'tail'
+          }, React.createElement("i", {
+            "className": 'icon chevron right'
+          }))));
+        }
+        return results;
+      })());
     }
   });
 

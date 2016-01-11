@@ -596,15 +596,54 @@ body.admin .ui.segment.demo-admin-table {
   margin: auto;
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+  .gh-page .info-input-form.result {
+    width: 300px;
+    margin-top: 30px; }
+  .gh-page .info-input-form .menu {
+    margin-bottom: 30px; }
   .gh-page .info-input-form .panel {
     width: 400px;
     margin: auto; }
   .gh-page .info-input-form h3.ui.header {
     text-align: center;
-    font-weight: normal;
-    margin-top: 30px; }
+    font-weight: normal; }
   .gh-page .info-input-form .ui.input {
     margin-bottom: 10px; }
     .gh-page .info-input-form .ui.input .ui.label {
       background-color: rgba(165, 103, 63, 0.1);
       color: #A5673F; }
+  .gh-page .info-input-form .enter-yy {
+    display: block;
+    margin: 0; }
+  .gh-page .info-input-form .exit {
+    margin-top: 10px; }
+
+.gh-page .pad-left-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  border-right: solid 1px rgba(0, 0, 0, 0.2); }
+.gh-page .pad-right-panel {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  bottom: 0;
+  right: 0; }
+.gh-page .pad-panel-list {
+  margin: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+  .gh-page .pad-panel-list .item {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    display: block;
+    color: rgba(0, 0, 0, 0.87); }
+    .gh-page .pad-panel-list .item .tail {
+      float: right; }
+      .gh-page .pad-panel-list .item .tail i {
+        position: relative;
+        left: 10px;
+        color: #A5673F; }
