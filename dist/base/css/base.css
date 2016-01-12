@@ -636,11 +636,17 @@ body.admin .ui.segment.demo-admin-table {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
   .gh-page .pad-panel-list .item {
     background-color: rgba(255, 255, 255, 0.6);
-    padding-left: 10px;
-    padding-right: 10px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
     position: relative;
     display: block;
     color: rgba(0, 0, 0, 0.87); }
+    .gh-page .pad-panel-list .item:last-child {
+      border-bottom: 0 none; }
+    .gh-page .pad-panel-list .item:hover {
+      background-color: #FFF; }
     .gh-page .pad-panel-list .item .tail {
       float: right; }
       .gh-page .pad-panel-list .item .tail i {

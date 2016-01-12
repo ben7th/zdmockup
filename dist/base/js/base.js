@@ -1803,7 +1803,7 @@
 }).call(this);
 
 (function() {
-  var ConfirmYYInfoPanel, FormPanel, GHMenu, PADLeftPanel, PADPanelList, PADRightPanel;
+  var ConfirmYYInfoPanel, DoctorArrangeInfoItem, FormPanel, GHMenu, PADLeftPanel, PADPanelList, PADRightPanel;
 
   this.GHSelectPage = React.createClass({
     render: function() {
@@ -2032,7 +2032,9 @@
         "className": 'ui header topbar'
       }, React.createElement(TopbarBack, {
         "href": 'gh-xc.html'
-      }), "医师"), React.createElement(PADPanelList, null)), React.createElement(PADRightPanel, null, React.createElement("h2", {
+      }), "医师"), React.createElement(PADPanelList, {
+        "item_component": DoctorArrangeInfoItem
+      })), React.createElement(PADRightPanel, null, React.createElement("h2", {
         "className": 'ui header topbar'
       }, "排班表"))));
     }
@@ -2056,32 +2058,39 @@
 
   PADPanelList = React.createClass({
     render: function() {
-      var idx, klass, patient, patients;
-      patients = [['301', '王大锤', '男'], ['302', '张本煜', '男'], ['303', '小爱', '女'], ['304', '孔连顺', '女'], ['305', '刘循子墨', '男'], ['306', '易小星', '男'], ['307', '至尊玉', '男'], ['308', '葛布', '女']];
+      var data, idx, item;
+      data = [['301', '王大锤', '男'], ['302', '张本煜', '男'], ['303', '小爱', '女'], ['304', '孔连顺', '女'], ['305', '刘循子墨', '男'], ['306', '易小星', '男'], ['307', '至尊玉', '男'], ['308', '葛布', '女']];
       return React.createElement("div", {
-        "className": 'ui relaxed divided list pad-panel-list'
+        "className": 'pad-panel-list'
       }, (function() {
         var i, len, results;
         results = [];
-        for (idx = i = 0, len = patients.length; i < len; idx = ++i) {
-          patient = patients[idx];
-          klass = new ClassName({
-            'item': true
-          });
-          results.push(React.createElement("a", {
-            "key": idx,
-            "className": klass,
-            "href": 'zd-patient-info.html'
-          }, React.createElement("span", {
-            "className": 'ui label'
-          }, patient[0]), React.createElement("span", null, " - "), React.createElement("span", null, patient[1]), React.createElement("span", null, " - "), React.createElement("span", null, patient[2]), React.createElement("span", {
-            "className": 'tail'
-          }, React.createElement("i", {
-            "className": 'icon chevron right'
-          }))));
+        for (idx = i = 0, len = data.length; i < len; idx = ++i) {
+          item = data[idx];
+          results.push(React.createElement(this.props.item_component, {
+            'key': idx,
+            'data': item
+          }));
         }
         return results;
-      })());
+      }).call(this));
+    }
+  });
+
+  DoctorArrangeInfoItem = React.createClass({
+    render: function() {
+      var data;
+      data = this.props.data;
+      return React.createElement("a", {
+        "className": 'item',
+        "href": 'javascript:;'
+      }, React.createElement("span", {
+        "className": 'ui label'
+      }, data[0]), React.createElement("span", null, " - "), React.createElement("span", null, data[1]), React.createElement("span", null, " - "), React.createElement("span", null, data[2]), React.createElement("span", {
+        "className": 'tail'
+      }, React.createElement("i", {
+        "className": 'icon chevron right'
+      })));
     }
   });
 

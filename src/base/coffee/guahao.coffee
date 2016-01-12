@@ -171,7 +171,7 @@ ConfirmYYInfoPanel = React.createClass
             <TopbarBack href='gh-xc.html' />
             医师
           </h2>
-          <PADPanelList />
+          <PADPanelList item_component=DoctorArrangeInfoItem />
         </PADLeftPanel>
         <PADRightPanel>
           <h2 className='ui header topbar'>排班表</h2>
@@ -193,7 +193,7 @@ PADRightPanel = React.createClass
 
 PADPanelList = React.createClass
   render: ->
-    patients = [
+    data = [
       ['301', '王大锤', '男']
       ['302', '张本煜', '男']
       ['303', '小爱', '女']
@@ -204,22 +204,26 @@ PADPanelList = React.createClass
       ['308', '葛布', '女']
     ]
 
-    <div className='ui relaxed divided list pad-panel-list'>
+    <div className='pad-panel-list'>
     {
-      for patient, idx in patients
-        klass = new ClassName {
-          'item': true
-        }
-
-        <a key={idx} className={klass} href='zd-patient-info.html'>
-          <span className='ui label'>{patient[0]}</span>
-          <span> - </span>
-          <span>{patient[1]}</span>
-          <span> - </span>
-          <span>{patient[2]}</span>
-          <span className='tail'>
-            <i className='icon chevron right' />
-          </span>
-        </a>
+      for item, idx in data
+        React.createElement @props.item_component,
+          'key': idx
+          'data': item
     }
     </div>
+
+DoctorArrangeInfoItem = React.createClass
+  render: ->
+    data = @props.data
+
+    <a className='item' href='javascript:;'>
+      <span className='ui label'>{data[0]}</span>
+      <span> - </span>
+      <span>{data[1]}</span>
+      <span> - </span>
+      <span>{data[2]}</span>
+      <span className='tail'>
+        <i className='icon chevron right' />
+      </span>
+    </a>
