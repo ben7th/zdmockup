@@ -1,3 +1,31 @@
+@TijianSelectPage = React.createClass
+  render: ->
+    <div className='gh-page'>
+      <div className='ui container'>
+        <h2 className='ui header topbar'>
+          <TopbarBack href='index.html' />
+          <span>体检</span>
+        </h2>
+
+        <div className='select'>
+          <div className="ui cards three">
+            <a className="card" href='zd-patient-list.html'>
+              <div className="content">
+                <div className='yunwen' />
+                <div className="ui header"><span>患者队列</span></div>
+              </div>
+            </a>
+            <a className="card" href='tijian-paiban.html'>
+              <div className="content">
+                <div className='yunwen' />
+                <div className="ui header"><span>我的排班</span></div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
 @ZDPatientListPage = React.createClass
   render: ->
     <div className='zd-patient-list-page'>
@@ -19,7 +47,7 @@
 
         <div className='dates'>
           <h2 className='ui header topbar'>
-            <TopbarBack href='index.html' />
+            <TopbarBack href='tijian.html' />
             就诊日期
           </h2>
           <div className='dlist'>

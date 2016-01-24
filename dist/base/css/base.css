@@ -141,7 +141,9 @@ body.admin .ui.segment.demo-admin-table {
     .demo-index-page .ui.cards .card .header.guanli {
       background-image: url(http://i.teamkn.com/i/XnGX76wL.png); }
     .demo-index-page .ui.cards .card .header.guahao {
-      background-image: url(http://i.teamkn.com/i/uwkgkPxk.png); }
+      background-image: url(http://i.teamkn.com/i/Dp3HyGmq.png); }
+    .demo-index-page .ui.cards .card .header.doctor {
+      background-image: url(http://i.teamkn.com/i/ZLqsOWco.png); }
   .demo-index-page .ui.cards .card .description {
     display: none; }
 
@@ -333,7 +335,7 @@ body.admin .ui.segment.demo-admin-table {
   .horizontal-chinese-scroll .handle {
     position: absolute;
     width: 20px;
-    background-color: #A5673F;
+    background-color: #98794e;
     top: 12px;
     bottom: 12px; }
     .horizontal-chinese-scroll .handle.begin {
@@ -346,14 +348,16 @@ body.admin .ui.segment.demo-admin-table {
       left: 3px;
       right: 3px;
       height: 12px;
-      background-color: #422919; }
+      background-color: #422919;
+      border-radius: 3px 3px 0 0; }
     .horizontal-chinese-scroll .handle .handle-border.bottom {
       position: absolute;
       bottom: -12px;
       left: 3px;
       right: 3px;
       height: 12px;
-      background-color: #422919; }
+      background-color: #422919;
+      border-radius: 0 0 3px 3px; }
   .horizontal-chinese-scroll .scroll-inner {
     margin-top: 6px;
     margin-bottom: 6px;
@@ -573,9 +577,10 @@ body.admin .ui.segment.demo-admin-table {
     box-shadow: none !important; }
   .gh-page .cards .card .ui.header {
     text-align: center;
-    font-size: 40px;
+    font-size: 50px;
     line-height: 172px;
-    margin-top: 0; }
+    margin-top: 0;
+    font-family: 隶书; }
   .gh-page .cards .card .yunwen {
     background-image: url("http://i.teamkn.com/i/WEwYNX6i.png");
     background-size: cover;
@@ -591,7 +596,7 @@ body.admin .ui.segment.demo-admin-table {
 .gh-page .ui.menu {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
 .gh-page .info-input-form {
-  width: 600px;
+  width: 500px;
   padding: 20px;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.6);
@@ -617,6 +622,12 @@ body.admin .ui.segment.demo-admin-table {
     margin: 0; }
   .gh-page .info-input-form .exit {
     margin-top: 10px; }
+  .gh-page .info-input-form .list .item.period span.plabel {
+    font-weight: bold; }
+  .gh-page .info-input-form .list .item.period.full {
+    color: rgba(0, 0, 0, 0.3); }
+    .gh-page .info-input-form .list .item.period.full span.plabel {
+      font-weight: normal; }
 
 .gh-page .pad-left-panel {
   position: absolute;
@@ -645,11 +656,85 @@ body.admin .ui.segment.demo-admin-table {
     color: rgba(0, 0, 0, 0.87); }
     .gh-page .pad-panel-list .item:last-child {
       border-bottom: 0 none; }
-    .gh-page .pad-panel-list .item:hover {
+    .gh-page .pad-panel-list .item:hover, .gh-page .pad-panel-list .item.active {
       background-color: #FFF; }
+    .gh-page .pad-panel-list .item.disabled {
+      pointer-events: none; }
+    .gh-page .pad-panel-list .item.full {
+      color: rgba(0, 0, 0, 0.3); }
     .gh-page .pad-panel-list .item .tail {
       float: right; }
       .gh-page .pad-panel-list .item .tail i {
         position: relative;
         left: 10px;
         color: #A5673F; }
+
+table.paiban th {
+  text-align: center !important; }
+table.paiban td.pbtd {
+  padding: 3px; }
+  table.paiban td.pbtd.sat .date .text, table.paiban td.pbtd.sun .date .text {
+    color: rgba(255, 0, 0, 0.5); }
+  table.paiban td.pbtd.p1 .item.p1 {
+    background-color: rgba(33, 133, 208, 0.7);
+    color: white; }
+  table.paiban td.pbtd.p2 .item.p2 {
+    background-color: rgba(33, 133, 208, 0.7);
+    color: white; }
+  table.paiban td.pbtd.p3 .item.p3 {
+    background-color: rgba(33, 133, 208, 0.7);
+    color: white; }
+table.paiban .list {
+  border: solid 1px #eee; }
+table.paiban .item {
+  text-align: center;
+  padding: 0 !important; }
+  table.paiban .item.date {
+    font-weight: bold;
+    font-size: 20px; }
+  table.paiban .item .text {
+    height: 30px;
+    line-height: 30px; }
+
+.timeline {
+  margin-left: 100px;
+  border-left: solid 3px #ccc;
+  padding-left: 20px; }
+  .timeline .tl-item {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    line-height: 24px;
+    position: relative; }
+    .timeline .tl-item:before {
+      content: "";
+      width: 13px;
+      height: 13px;
+      border-radius: 100px;
+      background-color: #999;
+      position: absolute;
+      top: 19px;
+      left: -28px; }
+    .timeline .tl-item:after {
+      content: "";
+      border: solid 11px transparent;
+      border-right: solid 11px white;
+      position: absolute;
+      top: 15px;
+      left: -22px; }
+    .timeline .tl-item .dh {
+      border-bottom: dashed 1px #ddd;
+      line-height: 26px;
+      padding-bottom: 5px;
+      margin-bottom: 5px; }
+    .timeline .tl-item .dlabel {
+      color: #f2711c;
+      font-size: 16px; }
+    .timeline .tl-item .date {
+      font-weight: bold; }
+    .timeline .tl-item .jiaofei {
+      position: absolute;
+      top: 15px;
+      right: 15px; }

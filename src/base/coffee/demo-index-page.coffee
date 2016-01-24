@@ -29,17 +29,23 @@
       render: ->
         data = [
           {
+            name: '挂号'
+            desc: '预约，体检，诊疗业务操作演示'
+            key: 'guahao'
+            href: 'guide.html'
+          }
+          {
+            name: '医师'
+            desc: '医师操作演示'
+            key: 'doctor'
+            href: 'doctor.html'
+          }
+          {
             name: '体检'
             desc: '综合规范化诊断记录系统'
             key: 'tijian'
             # href: 'diagnosis.html'
-            href: 'zd-patient-list.html'
-          }
-          {
-            name: '挂号'
-            desc: '预约，体检，诊疗业务操作演示'
-            key: 'guahao'
-            href: 'gh-select.html'
+            href: 'tijian.html'
           }
           {
             name: '管理'
@@ -49,7 +55,7 @@
           }
         ]
 
-        <div className="ui cards three doubling">
+        <div className="ui cards four doubling">
         {
           for item, idx in data
             href = item.href || 'javascript:;'
