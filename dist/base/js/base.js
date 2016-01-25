@@ -2009,7 +2009,7 @@
             info: [
               ['主治医师', '李海峰'], ['就诊时间', '2015-11-05（星期四）上午'], [
                 '诊断报告', React.createElement("a", {
-                  "href": 'javascript:;'
+                  "href": 'doctor-zhenduan.html'
                 }, "查看详情")
               ]
             ],
@@ -2117,8 +2117,13 @@
   });
 
   this.DoctorPayPage = React.createClass({
+    getInitialState: function() {
+      return {
+        pays: [['基础体检', '次', '10.00', 1, '10.00'], ['舌诊', '次', '20.00', 1, '20.00'], ['脉诊', '次', '30.00', 1, '30.00']]
+      };
+    },
     render: function() {
-      var data, idx, item;
+      var idx, item, klass, total;
       return React.createElement("div", {
         "className": 'zd-patient-info-page pay'
       }, React.createElement("div", {
@@ -2135,27 +2140,66 @@
         "className": 'ui header'
       }, "尚未缴费项"), React.createElement("table", {
         "className": 'ui celled table'
-      }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null), React.createElement("th", null, "项目"), React.createElement("th", null, "单位"), React.createElement("th", null, "单价"), React.createElement("th", null, "数量"), React.createElement("th", null, "金额"))), React.createElement("tbody", null, ((function() {
-        var i, len, results;
-        data = [['基础体检', '次', '10.00', 1, '10.00'], ['舌诊', '次', '10.00', 1, '10.00'], ['脉诊', '次', '10.00', 1, '10.00']];
+      }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null, React.createElement("input", {
+        "type": "checkbox",
+        "onChange": this.toggle_all
+      })), React.createElement("th", null, "项目"), React.createElement("th", null, "单位"), React.createElement("th", null, "单价"), React.createElement("th", null, "数量"), React.createElement("th", null, "金额"))), React.createElement("tbody", null, ((function() {
+        var i, len, ref, results;
+        total = 0;
+        ref = this.state.pays;
         results = [];
-        for (idx = i = 0, len = data.length; i < len; idx = ++i) {
-          item = data[idx];
+        for (idx = i = 0, len = ref.length; i < len; idx = ++i) {
+          item = ref[idx];
+          if (item[5]) {
+            total = total + parseInt(item[4]);
+          }
           results.push(React.createElement("tr", {
             "key": idx
           }, React.createElement("td", {
             "className": 'collapsing'
           }, React.createElement("input", {
-            "type": "checkbox"
+            "type": "checkbox",
+            "checked": item[5],
+            "onChange": this.toggle(idx)
           })), React.createElement("td", null, item[0]), React.createElement("td", null, item[1]), React.createElement("td", null, item[2]), React.createElement("td", null, item[3]), React.createElement("td", null, item[4])));
         }
         return results;
-      })()))), React.createElement("a", {
+      }).call(this)))), React.createElement("h3", {
+        "className": 'ui header small total'
+      }, "总计：¥ ", total), (klass = new ClassName({
+        'ui button orange': true,
+        'disabled': total === 0
+      }), React.createElement("a", {
         "href": 'doctor-patient-info.html',
-        "className": 'ui button green'
+        "className": klass
       }, React.createElement("i", {
         "className": 'icon rmb'
-      }), "确定缴费")))));
+      }), "确定缴费"))))));
+    },
+    toggle_all: function(evt) {
+      var checked, i, len, p, pays;
+      checked = evt.target.checked;
+      pays = this.state.pays;
+      for (i = 0, len = pays.length; i < len; i++) {
+        p = pays[i];
+        p[5] = checked;
+      }
+      return this.setState({
+        pays: pays
+      });
+    },
+    toggle: function(idx) {
+      return (function(_this) {
+        return function(evt) {
+          var checked, pays;
+          checked = evt.target.checked;
+          pays = _this.state.pays;
+          pays[idx][5] = checked;
+          return _this.setState({
+            pays: pays
+          });
+        };
+      })(this);
     }
   });
 
@@ -4001,6 +4045,92 @@
       }, React.createElement("i", {
         "className": 'icon check'
       }), React.createElement("span", null, "保存体检结果"))))));
+    }
+  });
+
+  this.ZDPatientResultPage1 = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'zd-patient-info-page'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, React.createElement(TopbarBack, {
+        "href": 'doctor-patient-info.html'
+      }), React.createElement("span", null, "患者信息")), React.createElement("div", {
+        "className": 'table-div'
+      }, React.createElement("table", {
+        "className": 'ui very basic celled table'
+      }, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing'
+      }, "姓名："), React.createElement("td", null, "王大锤"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "性别："), React.createElement("td", null, "男"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "年龄："), React.createElement("td", null, "33")), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing'
+      }, "日期："), React.createElement("td", null, "2015-12-08"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "就诊号："), React.createElement("td", null, "301"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "诊疗卡："), React.createElement("td", null, "1234567")), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing'
+      }, "身高："), React.createElement("td", null, "180 cm"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "体重："), React.createElement("td", null, "70 kg"), React.createElement("td", {
+        "className": 'label collapsing'
+      }, "血压："), React.createElement("td", null, "70\x2F100 mmHg")), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing top aligned'
+      }, "既往史："), React.createElement("td", {
+        "colSpan": '5',
+        "className": 'desc'
+      }, React.createElement("span", null, "无"))), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing top aligned'
+      }, "体质类型："), React.createElement("td", {
+        "colSpan": '5',
+        "className": 'desc'
+      }, React.createElement("span", null, "阳虚体质"))), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing top aligned'
+      }, "主诉："), React.createElement("td", {
+        "colSpan": '5'
+      }, React.createElement("span", null, "失眠"))), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing top aligned'
+      }, "初步诊断："), React.createElement("td", {
+        "colSpan": '5',
+        "className": 'desc'
+      }, React.createElement("span", null, "失眠"))), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing top aligned'
+      }, "处理："), React.createElement("td", {
+        "colSpan": '5',
+        "className": 'desc'
+      }, React.createElement("div", null, "针灸：风池、印堂、神门、三阴交、太溪，平补平泻法，50分钟"), React.createElement("div", null, "火罐：心俞、脾俞、内关、神门，单纯拔罐法，10分钟"), React.createElement("div", null, "共5次"))), React.createElement("tr", null, React.createElement("td", {
+        "className": 'label collapsing top aligned'
+      }, "医师："), React.createElement("td", {
+        "colSpan": '5'
+      }, React.createElement("span", null, "叶建华")))))), React.createElement("div", {
+        "className": 'table-div'
+      }, React.createElement("div", {
+        "className": 'record'
+      }, React.createElement("h3", {
+        "className": 'ui header'
+      }, "已检查项目：背诊")), React.createElement("div", null, React.createElement("a", {
+        "className": 'ui labeled icon button back',
+        "href": 'javascript:;'
+      }, React.createElement("i", {
+        "className": 'icon file'
+      }), React.createElement("span", null, "查看体检记录")))), React.createElement("div", {
+        "className": 'table-div'
+      }, React.createElement("div", {
+        "className": 'record'
+      }, React.createElement("h3", {
+        "className": 'ui header'
+      }, "已检查项目：舌诊")), React.createElement("div", null, React.createElement("a", {
+        "className": 'ui labeled icon button back',
+        "href": 'javascript:;'
+      }, React.createElement("i", {
+        "className": 'icon file'
+      }), React.createElement("span", null, "查看体检记录"))))));
     }
   });
 

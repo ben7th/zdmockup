@@ -183,7 +183,7 @@
                 info: [
                   ['主治医师', '李海峰']
                   ['就诊时间', '2015-11-05（星期四）上午']
-                  ['诊断报告', <a href='javascript:;'>查看详情</a>]
+                  ['诊断报告', <a href='doctor-zhenduan.html'>查看详情</a>]
                 ]
                 jiaofei: true
               }
@@ -261,6 +261,12 @@ PatientInfo = React.createClass
 
 
 @DoctorPayPage = React.createClass
+  getInitialState: ->
+    pays: [
+      ['基础体检', '次', '10.00', 1, '10.00']
+      ['舌诊', '次', '20.00', 1, '20.00']
+      ['脉诊', '次', '30.00', 1, '30.00']
+    ]
   render: ->
     <div className='zd-patient-info-page pay'>
       <div className='ui container'>
@@ -276,19 +282,19 @@ PatientInfo = React.createClass
 
             <table className='ui celled table'>
               <thead><tr>
-              <th></th><th>项目</th><th>单位</th><th>单价</th><th>数量</th><th>金额</th>
+              <th>
+                <input type="checkbox" onChange={@toggle_all} />
+              </th><th>项目</th><th>单位</th><th>单价</th><th>数量</th><th>金额</th>
               </tr></thead>
               <tbody>
               {
-                data = [
-                  ['基础体检', '次', '10.00', 1, '10.00']
-                  ['舌诊', '次', '10.00', 1, '10.00']
-                  ['脉诊', '次', '10.00', 1, '10.00']
-                ]
-                for item, idx in data
+                total = 0
+                for item, idx in @state.pays
+                  if item[5]
+                    total = total + parseInt(item[4])
                   <tr key={idx}>
                     <td className='collapsing'>
-                      <input type="checkbox" />
+                      <input type="checkbox" checked={item[5]} onChange={@toggle(idx)} />
                     </td>
                     <td>{item[0]}</td>
                     <td>{item[1]}</td>
@@ -299,11 +305,33 @@ PatientInfo = React.createClass
               } 
               </tbody>
             </table>
-            <a href='doctor-patient-info.html' className='ui button green'>
-              <i className='icon rmb' />
-              确定缴费
-            </a>
+            {
+              <h3 className='ui header small total'>总计：¥ {total}</h3>
+            }
+            {
+              klass = new ClassName
+                'ui button orange': true
+                'disabled': total is 0
+              <a href='doctor-patient-info.html' className={klass}>
+                <i className='icon rmb' />
+                确定缴费
+              </a>
+            }
           </div>
         </div>
       </div>
     </div>
+
+  toggle_all: (evt)->
+    checked = evt.target.checked
+    pays = @state.pays
+    for p in pays
+      p[5] = checked
+    @setState pays: pays
+
+  toggle: (idx)->
+    (evt)=>
+      checked = evt.target.checked
+      pays = @state.pays
+      pays[idx][5] = checked
+      @setState pays: pays
