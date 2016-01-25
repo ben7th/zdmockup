@@ -111,7 +111,7 @@
   getInitialState: ->
     active: 0
   render: ->
-    <div className='zd-patient-info-page'>
+    <div className='zd-patient-info-page doctor-pinfo'>
       <div className='ui container'>
         <h2 className='ui header topbar'>
           <TopbarBack href='doctor-patient-list.html' />
@@ -119,6 +119,8 @@
         </h2>
 
         <div className='table-div'>
+
+          <PatientInfo />
 
           {
             klass0 = new ClassName
@@ -237,3 +239,71 @@
     @setState active: 2
   select3: ->
     @setState active: 3
+
+PatientInfo = React.createClass
+  render: ->
+    <div className='ui segment patient-info'>
+      <div className='avatar' style={'backgroundImage':'url(http://i.teamkn.com/i/jdXKi54u.png)', 'backgroundSize':'cover', 'width':'120px', 'height':'120px'}></div>
+      <div className='content'>
+        <h3 className='ui header name'>王大锤</h3>
+        <div className='info'>
+          <span>男，33岁，诊疗卡号：</span>
+          <span className='id'>1234567</span>
+        </div>
+        <div className='info'>既往史：无</div>
+        <div className='info'>家族史：无</div>
+      </div>
+      <a href='doctor-pay.html' className='doctor-pay ui orange button'>
+        <i className='icon rmb' />
+        结清缴费
+      </a>
+    </div>
+
+
+@DoctorPayPage = React.createClass
+  render: ->
+    <div className='zd-patient-info-page pay'>
+      <div className='ui container'>
+        <h2 className='ui header topbar'>
+          <TopbarBack href='doctor-patient-info.html' />
+          <span>患者信息</span>
+        </h2>
+        <div className='table-div'>
+          <PatientInfo />
+
+          <div className='pay-items ui segment'>
+            <h3 className='ui header'>尚未缴费项</h3>
+
+            <table className='ui celled table'>
+              <thead><tr>
+              <th></th><th>项目</th><th>单位</th><th>单价</th><th>数量</th><th>金额</th>
+              </tr></thead>
+              <tbody>
+              {
+                data = [
+                  ['基础体检', '次', '10.00', 1, '10.00']
+                  ['舌诊', '次', '10.00', 1, '10.00']
+                  ['脉诊', '次', '10.00', 1, '10.00']
+                ]
+                for item, idx in data
+                  <tr key={idx}>
+                    <td className='collapsing'>
+                      <input type="checkbox" />
+                    </td>
+                    <td>{item[0]}</td>
+                    <td>{item[1]}</td>
+                    <td>{item[2]}</td>
+                    <td>{item[3]}</td>
+                    <td>{item[4]}</td>
+                  </tr>
+              } 
+              </tbody>
+            </table>
+            <a href='doctor-patient-info.html' className='ui button green'>
+              <i className='icon rmb' />
+              确定缴费
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -697,12 +697,12 @@ table.paiban .item {
     line-height: 30px; }
 
 .timeline {
-  margin-left: 100px;
+  margin-left: 67.5px;
   border-left: solid 3px #ccc;
   padding-left: 20px; }
   .timeline .tl-item {
     width: 400px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: white;
     padding: 15px;
     margin-bottom: 15px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -738,3 +738,30 @@ table.paiban .item {
       position: absolute;
       top: 15px;
       right: 15px; }
+
+.zd-patient-info-page.doctor-pinfo {
+  position: relative;
+  bottom: auto;
+  height: auto;
+  padding-bottom: 20px; }
+.zd-patient-info-page .container {
+  position: relative;
+  bottom: auto;
+  height: auto; }
+.zd-patient-info-page .patient-info {
+  overflow: hidden;
+  position: relative; }
+  .zd-patient-info-page .patient-info .avatar {
+    float: left; }
+  .zd-patient-info-page .patient-info .content {
+    margin-left: 135px; }
+    .zd-patient-info-page .patient-info .content .info {
+      margin-bottom: 10px; }
+      .zd-patient-info-page .patient-info .content .info .id {
+        color: #f2711c; }
+  .zd-patient-info-page .patient-info .doctor-pay {
+    position: absolute;
+    top: 15px;
+    right: 15px; }
+.zd-patient-info-page.pay .doctor-pay {
+  display: none; }

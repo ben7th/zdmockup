@@ -1808,6 +1808,8 @@
 }).call(this);
 
 (function() {
+  var PatientInfo;
+
   this.DoctorSelectPage = React.createClass({
     render: function() {
       return React.createElement("div", {
@@ -1934,7 +1936,7 @@
     render: function() {
       var arr, display, idx, idx1, item, klass0, klass1, klass2, klass3, timeline_data;
       return React.createElement("div", {
-        "className": 'zd-patient-info-page'
+        "className": 'zd-patient-info-page doctor-pinfo'
       }, React.createElement("div", {
         "className": 'ui container'
       }, React.createElement("h2", {
@@ -1943,7 +1945,7 @@
         "href": 'doctor-patient-list.html'
       }), React.createElement("span", null, "患者信息")), React.createElement("div", {
         "className": 'table-div'
-      }, (klass0 = new ClassName({
+      }, React.createElement(PatientInfo, null), (klass0 = new ClassName({
         'item': true,
         'active': this.state.active === 0
       }), klass1 = new ClassName({
@@ -2078,6 +2080,82 @@
       return this.setState({
         active: 3
       });
+    }
+  });
+
+  PatientInfo = React.createClass({
+    render: function() {
+      return React.createElement("div", {
+        "className": 'ui segment patient-info'
+      }, React.createElement("div", {
+        "className": 'avatar',
+        "style": {
+          'backgroundImage': 'url(http://i.teamkn.com/i/jdXKi54u.png)',
+          'backgroundSize': 'cover',
+          'width': '120px',
+          'height': '120px'
+        }
+      }), React.createElement("div", {
+        "className": 'content'
+      }, React.createElement("h3", {
+        "className": 'ui header name'
+      }, "王大锤"), React.createElement("div", {
+        "className": 'info'
+      }, React.createElement("span", null, "男，33岁，诊疗卡号："), React.createElement("span", {
+        "className": 'id'
+      }, "1234567")), React.createElement("div", {
+        "className": 'info'
+      }, "既往史：无"), React.createElement("div", {
+        "className": 'info'
+      }, "家族史：无")), React.createElement("a", {
+        "href": 'doctor-pay.html',
+        "className": 'doctor-pay ui orange button'
+      }, React.createElement("i", {
+        "className": 'icon rmb'
+      }), "结清缴费"));
+    }
+  });
+
+  this.DoctorPayPage = React.createClass({
+    render: function() {
+      var data, idx, item;
+      return React.createElement("div", {
+        "className": 'zd-patient-info-page pay'
+      }, React.createElement("div", {
+        "className": 'ui container'
+      }, React.createElement("h2", {
+        "className": 'ui header topbar'
+      }, React.createElement(TopbarBack, {
+        "href": 'doctor-patient-info.html'
+      }), React.createElement("span", null, "患者信息")), React.createElement("div", {
+        "className": 'table-div'
+      }, React.createElement(PatientInfo, null), React.createElement("div", {
+        "className": 'pay-items ui segment'
+      }, React.createElement("h3", {
+        "className": 'ui header'
+      }, "尚未缴费项"), React.createElement("table", {
+        "className": 'ui celled table'
+      }, React.createElement("thead", null, React.createElement("tr", null, React.createElement("th", null), React.createElement("th", null, "项目"), React.createElement("th", null, "单位"), React.createElement("th", null, "单价"), React.createElement("th", null, "数量"), React.createElement("th", null, "金额"))), React.createElement("tbody", null, ((function() {
+        var i, len, results;
+        data = [['基础体检', '次', '10.00', 1, '10.00'], ['舌诊', '次', '10.00', 1, '10.00'], ['脉诊', '次', '10.00', 1, '10.00']];
+        results = [];
+        for (idx = i = 0, len = data.length; i < len; idx = ++i) {
+          item = data[idx];
+          results.push(React.createElement("tr", {
+            "key": idx
+          }, React.createElement("td", {
+            "className": 'collapsing'
+          }, React.createElement("input", {
+            "type": "checkbox"
+          })), React.createElement("td", null, item[0]), React.createElement("td", null, item[1]), React.createElement("td", null, item[2]), React.createElement("td", null, item[3]), React.createElement("td", null, item[4])));
+        }
+        return results;
+      })()))), React.createElement("a", {
+        "href": 'doctor-patient-info.html',
+        "className": 'ui button green'
+      }, React.createElement("i", {
+        "className": 'icon rmb'
+      }), "确定缴费")))));
     }
   });
 

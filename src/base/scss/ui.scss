@@ -915,7 +915,7 @@ table.paiban {
 }
 
 .timeline {
-  margin-left: 100px;
+  margin-left: (120px + 15px) / 2;
   border-left: solid 3px #ccc;
   padding-left: 20px;
   .tl-item {
@@ -937,7 +937,7 @@ table.paiban {
     }
 
     width:400px;
-    background-color: rgba(white, 0.6);
+    background-color: rgba(white, 1);
     // border:solid 1px #eee;
     padding:15px;
     margin-bottom:15px;
@@ -962,5 +962,40 @@ table.paiban {
       top:15px;
       right:15px;
     }
+  }
+}
+
+.zd-patient-info-page{
+  &.doctor-pinfo {
+    position: relative;
+    bottom:auto;
+    height:auto;
+    padding-bottom: 20px;
+  }
+
+  .container {
+    position: relative;
+    bottom:auto;
+    height:auto;
+  }
+
+  .patient-info {
+    overflow:hidden;
+    position: relative;
+    .avatar {float: left;}
+    .content {
+      margin-left: 135px;
+      .info {
+        margin-bottom: 10px;
+        .id {color: #f2711c;}
+      }
+    }
+    .doctor-pay {
+      position: absolute;
+      top:15px;right:15px;
+    }
+  }
+  &.pay .doctor-pay {display:none;}
+  &.pay .pay-items {
   }
 }
