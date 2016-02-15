@@ -765,3 +765,196 @@ table.paiban .item {
     right: 15px; }
 .zd-patient-info-page.pay .doctor-pay {
   display: none; }
+
+.demo-new-index-page .svg-source {
+  width: 800px;
+  padding-top: 15px;
+  margin: 0 auto; }
+  .demo-new-index-page .svg-source svg text {
+    cursor: default; }
+  .demo-new-index-page .svg-source svg #group200-388,
+  .demo-new-index-page .svg-source svg #group202-420,
+  .demo-new-index-page .svg-source svg #group203-433,
+  .demo-new-index-page .svg-source svg #group201-404,
+  .demo-new-index-page .svg-source svg #group149-262,
+  .demo-new-index-page .svg-source svg #group49-82,
+  .demo-new-index-page .svg-source svg #group44-73,
+  .demo-new-index-page .svg-source svg #group39-64,
+  .demo-new-index-page .svg-source svg #group9-10,
+  .demo-new-index-page .svg-source svg #group14-19,
+  .demo-new-index-page .svg-source svg #group4-1,
+  .demo-new-index-page .svg-source svg #shape154-271,
+  .demo-new-index-page .svg-source svg #shape155-277,
+  .demo-new-index-page .svg-source svg #shape156-280,
+  .demo-new-index-page .svg-source svg #group84-145,
+  .demo-new-index-page .svg-source svg #group79-136,
+  .demo-new-index-page .svg-source svg #group74-127,
+  .demo-new-index-page .svg-source svg #group54-91,
+  .demo-new-index-page .svg-source svg #group64-109,
+  .demo-new-index-page .svg-source svg #group59-100,
+  .demo-new-index-page .svg-source svg #group69-118,
+  .demo-new-index-page .svg-source svg #group200-401,
+  .demo-new-index-page .svg-source svg #shape160-283,
+  .demo-new-index-page .svg-source svg #shape161-289,
+  .demo-new-index-page .svg-source svg #shape162-294,
+  .demo-new-index-page .svg-source svg #group202-443,
+  .demo-new-index-page .svg-source svg #group124-217,
+  .demo-new-index-page .svg-source svg #group129-226,
+  .demo-new-index-page .svg-source svg #group134-235,
+  .demo-new-index-page .svg-source svg #group139-244,
+  .demo-new-index-page .svg-source svg #group144-253,
+  .demo-new-index-page .svg-source svg #group34-55,
+  .demo-new-index-page .svg-source svg #group29-46,
+  .demo-new-index-page .svg-source svg #group24-37,
+  .demo-new-index-page .svg-source svg #group19-28,
+  .demo-new-index-page .svg-source svg #group89-154,
+  .demo-new-index-page .svg-source svg #group109-190,
+  .demo-new-index-page .svg-source svg #group94-163,
+  .demo-new-index-page .svg-source svg #group99-172,
+  .demo-new-index-page .svg-source svg #group114-199,
+  .demo-new-index-page .svg-source svg #group104-181,
+  .demo-new-index-page .svg-source svg #group119-208,
+  .demo-new-index-page .svg-source svg #group201-417,
+  .demo-new-index-page .svg-source svg #group202-433,
+  .demo-new-index-page .svg-source svg #shape171-311,
+  .demo-new-index-page .svg-source svg #shape188-374,
+  .demo-new-index-page .svg-source svg #shape181-363,
+  .demo-new-index-page .svg-source svg #shape172-317,
+  .demo-new-index-page .svg-source svg #shape173-323,
+  .demo-new-index-page .svg-source svg #shape174-328,
+  .demo-new-index-page .svg-source svg #shape175-333,
+  .demo-new-index-page .svg-source svg #shape176-338,
+  .demo-new-index-page .svg-source svg #shape177-343,
+  .demo-new-index-page .svg-source svg #shape179-353,
+  .demo-new-index-page .svg-source svg #shape178-348,
+  .demo-new-index-page .svg-source svg #shape180-358,
+  .demo-new-index-page .svg-source svg #shape170-308,
+  .demo-new-index-page .svg-source svg #shape169-305,
+  .demo-new-index-page .svg-source svg #shape168-302,
+  .demo-new-index-page .svg-source svg #shape167-299,
+  .demo-new-index-page .svg-source svg #shape189-379,
+  .demo-new-index-page .svg-source svg #shape190-382,
+  .demo-new-index-page .svg-source svg #shape191-385,
+  .demo-new-index-page .svg-source svg #shape185-368,
+  .demo-new-index-page .svg-source svg #group203-446 {
+    opacity: 0.3;
+    transition: all .2s ease; }
+  .demo-new-index-page .svg-source.p1 svg #group149-262,
+  .demo-new-index-page .svg-source.p1 svg #group49-82,
+  .demo-new-index-page .svg-source.p1 svg #group44-73,
+  .demo-new-index-page .svg-source.p1 svg #group39-64,
+  .demo-new-index-page .svg-source.p1 svg #group9-10,
+  .demo-new-index-page .svg-source.p1 svg #group14-19,
+  .demo-new-index-page .svg-source.p1 svg #group4-1,
+  .demo-new-index-page .svg-source.p1 svg #shape154-271,
+  .demo-new-index-page .svg-source.p1 svg #shape155-277,
+  .demo-new-index-page .svg-source.p1 svg #shape156-280,
+  .demo-new-index-page .svg-source.p1 svg #group79-136,
+  .demo-new-index-page .svg-source.p1 svg #group200-388 {
+    opacity: 1; }
+  .demo-new-index-page .svg-source.p2 svg #group84-145,
+  .demo-new-index-page .svg-source.p2 svg #group79-136,
+  .demo-new-index-page .svg-source.p2 svg #group124-217,
+  .demo-new-index-page .svg-source.p2 svg #group34-55,
+  .demo-new-index-page .svg-source.p2 svg #shape160-283,
+  .demo-new-index-page .svg-source.p2 svg #shape161-289,
+  .demo-new-index-page .svg-source.p2 svg #shape171-311 {
+    opacity: 1; }
+  .demo-new-index-page .svg-source.p3 svg #group124-217,
+  .demo-new-index-page .svg-source.p3 svg #group144-253,
+  .demo-new-index-page .svg-source.p3 svg #group129-226,
+  .demo-new-index-page .svg-source.p3 svg #group29-46,
+  .demo-new-index-page .svg-source.p3 svg #group24-37,
+  .demo-new-index-page .svg-source.p3 svg #group89-154,
+  .demo-new-index-page .svg-source.p3 svg #group94-163,
+  .demo-new-index-page .svg-source.p3 svg #shape168-302,
+  .demo-new-index-page .svg-source.p3 svg #shape189-379,
+  .demo-new-index-page .svg-source.p3 svg #shape188-374,
+  .demo-new-index-page .svg-source.p3 svg #shape172-317,
+  .demo-new-index-page .svg-source.p3 svg #shape181-363,
+  .demo-new-index-page .svg-source.p3 svg #shape174-328,
+  .demo-new-index-page .svg-source.p3 svg #shape185-368 {
+    opacity: 1; }
+  .demo-new-index-page .svg-source.p4 svg #group124-217,
+  .demo-new-index-page .svg-source.p4 svg #group144-253,
+  .demo-new-index-page .svg-source.p4 svg #group129-226,
+  .demo-new-index-page .svg-source.p4 svg #group29-46,
+  .demo-new-index-page .svg-source.p4 svg #group24-37,
+  .demo-new-index-page .svg-source.p4 svg #group89-154,
+  .demo-new-index-page .svg-source.p4 svg #group94-163,
+  .demo-new-index-page .svg-source.p4 svg #shape168-302,
+  .demo-new-index-page .svg-source.p4 svg #shape189-379,
+  .demo-new-index-page .svg-source.p4 svg #shape188-374,
+  .demo-new-index-page .svg-source.p4 svg #shape172-317,
+  .demo-new-index-page .svg-source.p4 svg #shape181-363,
+  .demo-new-index-page .svg-source.p4 svg #shape174-328,
+  .demo-new-index-page .svg-source.p4 svg #shape185-368,
+  .demo-new-index-page .svg-source.p4 svg #group134-235,
+  .demo-new-index-page .svg-source.p4 svg #group99-172,
+  .demo-new-index-page .svg-source.p4 svg #group114-199,
+  .demo-new-index-page .svg-source.p4 svg #shape177-343,
+  .demo-new-index-page .svg-source.p4 svg #shape179-353,
+  .demo-new-index-page .svg-source.p4 svg #shape190-382,
+  .demo-new-index-page .svg-source.p4 svg #shape175-333,
+  .demo-new-index-page .svg-source.p4 svg #group203-433,
+  .demo-new-index-page .svg-source.p4 svg #group109-190,
+  .demo-new-index-page .svg-source.p4 svg #shape173-323 {
+    opacity: 1; }
+  .demo-new-index-page .svg-source.p4 svg #shape187-439 {
+    opacity: 0.4; }
+  .demo-new-index-page .svg-source.p5 svg #group124-217,
+  .demo-new-index-page .svg-source.p5 svg #group144-253,
+  .demo-new-index-page .svg-source.p5 svg #group129-226,
+  .demo-new-index-page .svg-source.p5 svg #group29-46,
+  .demo-new-index-page .svg-source.p5 svg #group24-37,
+  .demo-new-index-page .svg-source.p5 svg #group89-154,
+  .demo-new-index-page .svg-source.p5 svg #group94-163,
+  .demo-new-index-page .svg-source.p5 svg #shape168-302,
+  .demo-new-index-page .svg-source.p5 svg #shape189-379,
+  .demo-new-index-page .svg-source.p5 svg #shape188-374,
+  .demo-new-index-page .svg-source.p5 svg #shape172-317,
+  .demo-new-index-page .svg-source.p5 svg #shape181-363,
+  .demo-new-index-page .svg-source.p5 svg #shape174-328,
+  .demo-new-index-page .svg-source.p5 svg #shape185-368,
+  .demo-new-index-page .svg-source.p5 svg #group134-235,
+  .demo-new-index-page .svg-source.p5 svg #group99-172,
+  .demo-new-index-page .svg-source.p5 svg #group114-199,
+  .demo-new-index-page .svg-source.p5 svg #shape177-343,
+  .demo-new-index-page .svg-source.p5 svg #shape179-353,
+  .demo-new-index-page .svg-source.p5 svg #shape190-382,
+  .demo-new-index-page .svg-source.p5 svg #shape175-333,
+  .demo-new-index-page .svg-source.p5 svg #group203-433,
+  .demo-new-index-page .svg-source.p5 svg #group139-244,
+  .demo-new-index-page .svg-source.p5 svg #group104-181,
+  .demo-new-index-page .svg-source.p5 svg #group119-208,
+  .demo-new-index-page .svg-source.p5 svg #group109-190,
+  .demo-new-index-page .svg-source.p5 svg #shape178-348,
+  .demo-new-index-page .svg-source.p5 svg #shape180-358,
+  .demo-new-index-page .svg-source.p5 svg #shape191-385,
+  .demo-new-index-page .svg-source.p5 svg #shape176-338,
+  .demo-new-index-page .svg-source.p5 svg #shape173-323 {
+    opacity: 1; }
+  .demo-new-index-page .svg-source.p7 svg #group109-190,
+  .demo-new-index-page .svg-source.p7 svg #group114-199,
+  .demo-new-index-page .svg-source.p7 svg #group119-208,
+  .demo-new-index-page .svg-source.p7 svg #group19-28,
+  .demo-new-index-page .svg-source.p7 svg #group201-404 {
+    opacity: 1; }
+  .demo-new-index-page .svg-source.p6 svg #group124-217,
+  .demo-new-index-page .svg-source.p6 svg #group74-127,
+  .demo-new-index-page .svg-source.p6 svg #group54-91,
+  .demo-new-index-page .svg-source.p6 svg #group59-100,
+  .demo-new-index-page .svg-source.p6 svg #group64-109,
+  .demo-new-index-page .svg-source.p6 svg #group69-118,
+  .demo-new-index-page .svg-source.p6 svg #shape162-294,
+  .demo-new-index-page .svg-source.p6 svg #group202-420 {
+    opacity: 1; }
+.demo-new-index-page .demo-new-index-page-component {
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 15px; }
+  .demo-new-index-page .demo-new-index-page-component .desc {
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.04);
+    margin-top: 15px;
+    font-size: 16px; }

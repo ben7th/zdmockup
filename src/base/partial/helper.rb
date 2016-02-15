@@ -7,6 +7,11 @@ def partial(file, &block)
   end
 end
 
+def render(file)
+  path = "#{Dir.pwd}/src/base/partial/#{file}.haml"
+  Haml::Engine.new(File.read path).render
+end
+
 def react_component(class_name, props = {})
   capture_haml {
     haml_tag :div, 

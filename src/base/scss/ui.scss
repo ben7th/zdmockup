@@ -999,3 +999,275 @@ table.paiban {
   &.pay .pay-items {
   }
 }
+
+
+.demo-new-index-page {
+  // background-color: #F9F7ED;
+
+  .svg-source {
+    // padding: 15px 100px;
+    width:800px;
+    padding-top: 15px;
+    margin: 0 auto;
+    svg {
+      text {
+        cursor: default;
+      }
+
+      #group200-388,
+      #group202-420,
+      #group203-433,
+      #group201-404,
+
+      #group149-262,
+      #group49-82,
+      #group44-73,
+      #group39-64,
+      #group9-10,
+      #group14-19,
+      #group4-1,
+
+      #shape154-271,
+      #shape155-277,
+      #shape156-280,
+
+      #group84-145,
+      #group79-136,
+      #group74-127,
+      #group54-91,
+      #group64-109,
+      #group59-100,
+      #group69-118,
+
+      #group200-401,
+      #shape160-283,
+      #shape161-289,
+      #shape162-294,
+      #group202-443,
+
+      #group124-217,
+      #group129-226,
+      #group134-235,
+      #group139-244,
+
+      #group144-253,
+      #group34-55,
+      #group29-46,
+      #group24-37,
+      #group19-28,
+
+      #group89-154,
+      #group109-190,
+      #group94-163,
+      #group99-172,
+      #group114-199,
+      #group104-181,
+      #group119-208,
+
+      #group201-417,
+      #group202-433,
+
+      #shape171-311,
+      #shape188-374,
+      #shape181-363,
+      #shape172-317,
+      #shape173-323,
+      #shape174-328,
+      #shape175-333,
+      #shape176-338,
+      #shape177-343,
+      #shape179-353,
+      #shape178-348,
+      #shape180-358,
+
+      #shape170-308,
+      #shape169-305,
+      #shape168-302,
+      #shape167-299,
+      #shape189-379,
+      #shape190-382,
+      #shape191-385,
+      #shape185-368,
+      #group203-446
+      {
+        opacity: 0.3;
+        transition: all .2s ease;
+      }
+    }
+
+    &.p1 svg {
+      #group149-262,
+      #group49-82,
+      #group44-73,
+      #group39-64,
+      #group9-10,
+      #group14-19,
+      #group4-1,
+
+      #shape154-271,
+      #shape155-277,
+      #shape156-280,
+
+      #group79-136,
+      #group200-388,
+      {
+        opacity: 1;
+      }
+    }
+
+    &.p2 svg {
+      #group84-145,
+      #group79-136,
+      #group124-217,
+      #group34-55,
+
+      #shape160-283,
+      #shape161-289,
+      #shape171-311,
+      {
+        opacity: 1;
+      }
+    }
+
+    &.p3 svg {
+      #group124-217,
+      #group144-253,
+      #group129-226,
+      #group29-46,
+      #group24-37,
+      #group89-154,
+      #group94-163,
+
+      #shape168-302,
+      #shape189-379,
+      #shape188-374,
+      #shape172-317,
+      #shape181-363,
+      #shape174-328,
+      #shape185-368,
+      {
+        opacity: 1;
+      }
+    }
+
+    &.p4 svg {
+      #group124-217,
+      #group144-253,
+      #group129-226,
+      #group29-46,
+      #group24-37,
+      #group89-154,
+      #group94-163,
+
+      #shape168-302,
+      #shape189-379,
+      #shape188-374,
+      #shape172-317,
+      #shape181-363,
+      #shape174-328,
+      #shape185-368,
+
+      #group134-235,
+      #group99-172,
+      #group114-199,
+
+      #shape177-343,
+      #shape179-353,
+      #shape190-382,
+      #shape175-333,
+      #group203-433,
+
+      #group109-190,
+      #shape173-323,
+      {
+        opacity: 1;
+      }
+      #shape187-439 {
+        opacity: 0.4;
+      }
+    }
+
+    &.p5 svg {
+      #group124-217,
+      #group144-253,
+      #group129-226,
+      #group29-46,
+      #group24-37,
+      #group89-154,
+      #group94-163,
+
+      #shape168-302,
+      #shape189-379,
+      #shape188-374,
+      #shape172-317,
+      #shape181-363,
+      #shape174-328,
+      #shape185-368,
+
+      #group134-235,
+      #group99-172,
+      #group114-199,
+
+      #shape177-343,
+      #shape179-353,
+      #shape190-382,
+      #shape175-333,
+      #group203-433,      
+
+      #group139-244,
+      #group104-181,
+      #group119-208,
+      #group109-190,
+
+      #shape178-348,
+      #shape180-358,
+      #shape191-385,
+      #shape176-338,
+      #shape173-323,
+      {
+        opacity: 1;
+      }
+    }
+
+    &.p7 svg {
+      #group109-190,
+      #group114-199,
+      #group119-208,
+      #group19-28,
+
+      #group201-404,
+      {
+        opacity: 1;
+      }
+    }
+
+    &.p6 svg {
+
+      #group124-217,
+      #group74-127,
+      #group54-91,
+      #group59-100,
+      #group64-109,
+      #group69-118,
+
+      #shape162-294,
+      #group202-420,
+
+      {
+        opacity: 1;
+      }
+    }
+  }
+
+  .demo-new-index-page-component {
+    width:800px;
+    margin:0 auto;
+    padding-top: 15px;
+    .desc {
+      padding: 15px;
+      background-color: rgba(black, 0.04);
+      margin-top: 15px;
+      font-size: 16px;
+    }
+  }
+}

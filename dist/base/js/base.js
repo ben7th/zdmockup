@@ -219,6 +219,77 @@
 }).call(this);
 
 (function() {
+  this.DemoNewIndexPage = React.createClass({
+    getInitialState: function() {
+      return {
+        period: 0
+      };
+    },
+    render: function() {
+      return React.createElement("div", {
+        "className": 'demo-new-index-page-component'
+      }, React.createElement("a", {
+        "className": 'ui button mini',
+        "href": 'javascript:;',
+        "onClick": this.show(1)
+      }, "过程一"), React.createElement("a", {
+        "className": 'ui button mini',
+        "href": 'javascript:;',
+        "onClick": this.show(2)
+      }, "过程二"), React.createElement("a", {
+        "className": 'ui button mini',
+        "href": 'javascript:;',
+        "onClick": this.show(3)
+      }, "过程三"), React.createElement("a", {
+        "className": 'ui button mini',
+        "href": 'javascript:;',
+        "onClick": this.show(4)
+      }, "过程四"), React.createElement("a", {
+        "className": 'ui button mini',
+        "href": 'javascript:;',
+        "onClick": this.show(5)
+      }, "过程五"), React.createElement("a", {
+        "className": 'ui button mini',
+        "href": 'javascript:;',
+        "onClick": this.show(6)
+      }, "过程六"), React.createElement("a", {
+        "className": 'ui button mini',
+        "href": 'javascript:;',
+        "onClick": this.show(7)
+      }, "过程七"), (this.state.period === 1 ? React.createElement("div", {
+        "className": 'desc'
+      }, "患者可以通过微信或网站的形式访问平台，进行线上预约；", React.createElement("br", null), "或者通过电话预约，或直接到访现场进行挂号；") : this.state.period === 2 ? React.createElement("div", {
+        "className": 'desc'
+      }, "第一次到访的患者会在平台完成信息补录，每一个患者的信息都会进入统一管理的患者信息库；", React.createElement("br", null), "所有患者的数据在中医平台下所有店面将实现数据同步；") : this.state.period === 3 ? React.createElement("div", {
+        "className": 'desc'
+      }, "导诊根据排班情况将患者分派给医师，医师将对患者进行初步诊断；", React.createElement("br", null), "并根据患者的具体情况，安排患者进行对应专项体检；") : this.state.period === 4 ? React.createElement("div", {
+        "className": 'desc'
+      }, "体检师对患者进行专项体检，并通过标准化的系统完成对体检结果的记录；", React.createElement("br", null), "体检结论供医师参考，对患者做出进一步的诊断；形成治疗方案；") : this.state.period === 5 ? React.createElement("div", {
+        "className": 'desc'
+      }, "患者根据治疗方案，在治疗师的帮助下接受多种形式的治疗；", React.createElement("br", null), "每一次治疗实施后，患者都将根据自身情况作出主观反馈，或者通过再次进行体检来跟踪病情变化；", React.createElement("br", null), "所有的反馈与变化情况都将被记录在平台中；") : this.state.period === 6 ? React.createElement("div", {
+        "className": 'desc'
+      }, "患者通过多种形式进行费用结算缴纳；", React.createElement("br", null), "预充值用户将能够享有更便捷的支付方式，以及在诊疗项目上更优惠的折扣；") : this.state.period === 7 ? React.createElement("div", {
+        "className": 'desc'
+      }, "所有患者在业务系统内完成的诊断，体检，治疗过程产生的治疗方案，体检记录，治疗反馈，都将以规范的形式被汇入中医平台知识库；", React.createElement("br", null), "从而对将来的诊疗案例分析提供参考，对患者健康状况的跟踪提供依据；", React.createElement("br", null), "以及作为将来更大众化的互联网诊疗应用的数据支持；") : void 0));
+    },
+    componentDidMount: function() {
+      return jQuery('.svg-source svg title').remove();
+    },
+    show: function(num) {
+      return (function(_this) {
+        return function() {
+          _this.setState({
+            period: num
+          });
+          return jQuery('.svg-source').removeClass('p1 p2 p3 p4 p5 p6 p7').addClass("p" + num);
+        };
+      })(this);
+    }
+  });
+
+}).call(this);
+
+(function() {
   this.DemoPlaceholder = React.createClass({
     render: function() {
       return React.createElement("div", {
